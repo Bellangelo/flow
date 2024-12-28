@@ -6,7 +6,7 @@ namespace Flow\ETL\Tests\Unit\Extractor;
 
 use function Flow\ETL\DSL\{df, from_data_frame, from_rows, row, rows, str_entry};
 
-final class DataFrameExtractorTest extends ExtractorTestCase
+final class DataFrameExtractorTest extends FlowTestCase
 {
     public function test_extracting_from_another_data_frame() : void
     {

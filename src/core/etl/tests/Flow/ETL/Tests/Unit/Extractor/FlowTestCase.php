@@ -7,7 +7,7 @@ namespace Flow\ETL\Tests\Unit\Extractor;
 use Flow\ETL\{Config, Extractor, FlowContext, Rows};
 use PHPUnit\Framework\TestCase;
 
-abstract class ExtractorTestCase extends TestCase
+abstract class FlowTestCase extends TestCase
 {
     public function assertExtractorCountRowsPerBatch(int $expectedCount, Extractor $extractor) : void
     {

@@ -11,7 +11,7 @@ use function Flow\ETL\DSL\{date_entry,
     from_sequence_number};
 use Flow\ETL\{Row, Rows};
 
-final class SequenceExtractorTest extends ExtractorTestCase
+final class SequenceExtractorTest extends FlowTestCase
 {
     public function test_extracting_from_date_period() : void
     {

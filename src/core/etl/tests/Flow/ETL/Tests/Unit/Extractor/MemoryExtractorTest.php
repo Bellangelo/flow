@@ -8,7 +8,7 @@ use function Flow\ETL\DSL\{from_memory, int_entry, str_entry, to_memory};
 use Flow\ETL\Memory\ArrayMemory;
 use Flow\ETL\{Config, FlowContext, Row, Rows};
 
-final class MemoryExtractorTest extends ExtractorTestCase
+final class MemoryExtractorTest extends FlowTestCase
 {
     public function test_memory_extractor() : void
     {

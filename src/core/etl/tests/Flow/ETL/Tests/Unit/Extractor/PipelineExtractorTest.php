@@ -9,7 +9,7 @@ use Flow\ETL\Extractor\{PipelineExtractor, RowsExtractor};
 use Flow\ETL\Pipeline\SynchronousPipeline;
 use Flow\ETL\{Row, Rows};
 
-final class PipelineExtractorTest extends ExtractorTestCase
+final class PipelineExtractorTest extends FlowTestCase
 {
     public function test_pipeline_extractor() : void
     {
