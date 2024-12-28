@@ -6,9 +6,8 @@ namespace Flow\ETL\Tests\Unit\Extractor;
 
 use function Flow\ETL\DSL\{files, flow_context};
 use Flow\ETL\Extractor\Signal;
-use Flow\ETL\Tests\FlowTestCase;
 
-final class FilesFlowTest extends FlowTestCase
+final class FilesExtractorTest extends ExtractorTestCase
 {
     public function test_extracting_files_from_directory() : void
     {

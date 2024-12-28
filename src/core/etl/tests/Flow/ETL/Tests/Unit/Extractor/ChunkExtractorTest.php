@@ -6,9 +6,8 @@ namespace Flow\ETL\Tests\Unit\Extractor;
 
 use Flow\ETL\Extractor\ChunkExtractor;
 use Flow\ETL\Tests\Double\FakeExtractor;
-use Flow\ETL\Tests\FlowTestCase;
 
-final class ChunkFlowTest extends FlowTestCase
+final class ChunkExtractorTest extends ExtractorTestCase
 {
     public function test_chunk_extractor() : void
     {
