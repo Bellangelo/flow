@@ -10,7 +10,20 @@ final class DataFrameExtractorTest extends ExtractorTestCase
 {
     public function test_extracting_from_another_data_frame() : void
     {
-        self::assertEquals(
+        $extractor = from_data_frame(
+            df()->read(from_rows(
+                rows(
+                    row(str_entry('value', 'test')),
+                    row(str_entry('value', 'test')),
+                ),
+                rows(
+                    row(str_entry('value', 'test')),
+                    row(str_entry('value', 'test')),
+                )
+            ))
+        );
+
+        $this->assertExtractorYieldedRows(
             [
                 rows(
                     row(str_entry('value', 'test')),
@@ -21,20 +34,7 @@ final class DataFrameExtractorTest extends ExtractorTestCase
                     row(str_entry('value', 'test')),
                 ),
             ],
-            $this->toRowsArray(
-                from_data_frame(
-                    df()->read(from_rows(
-                        rows(
-                            row(str_entry('value', 'test')),
-                            row(str_entry('value', 'test')),
-                        ),
-                        rows(
-                            row(str_entry('value', 'test')),
-                            row(str_entry('value', 'test')),
-                        )
-                    )),
-                )
-            ),
+            $extractor
         );
     }
 }
