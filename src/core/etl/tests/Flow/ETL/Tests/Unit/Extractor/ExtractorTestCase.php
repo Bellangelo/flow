@@ -30,18 +30,6 @@ abstract class ExtractorTestCase extends TestCase
     }
 
     /**
-     * @param array<Rows> $expectedRows
-     * @param Extractor $extractor
-     */
-    public function assertExtractorYieldedRows(array $expectedRows, Extractor $extractor) : void
-    {
-        static::assertEquals(
-            $expectedRows,
-            \iterator_to_array($extractor->extract(new FlowContext(Config::default())))
-        );
-    }
-
-    /**
      * @param array<mixed> $expectedArray
      * @param Extractor $extractor
      */
@@ -53,6 +41,18 @@ abstract class ExtractorTestCase extends TestCase
             $data = [...$data, ...$rowsData->toArray()];
         }
 
-        self::assertSame($expectedArray, $data);
+        static::assertSame($expectedArray, $data);
+    }
+
+    /**
+     * @param array<Rows> $expectedRows
+     * @param Extractor $extractor
+     */
+    public function assertExtractorYieldedRows(array $expectedRows, Extractor $extractor) : void
+    {
+        static::assertEquals(
+            $expectedRows,
+            \iterator_to_array($extractor->extract(new FlowContext(Config::default())))
+        );
     }
 }
