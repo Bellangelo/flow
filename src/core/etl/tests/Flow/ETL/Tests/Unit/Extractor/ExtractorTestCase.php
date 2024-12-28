@@ -41,7 +41,11 @@ abstract class ExtractorTestCase extends TestCase
         );
     }
 
-    public function toArray(Extractor $extractor) : array
+    /**
+     * @param array<mixed> $expectedArray
+     * @param Extractor $extractor
+     */
+    public function assertExtractorYieldedArray(array $expectedArray, Extractor $extractor) : void
     {
         $data = [];
 
@@ -49,6 +53,6 @@ abstract class ExtractorTestCase extends TestCase
             $data = [...$data, ...$rowsData->toArray()];
         }
 
-        return $data;
+        self::assertSame($expectedArray, $data);
     }
 }
