@@ -1,6 +1,11 @@
-## [Unreleased] - 2024-12-27
+## [Unreleased] - 2024-12-28
 
 ### Added
+- [#1296](https://github.com/flow-php/flow/pull/1296) - **Added codecov integration** - [@norberttech](https://github.com/norberttech)
+- [#1295](https://github.com/flow-php/flow/pull/1295) - **Symfony Http Foundation Bridge documentation to navigation** - [@norberttech](https://github.com/norberttech)
+- [#1294](https://github.com/flow-php/flow/pull/1294) - **Documentation building step to github actions workflow** - [@norberttech](https://github.com/norberttech)
+- [#1281](https://github.com/flow-php/flow/pull/1281) - **S3 Filesystem based on Async AWS library** - [@norberttech](https://github.com/norberttech)
+- [#1281](https://github.com/flow-php/flow/pull/1281) - **Timeout to testsuite job at github actios** - [@norberttech](https://github.com/norberttech)
 - [#1280](https://github.com/flow-php/flow/pull/1280) - **Added cookies fallback page** - [@norberttech](https://github.com/norberttech)
 - [2b6ae2](https://github.com/flow-php/flow/commit/2b6ae2017837a74b35a4b2e112554913b118c20b) - **default google consent state script** - [@norberttech](https://github.com/norberttech)
 - [6e3a60](https://github.com/flow-php/flow/commit/6e3a602b7622fc341c19df3b9f359d5546df8c9d) - **cookie banner to the website** - [@norberttech](https://github.com/norberttech)
@@ -27,6 +32,10 @@
 - [#1244](https://github.com/flow-php/flow/pull/1244) - **Added CLI command to read schema from a file** - [@norberttech](https://github.com/norberttech)
 
 ### Changed
+- [#1295](https://github.com/flow-php/flow/pull/1295) - **Improved readability of remote filesystem examples** - [@norberttech](https://github.com/norberttech)
+- [#1293](https://github.com/flow-php/flow/pull/1293) - **Increase minimal MSI for Infection** - [@stloyd](https://github.com/stloyd)
+- [#1293](https://github.com/flow-php/flow/pull/1293) - **Run mutations tests when changing Inflection related files** - [@stloyd](https://github.com/stloyd)
+- [#1292](https://github.com/flow-php/flow/pull/1292) - **Update & adjust Infection configuration** - [@stloyd](https://github.com/stloyd)
 - [#1287](https://github.com/flow-php/flow/pull/1287) - **Split test suite into independent jobs** - [@norberttech](https://github.com/norberttech)
 - [#1287](https://github.com/flow-php/flow/pull/1287) - **Locked meilisearch to 1.11** - [@norberttech](https://github.com/norberttech)
 - [085971](https://github.com/flow-php/flow/commit/0859718d573c0f3c2b1fe817a7c88838256196f0) - **Create ads.txt** - [@norberttech](https://github.com/norberttech)
@@ -49,6 +58,8 @@
 - [#1240](https://github.com/flow-php/flow/pull/1240) - **Update Homebrew TAP formula: flow-php to version: 0.10.0** - [@norberttech](https://github.com/norberttech)
 
 ### Fixed
+- [#1294](https://github.com/flow-php/flow/pull/1294) - **Fixed broken documentation building script** - [@norberttech](https://github.com/norberttech)
+- [#1281](https://github.com/flow-php/flow/pull/1281) - **Meilisearch pagination** - [@norberttech](https://github.com/norberttech)
 - [#1289](https://github.com/flow-php/flow/pull/1289) - **Adjust Meilisearch adapter to newer library code** - [@stloyd](https://github.com/stloyd)
 - [53892a](https://github.com/flow-php/flow/commit/53892aef80f10c7c727151059ae9951d90ee907c) - **static content providers for website** - [@norberttech](https://github.com/norberttech)
 - [#1277](https://github.com/flow-php/flow/pull/1277) - **Removed .md suffix from documentation URLs** - [@norberttech](https://github.com/norberttech)

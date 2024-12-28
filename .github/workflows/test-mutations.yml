@@ -8,8 +8,9 @@ on:
       - 'src/adapter/**'
       - 'src/core/**'
       - 'src/lib/**'
-      - 'tools/infection/composer.lock'
+      - 'tools/infection/composer.*'
       - 'composer.lock'
+      - 'infection.json'
   push:
     branches: [ 1.x ]
     paths-ignore:
@@ -77,4 +78,4 @@ jobs:
         run: "composer install --no-interaction --no-progress --no-suggest"
 
       - name: "Mutation Tests"
-        run: "composer test:mutation -- --logger-github=false"
+        run: "composer test:mutation -- --logger-github=false --log-verbosity=none"
