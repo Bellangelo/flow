@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Extractor;
 
-use Flow\ETL\Config;
-use Flow\ETL\FlowContext;
+use Flow\ETL\{Config, FlowContext, Extractor};
 use PHPUnit\Framework\TestCase;
-use Flow\ETL\Extractor;
 
 abstract class ExtractorTestCase extends TestCase
 {
