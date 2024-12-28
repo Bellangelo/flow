@@ -6,8 +6,6 @@ namespace Flow\ETL\Tests\Unit\Extractor;
 
 use Flow\ETL\Extractor\ChunkExtractor;
 use Flow\ETL\Tests\Double\FakeExtractor;
-use Flow\ETL\{Config, FlowContext};
-use PHPUnit\Framework\TestCase;
 
 final class ChunkExtractorTest extends ExtractorTestCase
 {

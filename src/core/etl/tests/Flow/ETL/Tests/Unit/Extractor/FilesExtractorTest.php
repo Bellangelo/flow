@@ -6,7 +6,6 @@ namespace Flow\ETL\Tests\Unit\Extractor;
 
 use function Flow\ETL\DSL\{files, flow_context};
 use Flow\ETL\Extractor\Signal;
-use PHPUnit\Framework\TestCase;
 
 final class FilesExtractorTest extends ExtractorTestCase
 {

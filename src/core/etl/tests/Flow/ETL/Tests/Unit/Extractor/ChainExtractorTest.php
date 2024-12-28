@@ -5,10 +5,9 @@ declare(strict_types=1);
 namespace Flow\ETL\Tests\Unit\Extractor;
 
 use function Flow\ETL\DSL\{from_all, int_entry};
-use Flow\ETL\{Config, Extractor, FlowContext, Row, Rows};
-use PHPUnit\Framework\TestCase;
+use Flow\ETL\{Extractor, FlowContext, Row, Rows};
 
-final class ChainExtractorTest extends TestCase
+final class ChainExtractorTest extends ExtractorTestCase
 {
     public function test_chain_extractor() : void
     {
@@ -36,7 +35,7 @@ final class ChainExtractorTest extends TestCase
                 new Rows(Row::create(int_entry('id', 3))),
                 new Rows(Row::create(int_entry('id', 4))),
             ],
-            \iterator_to_array($extractor->extract(new FlowContext(Config::default())))
+            $this->toRowsArray($extractor)
         );
     }
 }

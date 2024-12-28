@@ -9,10 +9,9 @@ use function Flow\ETL\DSL\{date_entry,
     from_sequence_date_period,
     from_sequence_date_period_recurrences,
     from_sequence_number};
-use Flow\ETL\{Config, FlowContext, Row, Rows};
-use PHPUnit\Framework\TestCase;
+use Flow\ETL\{Row, Rows};
 
-final class SequenceExtractorTest extends TestCase
+final class SequenceExtractorTest extends ExtractorTestCase
 {
     public function test_extracting_from_date_period() : void
     {
@@ -30,7 +29,7 @@ final class SequenceExtractorTest extends TestCase
                 new Rows(Row::create(date_entry('day', new \DateTimeImmutable('2023-01-09')))),
                 new Rows(Row::create(date_entry('day', new \DateTimeImmutable('2023-01-10')))),
             ],
-            \iterator_to_array($extractor->extract(new FlowContext(Config::default())))
+            $this->toRowsArray($extractor)
         );
     }
 
@@ -51,7 +50,7 @@ final class SequenceExtractorTest extends TestCase
                 new Rows(Row::create(date_entry('day', new \DateTimeImmutable('2023-01-10')))),
                 new Rows(Row::create(date_entry('day', new \DateTimeImmutable('2023-01-11')))),
             ],
-            \iterator_to_array($extractor->extract(new FlowContext(Config::default())))
+            $this->toRowsArray($extractor)
         );
     }
 
@@ -69,7 +68,7 @@ final class SequenceExtractorTest extends TestCase
                 new Rows(Row::create(float_entry('num', 7.5))),
                 new Rows(Row::create(float_entry('num', 9))),
             ],
-            \iterator_to_array($extractor->extract(new FlowContext(Config::default())))
+            $this->toRowsArray($extractor)
         );
     }
 }
