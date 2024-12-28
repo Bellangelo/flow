@@ -9,16 +9,29 @@ use PHPUnit\Framework\TestCase;
 
 abstract class ExtractorTestCase extends TestCase
 {
-    public function assertCountMultiRows(int $expectedTotalCount, int $expectedCountPerRow, Extractor $extractor) : void
+    public function assertExtractorCountRowsPerBatch(int $expectedCount, Extractor $extractor) : void
+    {
+        $extractorContainsBatches = false;
+
+        foreach ($extractor->extract(new FlowContext(Config::default())) as $rows) {
+            static::assertCount($expectedCount, $rows);
+            $extractorContainsBatches = true;
+        }
+
+        if (!$extractorContainsBatches) {
+            static::fail('Extractor does not contain any batches');
+        }
+    }
+
+    public function assertExtractorCountRows(int $expectedCount, Extractor $extractor) : void
     {
         $totalRows = 0;
 
         foreach ($extractor->extract(new FlowContext(Config::default())) as $rows) {
-            static::assertCount($expectedCountPerRow, $rows);
             $totalRows += $rows->count();
         }
 
-        static::assertSame($expectedTotalCount, $totalRows);
+        static::assertSame($expectedCount, $totalRows);
     }
 
     public function assertExtractorCountBatches(int $expectedCount, Extractor $extractor) : void

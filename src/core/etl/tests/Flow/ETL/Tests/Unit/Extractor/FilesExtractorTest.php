@@ -13,7 +13,8 @@ final class FilesExtractorTest extends ExtractorTestCase
     {
         $extractor = files(__DIR__ . '/Fixtures/FileListExtractor/*');
 
-        self::assertCountMultiRows(3, 1, $extractor);
+        $this->assertExtractorCountRows(3, $extractor);
+        $this->assertExtractorCountRowsPerBatch(1, $extractor);
     }
 
     public function test_extracting_files_from_directory_after_getting_stop_signal() : void
@@ -35,7 +36,8 @@ final class FilesExtractorTest extends ExtractorTestCase
     {
         $extractor = files(__DIR__ . '/Fixtures/FileListExtractor/**/*');
 
-        self::assertCountMultiRows(6, 1, $extractor);
+        $this->assertExtractorCountRows(6, $extractor);
+        $this->assertExtractorCountRowsPerBatch(1, $extractor);
     }
 
     public function test_extracting_files_from_directory_with_limit() : void
@@ -43,6 +45,7 @@ final class FilesExtractorTest extends ExtractorTestCase
         $extractor = files(__DIR__ . '/Fixtures/FileListExtractor/**/*');
         $extractor->changeLimit(2);
 
-        self::assertCountMultiRows(2, 1, $extractor);
+        $this->assertExtractorCountRows(2, $extractor);
+        $this->assertExtractorCountRowsPerBatch(1, $extractor);
     }
 }
