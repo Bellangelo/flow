@@ -9,7 +9,7 @@ use Flow\ETL\Memory\ArrayMemory;
 use Flow\ETL\{Config, FlowContext, Row, Rows};
 use PHPUnit\Framework\TestCase;
 
-final class MemoryExtractorTest extends TestCase
+final class MemoryExtractorTest extends ExtractorTestCase
 {
     public function test_memory_extractor() : void
     {
@@ -27,12 +27,6 @@ final class MemoryExtractorTest extends TestCase
 
         $extractor = from_memory($memory);
 
-        $data = [];
-
-        foreach ($extractor->extract(new FlowContext(Config::default())) as $rowsData) {
-            $data = [...$data, ...$rowsData->toArray()];
-        }
-
         self::assertSame(
             [
                 ['number' => 1, 'name' => 'one'],
@@ -41,7 +35,7 @@ final class MemoryExtractorTest extends TestCase
                 ['number' => 4, 'name' => 'four'],
                 ['number' => 5, 'name' => 'five'],
             ],
-            $data
+            $this->toArray($extractor)
         );
     }
 }
