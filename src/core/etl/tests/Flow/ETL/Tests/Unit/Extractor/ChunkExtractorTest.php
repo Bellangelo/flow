@@ -9,15 +9,15 @@ use Flow\ETL\Tests\Double\FakeExtractor;
 use Flow\ETL\{Config, FlowContext};
 use PHPUnit\Framework\TestCase;
 
-final class ChunkExtractorTest extends TestCase
+final class ChunkExtractorTest extends ExtractorTestCase
 {
     public function test_chunk_extractor() : void
     {
         $extractor = new ChunkExtractor(new FakeExtractor($batches = 100), $chunkSize = 10);
 
-        self::assertCount(
+        $this->assertCountRows(
             $batches / $chunkSize,
-            \iterator_to_array($extractor->extract(new FlowContext(Config::default())))
+            $extractor
         );
     }
 
@@ -25,9 +25,9 @@ final class ChunkExtractorTest extends TestCase
     {
         $extractor = new ChunkExtractor(new FakeExtractor(total: 20), chunkSize: 25);
 
-        self::assertCount(
+        $this->assertCountRows(
             1,
-            \iterator_to_array($extractor->extract(new FlowContext(Config::default())))
+            $extractor
         );
     }
 }
