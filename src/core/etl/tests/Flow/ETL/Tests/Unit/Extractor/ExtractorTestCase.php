@@ -34,4 +34,16 @@ abstract class ExtractorTestCase extends TestCase
     {
         self::assertCount($expectedCount, $this->toRowsArray($extractor));
     }
+
+    public function assertCountMultiRows(int $expectedTotalCount, int $expectedCountPerRow, Extractor $extractor): void
+    {
+        $totalRows = 0;
+
+        foreach ($extractor->extract(new FlowContext(Config::default())) as $rows) {
+            self::assertCount($expectedCountPerRow, $rows);
+            $totalRows += $rows->count();
+        }
+
+        self::assertSame($expectedTotalCount, $totalRows);
+    }
 }
