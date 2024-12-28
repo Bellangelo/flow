@@ -21,7 +21,7 @@ abstract class ExtractorTestCase extends TestCase
         static::assertSame($expectedTotalCount, $totalRows);
     }
 
-    public function assertCountRows(int $expectedCount, Extractor $extractor) : void
+    public function assertExtractorCountBatches(int $expectedCount, Extractor $extractor) : void
     {
         static::assertCount(
             $expectedCount,

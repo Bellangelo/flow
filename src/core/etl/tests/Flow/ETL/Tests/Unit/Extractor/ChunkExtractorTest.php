@@ -13,7 +13,7 @@ final class ChunkExtractorTest extends ExtractorTestCase
     {
         $extractor = new ChunkExtractor(new FakeExtractor($batches = 100), $chunkSize = 10);
 
-        $this->assertCountRows(
+        $this->assertExtractorCountBatches(
             $batches / $chunkSize,
             $extractor
         );
@@ -23,7 +23,7 @@ final class ChunkExtractorTest extends ExtractorTestCase
     {
         $extractor = new ChunkExtractor(new FakeExtractor(total: 20), chunkSize: 25);
 
-        $this->assertCountRows(
+        $this->assertExtractorCountBatches(
             1,
             $extractor
         );
