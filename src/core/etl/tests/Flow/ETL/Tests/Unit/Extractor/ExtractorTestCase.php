@@ -6,6 +6,7 @@ namespace Flow\ETL\Tests\Unit\Extractor;
 
 use Flow\ETL\{Config, Extractor, FlowContext, Row};
 use PHPUnit\Framework\TestCase;
+use function iterator_to_array;
 
 abstract class ExtractorTestCase extends TestCase
 {
@@ -44,6 +45,6 @@ abstract class ExtractorTestCase extends TestCase
      */
     public function toRowsArray(Extractor $extractor) : array
     {
-        return \iterator_to_array($extractor->extract(new FlowContext(Config::default())));
+        return iterator_to_array($extractor->extract(new FlowContext(Config::default())));
     }
 }
