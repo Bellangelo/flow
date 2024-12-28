@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Extractor;
 
-use function Flow\ETL\DSL\{from_rows, int_entry, str_entry};
-use Flow\ETL\{Row, Rows};
+use function Flow\ETL\DSL\{from_memory, int_entry, str_entry, to_memory};
+use Flow\ETL\Memory\ArrayMemory;
+use Flow\ETL\{Config, FlowContext, Row, Rows, Tests\FlowTestCase};
 
-final class RowsExtractorTest extends ExtractorTestCase
+final class MemoryFlowTest extends FlowTestCase
 {
-    public function test_process_extractor() : void
+    public function test_memory_extractor() : void
     {
         $rows = new Rows(
             Row::create(int_entry('number', 1), str_entry('name', 'one')),
@@ -19,7 +20,11 @@ final class RowsExtractorTest extends ExtractorTestCase
             Row::create(int_entry('number', 5), str_entry('name', 'five')),
         );
 
-        $extractor = from_rows($rows);
+        $memory = new ArrayMemory();
+
+        (to_memory($memory))->load($rows, new FlowContext(Config::default()));
+
+        $extractor = from_memory($memory);
 
         $this->assertExtractorSameArray(
             [

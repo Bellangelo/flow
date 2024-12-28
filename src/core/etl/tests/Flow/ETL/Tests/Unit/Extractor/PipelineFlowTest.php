@@ -7,9 +7,9 @@ namespace Flow\ETL\Tests\Unit\Extractor;
 use function Flow\ETL\DSL\int_entry;
 use Flow\ETL\Extractor\{PipelineExtractor, RowsExtractor};
 use Flow\ETL\Pipeline\SynchronousPipeline;
-use Flow\ETL\{Row, Rows};
+use Flow\ETL\{Row, Rows, Tests\FlowTestCase};
 
-final class PipelineExtractorTest extends ExtractorTestCase
+final class PipelineFlowTest extends FlowTestCase
 {
     public function test_pipeline_extractor() : void
     {

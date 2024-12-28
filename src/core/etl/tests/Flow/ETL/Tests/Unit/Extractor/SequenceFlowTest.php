@@ -9,9 +9,9 @@ use function Flow\ETL\DSL\{date_entry,
     from_sequence_date_period,
     from_sequence_date_period_recurrences,
     from_sequence_number};
-use Flow\ETL\{Row, Rows};
+use Flow\ETL\{Row, Rows, Tests\FlowTestCase};
 
-final class SequenceExtractorTest extends ExtractorTestCase
+final class SequenceFlowTest extends FlowTestCase
 {
     public function test_extracting_from_date_period() : void
     {
