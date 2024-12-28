@@ -33,7 +33,7 @@ abstract class ExtractorTestCase extends TestCase
      * @param array<mixed> $expectedArray
      * @param Extractor $extractor
      */
-    public function assertExtractorYieldedArray(array $expectedArray, Extractor $extractor) : void
+    public function assertExtractorSameArray(array $expectedArray, Extractor $extractor) : void
     {
         $data = [];
 
@@ -48,7 +48,7 @@ abstract class ExtractorTestCase extends TestCase
      * @param array<Rows> $expectedRows
      * @param Extractor $extractor
      */
-    public function assertExtractorYieldedRows(array $expectedRows, Extractor $extractor) : void
+    public function assertExtractorEqualsRows(array $expectedRows, Extractor $extractor) : void
     {
         static::assertEquals(
             $expectedRows,

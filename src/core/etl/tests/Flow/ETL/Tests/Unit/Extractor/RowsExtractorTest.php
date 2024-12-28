@@ -21,7 +21,7 @@ final class RowsExtractorTest extends ExtractorTestCase
 
         $extractor = from_rows($rows);
 
-        $this->assertExtractorYieldedArray(
+        $this->assertExtractorSameArray(
             [
                 ['number' => 1, 'name' => 'one'],
                 ['number' => 2, 'name' => 'two'],

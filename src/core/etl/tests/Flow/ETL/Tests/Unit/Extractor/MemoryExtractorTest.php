@@ -26,7 +26,7 @@ final class MemoryExtractorTest extends ExtractorTestCase
 
         $extractor = from_memory($memory);
 
-        $this->assertExtractorYieldedArray(
+        $this->assertExtractorSameArray(
             [
                 ['number' => 1, 'name' => 'one'],
                 ['number' => 2, 'name' => 'two'],

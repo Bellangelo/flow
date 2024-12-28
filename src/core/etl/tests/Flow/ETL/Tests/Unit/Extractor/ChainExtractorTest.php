@@ -28,7 +28,7 @@ final class ChainExtractorTest extends ExtractorTestCase
             },
         );
 
-        $this->assertExtractorYieldedRows(
+        $this->assertExtractorEqualsRows(
             [
                 new Rows(Row::create(int_entry('id', 1))),
                 new Rows(Row::create(int_entry('id', 2))),
