@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Extractor;
 
-use function Flow\ETL\DSL\{from_array};
+use function Flow\ETL\DSL\{config, config_builder, execution_context, from_array};
+use PHPUnit\Framework\TestCase;
 
-final class ArrayExtractorTest extends ExtractorTestCase
+final class ArrayExtractorTest extends TestCase
 {
     public function test_array_extractor() : void
     {
@@ -15,7 +16,7 @@ final class ArrayExtractorTest extends ExtractorTestCase
             ['id' => 2, 'name' => 'Michal'],
         ]);
 
-        $rows = $this->toRowsArray($extractor);
+        $rows = \iterator_to_array($extractor->extract(execution_context(config_builder()->build())));
 
         self::assertCount(2, $rows);
         self::assertSame(['id' => 1, 'name' => 'Norbert'], $rows[0]->first()->toArray());
@@ -31,7 +32,7 @@ final class ArrayExtractorTest extends ExtractorTestCase
 
         $extractor = from_array($generator());
 
-        $rows = $this->toRowsArray($extractor);
+        $rows = \iterator_to_array($extractor->extract(execution_context(config())));
 
         self::assertCount(2, $rows);
         self::assertSame(['id' => 1, 'name' => 'Norbert'], $rows[0]->first()->toArray());
