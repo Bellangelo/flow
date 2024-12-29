@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests;
 
+use function Flow\ETL\DSL\rows;
 use Flow\ETL\{Config, Extractor, FlowContext, Rows};
 use PHPUnit\Framework\TestCase;
-use function Flow\ETL\DSL\rows;
 
 abstract class FlowTestCase extends TestCase
 {

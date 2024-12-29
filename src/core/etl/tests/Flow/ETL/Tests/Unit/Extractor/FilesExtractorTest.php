@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Extractor;
 
+use function Flow\ETL\DSL\{files, flow_context};
 use Flow\ETL\Extractor\Signal;
 use Flow\ETL\Tests\FlowTestCase;
-use function Flow\ETL\DSL\{files, flow_context};
 
 final class FilesExtractorTest extends FlowTestCase
 {

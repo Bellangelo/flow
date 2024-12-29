@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Extractor;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{df, from_data_frame, from_rows, row, rows, str_entry};
+use Flow\ETL\Tests\FlowTestCase;
 
 final class DataFrameExtractorTest extends FlowTestCase
 {

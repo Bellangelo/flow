@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Extractor;
 
-use Flow\ETL\{Row, Rows, Tests\FlowTestCase};
+use function Flow\ETL\DSL\int_entry;
 use Flow\ETL\Extractor\{PipelineExtractor, RowsExtractor};
 use Flow\ETL\Pipeline\SynchronousPipeline;
-use function Flow\ETL\DSL\int_entry;
+use Flow\ETL\{Row, Rows, Tests\FlowTestCase};
 
 final class PipelineExtractorTest extends FlowTestCase
 {

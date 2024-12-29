@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Extractor;
 
-use Flow\ETL\{Row, Rows, Tests\FlowTestCase};
 use function Flow\ETL\DSL\{from_rows, int_entry, str_entry};
+use Flow\ETL\{Row, Rows, Tests\FlowTestCase};
 
 final class RowsExtractorTest extends FlowTestCase
 {
