@@ -24,16 +24,12 @@ final class DataFrameExtractorTest extends FlowTestCase
         );
 
         $this->assertExtractedRowsEquals(
-            [
-                rows(
-                    row(str_entry('value', 'test')),
-                    row(str_entry('value', 'test')),
-                ),
-                rows(
-                    row(str_entry('value', 'test')),
-                    row(str_entry('value', 'test')),
-                ),
-            ],
+            rows(
+                row(str_entry('value', 'test')),
+                row(str_entry('value', 'test')),
+                row(str_entry('value', 'test')),
+                row(str_entry('value', 'test')),
+            ),
             $extractor
         );
     }

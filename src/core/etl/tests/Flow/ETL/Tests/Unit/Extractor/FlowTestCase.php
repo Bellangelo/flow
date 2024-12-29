@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Extractor;
 
+use function Flow\ETL\DSL\rows;
 use Flow\ETL\{Config, Extractor, FlowContext, Rows};
 use PHPUnit\Framework\TestCase;
 
@@ -15,17 +16,6 @@ abstract class FlowTestCase extends TestCase
             $expectedCount,
             \iterator_to_array($extractor->extract(new FlowContext(Config::default())))
         );
-    }
-
-    public function assertExtractedRowsCount(int $expectedCount, Extractor $extractor) : void
-    {
-        $totalRows = 0;
-
-        foreach ($extractor->extract(new FlowContext(Config::default())) as $rows) {
-            $totalRows += $rows->count();
-        }
-
-        static::assertSame($expectedCount, $totalRows);
     }
 
     public function assertExtractedBatchesSize(int $expectedCount, Extractor $extractor) : void
@@ -43,18 +33,6 @@ abstract class FlowTestCase extends TestCase
     }
 
     /**
-     * @param array<Rows> $expectedRows
-     * @param Extractor $extractor
-     */
-    public function assertExtractedRowsEquals(array $expectedRows, Extractor $extractor) : void
-    {
-        static::assertEquals(
-            $expectedRows,
-            \iterator_to_array($extractor->extract(new FlowContext(Config::default())))
-        );
-    }
-
-    /**
      * @param array<mixed> $expectedArray
      * @param Extractor $extractor
      */
@@ -67,5 +45,27 @@ abstract class FlowTestCase extends TestCase
         }
 
         static::assertSame($expectedArray, $data);
+    }
+
+    public function assertExtractedRowsCount(int $expectedCount, Extractor $extractor) : void
+    {
+        $totalRows = 0;
+
+        foreach ($extractor->extract(new FlowContext(Config::default())) as $rows) {
+            $totalRows += $rows->count();
+        }
+
+        static::assertSame($expectedCount, $totalRows);
+    }
+
+    public function assertExtractedRowsEquals(Rows $expectedRows, Extractor $extractor) : void
+    {
+        $extractedRows = rows();
+
+        foreach ($extractor->extract(new FlowContext(Config::default())) as $nextRows) {
+            $extractedRows = $extractedRows->merge($nextRows);
+        }
+
+        static::assertEquals($expectedRows, $extractedRows);
     }
 }
