@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Row\Factory;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{bool_entry,
     date_entry,
     datetime_entry,
@@ -34,6 +33,7 @@ use Flow\ETL\Row\Entry\{StructureEntry, TimeEntry};
 use Flow\ETL\Row\Factory\NativeEntryFactory;
 use Flow\ETL\Row\Schema;
 use Flow\ETL\Tests\Fixtures\Enum\BackedIntEnum;
+use Flow\ETL\Tests\FlowTestCase;
 use PHPUnit\Framework\Attributes\DataProvider;
 use Ramsey\Uuid\Uuid;
 

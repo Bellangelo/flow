@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Loader;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{flow_context, int_entry, row, rows, str_entry, to_array};
+use Flow\ETL\Tests\FlowTestCase;
 
 final class ArrayLoaderTest extends FlowTestCase
 {

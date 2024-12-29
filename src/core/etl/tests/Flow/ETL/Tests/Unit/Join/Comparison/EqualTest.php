@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Join\Comparison;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\datetime_entry;
 use Flow\ETL\Join\Comparison\Equal;
 use Flow\ETL\Row;
+use Flow\ETL\Tests\FlowTestCase;
 
 final class EqualTest extends FlowTestCase
 {

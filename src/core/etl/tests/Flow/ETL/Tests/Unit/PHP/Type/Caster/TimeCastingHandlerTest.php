@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\PHP\Type\Caster;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\type_time;
 use Flow\ETL\PHP\Type\Caster;
 use Flow\ETL\PHP\Type\Caster\TimeCastingHandler;
+use Flow\ETL\Tests\FlowTestCase;
 use PHPUnit\Framework\Attributes\DataProvider;
 
 final class TimeCastingHandlerTest extends FlowTestCase

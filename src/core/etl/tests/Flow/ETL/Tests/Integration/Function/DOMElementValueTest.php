@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Integration\Function;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{df, from_rows, ref, row, rows, xml_element_entry, xml_entry};
+use Flow\ETL\Tests\FlowTestCase;
 
 final class DOMElementValueTest extends FlowTestCase
 {

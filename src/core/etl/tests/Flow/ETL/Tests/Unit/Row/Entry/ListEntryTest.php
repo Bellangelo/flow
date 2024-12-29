@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Row\Entry;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{list_entry, type_boolean, type_datetime, type_int, type_list, type_string};
 use Flow\ETL\Exception\InvalidArgumentException;
 use Flow\ETL\PHP\Type\Logical\List\ListElement;
 use Flow\ETL\PHP\Type\Logical\ListType;
 use Flow\ETL\Row\Entry\ListEntry;
 use Flow\ETL\Row\Schema\Definition;
+use Flow\ETL\Tests\FlowTestCase;
 
 final class ListEntryTest extends FlowTestCase
 {

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{lit, uuid_v4, uuid_v7};
 use Flow\ETL\Row;
+use Flow\ETL\Tests\FlowTestCase;
 
 final class UuidTest extends FlowTestCase
 {

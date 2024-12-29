@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Row\Comparator;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\string_entry;
 use Flow\ETL\Row;
+use Flow\ETL\Tests\FlowTestCase;
 
 final class NativeComparatorTest extends FlowTestCase
 {

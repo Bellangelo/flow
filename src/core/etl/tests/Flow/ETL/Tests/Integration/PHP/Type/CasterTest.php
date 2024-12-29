@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Integration\PHP\Type;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{type_boolean, type_datetime, type_integer, type_json, type_null, type_string, type_uuid, type_xml};
 use Flow\ETL\PHP\Type\Caster;
 use Flow\ETL\PHP\Value\Uuid;
+use Flow\ETL\Tests\FlowTestCase;
 
 final class CasterTest extends FlowTestCase
 {

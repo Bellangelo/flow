@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Row;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{bool_schema,
     int_schema,
     json_schema,
@@ -27,6 +26,7 @@ use function Flow\ETL\DSL\{bool_schema,
     uuid_schema};
 use Flow\ETL\Exception\{InvalidArgumentException, SchemaDefinitionNotFoundException, SchemaDefinitionNotUniqueException};
 use Flow\ETL\Row\{EntryReference, Schema};
+use Flow\ETL\Tests\FlowTestCase;
 
 final class SchemaTest extends FlowTestCase
 {

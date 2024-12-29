@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Integration\Sort\ExternalSort;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{int_entry, ref, row, str_entry};
 use Flow\ETL\Sort\{ExternalSort\BucketRow, ExternalSort\RowsMinHeap};
+use Flow\ETL\Tests\FlowTestCase;
 
 final class RowsMinHeapTest extends FlowTestCase
 {

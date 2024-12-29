@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\PHP\Type\Caster;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\type_json;
 use Flow\ETL\Exception\CastingException;
 use Flow\ETL\PHP\Type\Caster;
 use Flow\ETL\PHP\Type\Caster\JsonCastingHandler;
+use Flow\ETL\Tests\FlowTestCase;
 
 final class JsonCastingHandlerTest extends FlowTestCase
 {

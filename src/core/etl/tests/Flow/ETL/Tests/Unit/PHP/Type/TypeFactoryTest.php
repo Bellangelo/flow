@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\PHP\Type;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{structure_element,
     type_array,
     type_boolean,
@@ -26,6 +25,7 @@ use function Flow\ETL\DSL\{structure_element,
     type_xml,
     type_xml_element};
 use Flow\ETL\PHP\Type\TypeFactory;
+use Flow\ETL\Tests\FlowTestCase;
 use Flow\ETL\Tests\Unit\PHP\Type\Fixtures\SomeEnum;
 
 final class TypeFactoryTest extends FlowTestCase

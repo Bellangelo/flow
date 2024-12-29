@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{concat, datetime_entry, hash, json_entry, lit, ref, str_entry};
 use Flow\ETL\Hash\NativePHPHash;
 use Flow\ETL\Row;
+use Flow\ETL\Tests\FlowTestCase;
 
 final class HashTest extends FlowTestCase
 {

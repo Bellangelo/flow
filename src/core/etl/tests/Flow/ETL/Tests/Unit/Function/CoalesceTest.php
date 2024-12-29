@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{coalesce, int_entry, lit, ref, row};
+use Flow\ETL\Tests\FlowTestCase;
 
 final class CoalesceTest extends FlowTestCase
 {

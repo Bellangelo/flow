@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Integration\Function\Structure;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{df, from_array, structure_ref};
+use Flow\ETL\Tests\FlowTestCase;
 
 final class StructureSelectTest extends FlowTestCase
 {

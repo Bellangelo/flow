@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\PHP\Type\Logical;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{type_int, type_uuid};
+use Flow\ETL\Tests\FlowTestCase;
 use Ramsey\Uuid\Uuid;
 
 final class UuidTypeTest extends FlowTestCase

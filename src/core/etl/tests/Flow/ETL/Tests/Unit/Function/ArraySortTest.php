@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{json_entry, ref, str_entry};
 use Flow\ETL\Function\ArraySort\Sort;
 use Flow\ETL\Row;
+use Flow\ETL\Tests\FlowTestCase;
 
 final class ArraySortTest extends FlowTestCase
 {

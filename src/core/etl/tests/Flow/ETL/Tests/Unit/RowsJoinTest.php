@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{bool_entry, int_entry, row, rows, str_entry};
 use Flow\ETL\Exception\{DuplicatedEntriesException, InvalidArgumentException};
 use Flow\ETL\Join\Expression;
+use Flow\ETL\Tests\FlowTestCase;
 
 final class RowsJoinTest extends FlowTestCase
 {

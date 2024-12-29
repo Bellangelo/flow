@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\PHP\Type\TypeDetector;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{structure_element, type_boolean, type_int, type_map, type_string, type_structure};
 use Flow\ETL\PHP\Type\TypeDetector;
+use Flow\ETL\Tests\FlowTestCase;
 
 final class StructuresTypeDetectorTest extends FlowTestCase
 {

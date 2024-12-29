@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Extractor;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{config, config_builder, execution_context, from_array};
+use Flow\ETL\Tests\FlowTestCase;
 
 final class ArrayExtractorTest extends FlowTestCase
 {

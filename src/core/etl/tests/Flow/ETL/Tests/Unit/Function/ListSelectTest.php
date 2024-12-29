@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{list_entry, ref, row, struct_element, struct_type, type_int, type_list, type_string};
 use Flow\ETL\Function\ListSelect;
+use Flow\ETL\Tests\FlowTestCase;
 
 final class ListSelectTest extends FlowTestCase
 {

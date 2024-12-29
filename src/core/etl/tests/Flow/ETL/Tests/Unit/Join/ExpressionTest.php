@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Join;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{col, int_entry};
 use Flow\ETL\Join\Comparison\Equal;
 use Flow\ETL\Join\Expression;
 use Flow\ETL\Row;
+use Flow\ETL\Tests\FlowTestCase;
 
 final class ExpressionTest extends FlowTestCase
 {

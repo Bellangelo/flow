@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Row\Entry;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\string_entry;
 use Flow\ETL\Row\Entry\StringEntry;
+use Flow\ETL\Tests\FlowTestCase;
 use PHPUnit\Framework\Attributes\DataProvider;
 
 final class StringEntryTest extends FlowTestCase

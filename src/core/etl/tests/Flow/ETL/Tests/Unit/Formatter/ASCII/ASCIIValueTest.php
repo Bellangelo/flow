@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Formatter\ASCII;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\datetime_entry;
 use Flow\ETL\Formatter\ASCII\ASCIIValue;
+use Flow\ETL\Tests\FlowTestCase;
 use PHPUnit\Framework\Attributes\DataProvider;
 
 final class ASCIIValueTest extends FlowTestCase

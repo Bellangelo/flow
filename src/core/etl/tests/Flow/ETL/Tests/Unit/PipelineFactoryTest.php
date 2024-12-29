@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\config;
 use function Flow\Filesystem\DSL\path;
 use Flow\CLI\PipelineFactory;
 use Flow\ETL\Exception\{InvalidArgumentException, InvalidFileFormatException};
+use Flow\ETL\Tests\FlowTestCase;
 
 final class PipelineFactoryTest extends FlowTestCase
 {

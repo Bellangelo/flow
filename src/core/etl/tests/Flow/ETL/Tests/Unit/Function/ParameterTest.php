@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{ref, row, str_entry, type_boolean, type_int, type_string};
 use Flow\ETL\Function\Parameter;
+use Flow\ETL\Tests\FlowTestCase;
 
 final class ParameterTest extends FlowTestCase
 {

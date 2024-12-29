@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Integration\Pipeline;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\ref;
 use Flow\ETL\Pipeline\{Optimizer, SynchronousPipeline};
+use Flow\ETL\Tests\FlowTestCase;
 use Flow\ETL\Transformer\SelectEntriesTransformer;
 
 final class OptimizerTest extends FlowTestCase

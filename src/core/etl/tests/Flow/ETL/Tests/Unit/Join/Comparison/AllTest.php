@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Join\Comparison;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\int_entry;
 use Flow\ETL\Join\Comparison;
 use Flow\ETL\Join\Comparison\All;
 use Flow\ETL\Row;
+use Flow\ETL\Tests\FlowTestCase;
 
 final class AllTest extends FlowTestCase
 {

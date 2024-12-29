@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Row;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{bool_schema, datetime_schema, float_schema, int_schema, schema, str_schema};
+use Flow\ETL\Tests\FlowTestCase;
 
 final class SchemaMergeTest extends FlowTestCase
 {

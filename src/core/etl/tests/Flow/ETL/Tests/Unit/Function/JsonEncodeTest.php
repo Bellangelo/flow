@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{datetime_entry, int_entry, json_entry, ref, str_entry};
 use Flow\ETL\Row;
+use Flow\ETL\Tests\FlowTestCase;
 
 final class JsonEncodeTest extends FlowTestCase
 {

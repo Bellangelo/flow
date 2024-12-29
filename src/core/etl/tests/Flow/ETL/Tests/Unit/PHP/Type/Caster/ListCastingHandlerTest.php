@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\PHP\Type\Caster;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{type_float, type_int, type_list};
 use Flow\ETL\PHP\Type\Caster;
 use Flow\ETL\PHP\Type\Caster\ListCastingHandler;
+use Flow\ETL\Tests\FlowTestCase;
 
 final class ListCastingHandlerTest extends FlowTestCase
 {

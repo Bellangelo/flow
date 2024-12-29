@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\PHP\Type\Caster;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\type_enum;
 use Flow\ETL\Exception\CastingException;
 use Flow\ETL\PHP\Type\Caster;
 use Flow\ETL\PHP\Type\Caster\EnumCastingHandler;
+use Flow\ETL\Tests\FlowTestCase;
 use Flow\ETL\Tests\Unit\PHP\Type\Caster\Fixtures\ColorsEnum;
 
 final class EnumCastingHandlerTest extends FlowTestCase

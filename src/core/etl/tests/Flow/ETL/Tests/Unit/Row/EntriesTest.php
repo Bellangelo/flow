@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Row;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{bool_entry, int_entry, string_entry, type_int, type_string};
 use Flow\ETL\Exception\{InvalidArgumentException, RuntimeException};
 use Flow\ETL\PHP\Type\Logical\Structure\StructureElement;
@@ -12,6 +11,7 @@ use Flow\ETL\PHP\Type\Logical\StructureType;
 use Flow\ETL\Row\Entries;
 use Flow\ETL\Row\Entry\{BooleanEntry, DateTimeEntry, EnumEntry, IntegerEntry, StructureEntry};
 use Flow\ETL\Tests\Fixtures\Enum\BasicEnum;
+use Flow\ETL\Tests\FlowTestCase;
 
 final class EntriesTest extends FlowTestCase
 {

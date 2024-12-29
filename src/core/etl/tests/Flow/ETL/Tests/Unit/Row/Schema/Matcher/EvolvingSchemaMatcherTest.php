@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Row\Schema\Matcher;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{bool_schema, int_schema, schema, str_schema};
 use Flow\ETL\Row\Schema\Matcher\EvolvingSchemaMatcher;
+use Flow\ETL\Tests\FlowTestCase;
 
 final class EvolvingSchemaMatcherTest extends FlowTestCase
 {

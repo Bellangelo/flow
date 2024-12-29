@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Transformer;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{array_to_rows, flow_context};
 use Flow\ETL\PHP\Type\{AutoCaster, Caster};
+use Flow\ETL\Tests\FlowTestCase;
 use Flow\ETL\Transformer\AutoCastTransformer;
 
 final class AutoCastTransformerTest extends FlowTestCase

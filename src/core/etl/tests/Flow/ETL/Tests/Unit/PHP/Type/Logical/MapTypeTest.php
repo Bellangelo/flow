@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Flow\ETL\Tests\Unit\PHP\Type\Logical;
 
 use Flow\ETL\PHP\Type\Logical\List\ListElement;
-use Flow\ETL\Tests\FlowTestCase;
 use Flow\ETL\PHP\Type\Logical\Map\{MapKey, MapValue};
 use Flow\ETL\PHP\Type\Logical\{ListType, MapType};
+use Flow\ETL\Tests\FlowTestCase;
 
 final class MapTypeTest extends FlowTestCase
 {

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Transformer;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{
     bool_entry,
     compare_entries_by_name,
@@ -35,6 +34,7 @@ use function Flow\ETL\DSL\{
     type_string,
     uuid_entry};
 use Flow\ETL\Tests\Fixtures\Enum\BackedStringEnum;
+use Flow\ETL\Tests\FlowTestCase;
 use Flow\ETL\Transformer\OrderEntriesTransformer;
 use Ramsey\Uuid\Uuid;
 

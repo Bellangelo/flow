@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{date_interval_to_microseconds, date_interval_to_milliseconds, date_interval_to_seconds};
+use Flow\ETL\Tests\FlowTestCase;
 use PHPUnit\Framework\Attributes\{DataProvider, TestWith};
 
 final class DateIntervalFunctionsTest extends FlowTestCase

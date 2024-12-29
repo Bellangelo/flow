@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\PHP\Type\Caster;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{struct_type, structure_element, structure_type, type_integer, type_string};
 use Flow\ETL\PHP\Type\Caster;
 use Flow\ETL\PHP\Type\Caster\StructureCastingHandler;
+use Flow\ETL\Tests\FlowTestCase;
 
 final class StructureCastingHandlerTest extends FlowTestCase
 {
