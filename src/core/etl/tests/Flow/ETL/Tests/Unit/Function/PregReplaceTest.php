@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{lit, regex_replace};
 use Flow\ETL\Row;
-use PHPUnit\Framework\TestCase;
 
-final class PregReplaceTest extends TestCase
+final class PregReplaceTest extends FlowTestCase
 {
     public function test_preg_replace_expression_on_invalid_pattern() : void
     {

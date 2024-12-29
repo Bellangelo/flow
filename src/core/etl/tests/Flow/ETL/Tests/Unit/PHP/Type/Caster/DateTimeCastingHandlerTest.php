@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\PHP\Type\Caster;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\type_datetime;
 use Flow\ETL\PHP\Type\Caster;
 use Flow\ETL\PHP\Type\Caster\DateTimeCastingHandler;
 use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 
-final class DateTimeCastingHandlerTest extends TestCase
+final class DateTimeCastingHandlerTest extends FlowTestCase
 {
     public static function datetime_castable_data_provider() : \Generator
     {

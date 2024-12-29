@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Integration\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{from_array, ref, split, to_memory};
 use Flow\ETL\Flow;
 use Flow\ETL\Memory\ArrayMemory;
-use PHPUnit\Framework\TestCase;
 
-final class SplitTest extends TestCase
+final class SplitTest extends FlowTestCase
 {
     public function test_split() : void
     {

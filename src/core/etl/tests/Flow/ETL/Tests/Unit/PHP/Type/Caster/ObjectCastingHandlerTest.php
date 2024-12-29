@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\PHP\Type\Caster;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\type_object;
 use Flow\ETL\PHP\Type\Caster;
 use Flow\ETL\PHP\Type\Caster\ObjectCastingHandler;
-use PHPUnit\Framework\TestCase;
 
-final class ObjectCastingHandlerTest extends TestCase
+final class ObjectCastingHandlerTest extends FlowTestCase
 {
     public function test_casting_string_to_object() : void
     {

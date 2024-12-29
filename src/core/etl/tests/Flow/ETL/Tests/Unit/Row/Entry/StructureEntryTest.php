@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Row\Entry;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{struct_element, struct_entry, struct_type, type_array, type_int, type_string};
 use Flow\ETL\Exception\InvalidArgumentException;
 use Flow\ETL\PHP\Type\Logical\Map\{MapKey, MapValue};
@@ -11,9 +12,8 @@ use Flow\ETL\PHP\Type\Logical\MapType;
 use Flow\ETL\Row\Entry\StructureEntry;
 use Flow\ETL\Row\Schema\Definition;
 use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 
-final class StructureEntryTest extends TestCase
+final class StructureEntryTest extends FlowTestCase
 {
     public static function is_equal_data_provider() : \Generator
     {

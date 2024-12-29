@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\config;
 use function Flow\Filesystem\DSL\path;
 use Flow\CLI\PipelineFactory;
 use Flow\ETL\Exception\{InvalidArgumentException, InvalidFileFormatException};
-use PHPUnit\Framework\TestCase;
 
-final class PipelineFactoryTest extends TestCase
+final class PipelineFactoryTest extends FlowTestCase
 {
     public function test_empty_php_file() : void
     {

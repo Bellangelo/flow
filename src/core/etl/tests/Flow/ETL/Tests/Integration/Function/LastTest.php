@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Integration\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{df, from_array, last};
-use PHPUnit\Framework\TestCase;
 
-final class LastTest extends TestCase
+final class LastTest extends FlowTestCase
 {
     public function test_first_aggregation_with_grouping() : void
     {

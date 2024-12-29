@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{array_merge_collection, int_entry, json_entry, ref};
 use Flow\ETL\Row;
-use PHPUnit\Framework\TestCase;
 
-final class ArrayMergeCollectionTest extends TestCase
+final class ArrayMergeCollectionTest extends FlowTestCase
 {
     public function test_attempt_of_merging_collection_where_not_every_element_is_array() : void
     {

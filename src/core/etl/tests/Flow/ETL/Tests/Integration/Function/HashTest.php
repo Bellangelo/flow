@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Integration\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{from_array, ref, to_memory};
 use Flow\ETL\Flow;
 use Flow\ETL\Hash\NativePHPHash;
 use Flow\ETL\Memory\ArrayMemory;
 use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 
-final class HashTest extends TestCase
+final class HashTest extends FlowTestCase
 {
     public static function provideValues() : \Generator
     {

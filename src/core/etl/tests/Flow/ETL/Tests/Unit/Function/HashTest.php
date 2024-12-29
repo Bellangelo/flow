@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{concat, datetime_entry, hash, json_entry, lit, ref, str_entry};
 use Flow\ETL\Hash\NativePHPHash;
 use Flow\ETL\Row;
-use PHPUnit\Framework\TestCase;
 
-final class HashTest extends TestCase
+final class HashTest extends FlowTestCase
 {
     public function test_hashing_array_value() : void
     {

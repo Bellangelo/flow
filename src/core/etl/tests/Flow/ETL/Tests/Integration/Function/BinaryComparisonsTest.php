@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Integration\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{from_array, lit, ref, to_memory, when};
 use Flow\ETL\Flow;
 use Flow\ETL\Memory\ArrayMemory;
-use PHPUnit\Framework\TestCase;
 
-final class BinaryComparisonsTest extends TestCase
+final class BinaryComparisonsTest extends FlowTestCase
 {
     public function test_all_comparisons() : void
     {

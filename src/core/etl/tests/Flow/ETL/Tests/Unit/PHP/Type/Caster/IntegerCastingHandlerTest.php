@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\PHP\Type\Caster;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\type_integer;
 use Flow\ETL\PHP\Type\Caster;
 use Flow\ETL\PHP\Type\Caster\IntegerCastingHandler;
 use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 
-final class IntegerCastingHandlerTest extends TestCase
+final class IntegerCastingHandlerTest extends FlowTestCase
 {
     public static function integer_castable_data_provider() : \Generator
     {

@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{int_entry, json_entry, lit, ref};
 use Flow\ETL\Function\ArrayMerge;
 use Flow\ETL\Row;
-use PHPUnit\Framework\TestCase;
 
-final class ArrayMergeTest extends TestCase
+final class ArrayMergeTest extends FlowTestCase
 {
     public function test_array_merge_two_array_row_entries() : void
     {

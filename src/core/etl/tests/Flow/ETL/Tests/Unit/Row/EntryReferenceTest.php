@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Row;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{int_entry, ref};
 use Flow\ETL\Row;
-use PHPUnit\Framework\TestCase;
 
-final class EntryReferenceTest extends TestCase
+final class EntryReferenceTest extends FlowTestCase
 {
     public function test_executing_equals_expression() : void
     {

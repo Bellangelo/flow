@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{datetime_entry, int_entry, ref, str_entry, to_date_time};
 use Flow\ETL\Row;
-use PHPUnit\Framework\TestCase;
 
-final class ToDateTimeTest extends TestCase
+final class ToDateTimeTest extends FlowTestCase
 {
     public function test_date_time_to_date_time() : void
     {

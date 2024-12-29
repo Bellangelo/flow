@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{array_keys_style_convert, int_entry, json_entry, ref};
 use Flow\ETL\Exception\InvalidArgumentException;
 use Flow\ETL\Row;
-use PHPUnit\Framework\TestCase;
 
-final class ArrayKeysStyleConverterTest extends TestCase
+final class ArrayKeysStyleConverterTest extends FlowTestCase
 {
     public function test_for_invalid_style() : void
     {

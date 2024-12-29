@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{first, int_entry, ref, str_entry, string_entry};
 use Flow\ETL\Row;
-use PHPUnit\Framework\TestCase;
 
-final class FirstTest extends TestCase
+final class FirstTest extends FlowTestCase
 {
     public function test_aggregation_firs_value() : void
     {

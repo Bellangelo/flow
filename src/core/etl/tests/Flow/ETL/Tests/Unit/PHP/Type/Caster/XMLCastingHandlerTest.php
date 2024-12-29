@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\PHP\Type\Caster;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\type_xml;
 use Flow\ETL\Exception\CastingException;
 use Flow\ETL\PHP\Type\Caster;
 use Flow\ETL\PHP\Type\Caster\XMLCastingHandler;
-use PHPUnit\Framework\TestCase;
 
-final class XMLCastingHandlerTest extends TestCase
+final class XMLCastingHandlerTest extends FlowTestCase
 {
     public function test_casting_integer_to_xml() : void
     {

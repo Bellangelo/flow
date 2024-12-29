@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{lit, ref, str_entry, to_timezone};
 use Flow\ETL\Row;
-use PHPUnit\Framework\TestCase;
 
-final class ToTimeZoneTest extends TestCase
+final class ToTimeZoneTest extends FlowTestCase
 {
     public function test_casting_date_time_pst_to_utc_time_zone() : void
     {

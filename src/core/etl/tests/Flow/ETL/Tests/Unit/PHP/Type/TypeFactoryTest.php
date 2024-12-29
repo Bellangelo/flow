@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\PHP\Type;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{structure_element,
     type_array,
     type_boolean,
@@ -26,9 +27,8 @@ use function Flow\ETL\DSL\{structure_element,
     type_xml_element};
 use Flow\ETL\PHP\Type\TypeFactory;
 use Flow\ETL\Tests\Unit\PHP\Type\Fixtures\SomeEnum;
-use PHPUnit\Framework\TestCase;
 
-final class TypeFactoryTest extends TestCase
+final class TypeFactoryTest extends FlowTestCase
 {
     public function test_normalizing_and_creating_all_scalar() : void
     {

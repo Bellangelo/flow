@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Row;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{array_to_row,
     bool_entry,
     bool_schema,
@@ -23,9 +24,8 @@ use function Flow\ETL\DSL\{array_to_row,
     type_null,
     type_string};
 use Flow\ETL\Row\Schema;
-use PHPUnit\Framework\TestCase;
 
-final class ArrayToRowTest extends TestCase
+final class ArrayToRowTest extends FlowTestCase
 {
     public function test_building_array_to_row_with_entry_that_is_list_of_strings() : void
     {

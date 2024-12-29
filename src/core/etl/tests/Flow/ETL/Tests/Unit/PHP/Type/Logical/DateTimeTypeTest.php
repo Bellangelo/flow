@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\PHP\Type\Logical;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{type_datetime, type_int};
-use PHPUnit\Framework\TestCase;
 
-final class DateTimeTypeTest extends TestCase
+final class DateTimeTypeTest extends FlowTestCase
 {
     public function test_equals() : void
     {

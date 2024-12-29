@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Integration\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{from_array, lit, ref, to_memory};
 use Flow\ETL\Flow;
 use Flow\ETL\Memory\ArrayMemory;
-use PHPUnit\Framework\TestCase;
 
-final class JsonDecodeTest extends TestCase
+final class JsonDecodeTest extends FlowTestCase
 {
     public function test_add_json_string_into_existing_reference() : void
     {

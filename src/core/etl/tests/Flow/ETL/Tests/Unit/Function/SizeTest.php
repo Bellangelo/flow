@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{lit, size};
 use Flow\ETL\Row;
-use PHPUnit\Framework\TestCase;
 
-final class SizeTest extends TestCase
+final class SizeTest extends FlowTestCase
 {
     public function test_size_expression_on_array_value() : void
     {

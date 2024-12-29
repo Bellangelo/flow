@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{int_entry, ref, str_entry};
 use Flow\ETL\Row;
-use PHPUnit\Framework\TestCase;
 
-final class JsonDecodeTest extends TestCase
+final class JsonDecodeTest extends FlowTestCase
 {
     public function test_json_decode_expression() : void
     {

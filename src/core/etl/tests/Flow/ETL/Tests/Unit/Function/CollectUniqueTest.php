@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{collect_unique, ref, str_entry};
 use Flow\ETL\Row;
-use PHPUnit\Framework\TestCase;
 
-final class CollectUniqueTest extends TestCase
+final class CollectUniqueTest extends FlowTestCase
 {
     public function test_aggregation_collect_unique_values() : void
     {

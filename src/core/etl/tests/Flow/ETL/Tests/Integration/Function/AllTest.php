@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Integration\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{all, from_array, lit, ref, to_memory, when};
 use Flow\ETL\Flow;
 use Flow\ETL\Memory\ArrayMemory;
-use PHPUnit\Framework\TestCase;
 
-final class AllTest extends TestCase
+final class AllTest extends FlowTestCase
 {
     public function test_all_cases_found() : void
     {

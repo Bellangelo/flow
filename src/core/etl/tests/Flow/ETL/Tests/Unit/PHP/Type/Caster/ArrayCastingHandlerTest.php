@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\PHP\Type\Caster;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\type_array;
 use Flow\ETL\PHP\Type\Caster;
 use Flow\ETL\PHP\Type\Caster\ArrayCastingHandler;
-use PHPUnit\Framework\TestCase;
 
-final class ArrayCastingHandlerTest extends TestCase
+final class ArrayCastingHandlerTest extends FlowTestCase
 {
     public function test_casting_boolean_to_array() : void
     {

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\PHP\Type\Logical;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{type_int, type_xml};
-use PHPUnit\Framework\TestCase;
 
-final class XMLTypeTest extends TestCase
+final class XMLTypeTest extends FlowTestCase
 {
     public function test_equals() : void
     {

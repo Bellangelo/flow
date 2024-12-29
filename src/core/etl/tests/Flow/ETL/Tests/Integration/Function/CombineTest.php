@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Integration\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{combine, from_array, optional, ref, to_memory};
 use Flow\ETL\Flow;
 use Flow\ETL\Memory\ArrayMemory;
-use PHPUnit\Framework\TestCase;
 
-final class CombineTest extends TestCase
+final class CombineTest extends FlowTestCase
 {
     public function test_combine() : void
     {

@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Formatter\ASCII;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\datetime_entry;
 use Flow\ETL\Formatter\ASCII\ASCIIValue;
 use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 
-final class ASCIIValueTest extends TestCase
+final class ASCIIValueTest extends FlowTestCase
 {
     public static function values_with_truncating() : \Generator
     {

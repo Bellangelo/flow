@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{int_entry, lit, ref};
 use Flow\ETL\Function\{Literal, When};
 use Flow\ETL\Row;
-use PHPUnit\Framework\TestCase;
 
-final class WhenTest extends TestCase
+final class WhenTest extends FlowTestCase
 {
     public function test_condition_not_satisfied_without_else() : void
     {

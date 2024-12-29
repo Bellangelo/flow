@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{lit, regex_all};
 use Flow\ETL\Row;
-use PHPUnit\Framework\TestCase;
 
-final class RegexAllTest extends TestCase
+final class RegexAllTest extends FlowTestCase
 {
     public function test_regex_all_expression_on_invalid_subject() : void
     {

@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{between, int_entry, lit, ref, row};
 use Flow\ETL\Function\Between\Boundary;
-use PHPUnit\Framework\TestCase;
 
-final class BetweenTest extends TestCase
+final class BetweenTest extends FlowTestCase
 {
     public function test_between_exclusive() : void
     {

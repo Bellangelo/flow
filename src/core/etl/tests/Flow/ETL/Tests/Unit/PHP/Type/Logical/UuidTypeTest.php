@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\PHP\Type\Logical;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{type_int, type_uuid};
-use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\Uuid;
 
-final class UuidTypeTest extends TestCase
+final class UuidTypeTest extends FlowTestCase
 {
     public function test_equals() : void
     {

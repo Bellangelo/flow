@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{datetime_entry, float_entry, int_entry, ref, row, str_entry};
-use PHPUnit\Framework\TestCase;
 
-final class MaxTest extends TestCase
+final class MaxTest extends FlowTestCase
 {
     public function test_aggregation_max_from_numeric_values() : void
     {

@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{float_entry, int_entry, lit, ref, str_entry};
 use Flow\ETL\Function\NumberFormat;
 use Flow\ETL\Row;
-use PHPUnit\Framework\TestCase;
 
-final class NumberFormatTest extends TestCase
+final class NumberFormatTest extends FlowTestCase
 {
     public function test_number_format() : void
     {

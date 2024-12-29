@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Pipeline\Optimizer;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\ref;
 use Flow\ETL\Adapter\CSV\CSVExtractor;
 use Flow\ETL\GroupBy;
@@ -11,9 +12,8 @@ use Flow\ETL\Pipeline\Optimizer\LimitOptimization;
 use Flow\ETL\Pipeline\{GroupByPipeline, Optimizer, PartitioningPipeline, SynchronousPipeline};
 use Flow\ETL\Transformer\{DropDuplicatesTransformer, LimitTransformer, RenameEntryTransformer, ScalarFunctionTransformer, SelectEntriesTransformer};
 use Flow\Filesystem\Path;
-use PHPUnit\Framework\TestCase;
 
-final class LimitOptimizationTest extends TestCase
+final class LimitOptimizationTest extends FlowTestCase
 {
     public function test_optimization_against_pipelines() : void
     {

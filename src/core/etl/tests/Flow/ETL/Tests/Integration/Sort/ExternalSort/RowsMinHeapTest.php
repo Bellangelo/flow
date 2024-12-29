@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Integration\Sort\ExternalSort;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{int_entry, ref, row, str_entry};
-use Flow\ETL\Adapter\Elasticsearch\Tests\Integration\TestCase;
 use Flow\ETL\Sort\{ExternalSort\BucketRow, ExternalSort\RowsMinHeap};
 
-final class RowsMinHeapTest extends TestCase
+final class RowsMinHeapTest extends FlowTestCase
 {
     public function test_min_heap() : void
     {

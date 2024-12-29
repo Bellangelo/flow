@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Integration\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{array_expand, from_array, ref, to_memory};
 use Flow\ETL\Flow;
 use Flow\ETL\Function\ArrayExpand\ArrayExpand;
 use Flow\ETL\Memory\ArrayMemory;
-use PHPUnit\Framework\TestCase;
 
-final class ArrayExpandTest extends TestCase
+final class ArrayExpandTest extends FlowTestCase
 {
     public function test_expand_both() : void
     {

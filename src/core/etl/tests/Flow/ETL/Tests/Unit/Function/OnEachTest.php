@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{json_entry, ref, row, type_string};
-use Flow\ETL\Adapter\Elasticsearch\Tests\Integration\TestCase;
 
-final class OnEachTest extends TestCase
+final class OnEachTest extends FlowTestCase
 {
     public function test_executing_function_on_each_value_from_array() : void
     {

@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{lit, split};
 use Flow\ETL\Row;
-use PHPUnit\Framework\TestCase;
 
-final class SplitTest extends TestCase
+final class SplitTest extends FlowTestCase
 {
     public function test_split_not_string() : void
     {

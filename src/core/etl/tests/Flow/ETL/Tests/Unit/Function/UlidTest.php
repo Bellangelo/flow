@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{lit, ulid};
 use Flow\ETL\Row;
-use PHPUnit\Framework\TestCase;
 use Symfony\Component\Uid\Ulid;
 
-final class UlidTest extends TestCase
+final class UlidTest extends FlowTestCase
 {
     public function test_ulid() : void
     {

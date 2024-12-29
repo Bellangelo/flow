@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Integration\Function\Structure;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{df, from_array, structure_ref};
-use PHPUnit\Framework\TestCase;
 
-final class StructureSelectTest extends TestCase
+final class StructureSelectTest extends FlowTestCase
 {
     public function test_structure_keep() : void
     {

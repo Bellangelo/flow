@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{float_entry, int_entry, lit, ref, row};
 use Flow\ETL\Function\{Divide, Minus, Mod, Multiply, Plus, Power, Round};
-use PHPUnit\Framework\TestCase;
 
-final class MathTest extends TestCase
+final class MathTest extends FlowTestCase
 {
     public function test_divide() : void
     {

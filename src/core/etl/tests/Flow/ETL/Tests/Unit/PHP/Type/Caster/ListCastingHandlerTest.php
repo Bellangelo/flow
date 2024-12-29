@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\PHP\Type\Caster;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{type_float, type_int, type_list};
 use Flow\ETL\PHP\Type\Caster;
 use Flow\ETL\PHP\Type\Caster\ListCastingHandler;
-use PHPUnit\Framework\TestCase;
 
-final class ListCastingHandlerTest extends TestCase
+final class ListCastingHandlerTest extends FlowTestCase
 {
     public function test_casting_list_of_ints_to_list_of_floats() : void
     {

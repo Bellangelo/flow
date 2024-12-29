@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Transformer;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{
     bool_entry,
     compare_entries_by_name,
@@ -35,10 +36,9 @@ use function Flow\ETL\DSL\{
     uuid_entry};
 use Flow\ETL\Tests\Fixtures\Enum\BackedStringEnum;
 use Flow\ETL\Transformer\OrderEntriesTransformer;
-use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\Uuid;
 
-final class OrderEntriesTransformerTest extends TestCase
+final class OrderEntriesTransformerTest extends FlowTestCase
 {
     public function test_ordering_entries_by_name_and_type() : void
     {

@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\PHP\Type\Caster;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{type_float, type_int, type_integer, type_map, type_string};
 use Flow\ETL\Exception\CastingException;
 use Flow\ETL\PHP\Type\Caster;
 use Flow\ETL\PHP\Type\Caster\MapCastingHandler;
-use PHPUnit\Framework\TestCase;
 
-final class MapCastingHandlerTest extends TestCase
+final class MapCastingHandlerTest extends FlowTestCase
 {
     public function test_casting_map_of_ints_into_map_of_floats() : void
     {

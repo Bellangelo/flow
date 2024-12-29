@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Integration\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{df, from_array, ref, type_string};
-use PHPUnit\Framework\TestCase;
 
-final class OnEachTest extends TestCase
+final class OnEachTest extends FlowTestCase
 {
     public function test_on_each_function() : void
     {

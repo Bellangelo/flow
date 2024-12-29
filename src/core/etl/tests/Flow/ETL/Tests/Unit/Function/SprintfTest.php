@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{lit, sprintf};
 use Flow\ETL\Row;
-use PHPUnit\Framework\TestCase;
 
-final class SprintfTest extends TestCase
+final class SprintfTest extends FlowTestCase
 {
     public function test_sprintf_expression_on_invalid_format() : void
     {

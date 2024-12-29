@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\PHP\Type;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{type_int, type_null, type_string};
 use Flow\ETL\PHP\Type\Logical\List\ListElement;
 use Flow\ETL\PHP\Type\Logical\Map\{MapKey, MapValue};
@@ -12,9 +13,8 @@ use Flow\ETL\PHP\Type\Logical\{ListType, MapType, StructureType};
 use Flow\ETL\PHP\Type\Native\ArrayType;
 use Flow\ETL\PHP\Type\{ArrayContentDetector, Types};
 use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 
-final class ArrayContentDetectorTest extends TestCase
+final class ArrayContentDetectorTest extends FlowTestCase
 {
     public static function provide_list_data() : \Generator
     {

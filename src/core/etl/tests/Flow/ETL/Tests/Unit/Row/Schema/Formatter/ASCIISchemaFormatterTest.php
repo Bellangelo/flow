@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Row\Schema\Formatter;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{type_int, type_list, type_string};
 use Flow\ETL\PHP\Type\Logical\List\ListElement;
 use Flow\ETL\PHP\Type\Logical\Map\{MapKey, MapValue};
@@ -11,9 +12,8 @@ use Flow\ETL\PHP\Type\Logical\Structure\StructureElement;
 use Flow\ETL\PHP\Type\Logical\{ListType, MapType, StructureType};
 use Flow\ETL\Row\Schema;
 use Flow\ETL\Row\Schema\Formatter\ASCIISchemaFormatter;
-use PHPUnit\Framework\TestCase;
 
-final class ASCIISchemaFormatterTest extends TestCase
+final class ASCIISchemaFormatterTest extends FlowTestCase
 {
     public function test_format_nested_schema() : void
     {

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{bool_entry,
     datetime_entry,
     float_entry,
@@ -36,9 +37,8 @@ use Flow\ETL\Row\Entry\{
 use Flow\ETL\Row\Schema;
 use Flow\ETL\Row\Schema\Definition;
 use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 
-final class RowTest extends TestCase
+final class RowTest extends FlowTestCase
 {
     public static function is_equal_data_provider() : \Generator
     {

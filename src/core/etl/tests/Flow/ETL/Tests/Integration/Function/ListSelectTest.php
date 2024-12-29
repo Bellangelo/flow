@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Integration\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{df, from_array, list_ref};
-use PHPUnit\Framework\TestCase;
 
-final class ListSelectTest extends TestCase
+final class ListSelectTest extends FlowTestCase
 {
     public function test_selecting_properties_from_list() : void
     {

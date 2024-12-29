@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Row\Schema\Matcher;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{int_schema, schema, str_schema};
 use Flow\ETL\Row\Schema\Matcher\StrictSchemaMatcher;
-use PHPUnit\Framework\TestCase;
 
-final class StrictSchemaMatcherTest extends TestCase
+final class StrictSchemaMatcherTest extends FlowTestCase
 {
     public function test_matching_different_schemas() : void
     {

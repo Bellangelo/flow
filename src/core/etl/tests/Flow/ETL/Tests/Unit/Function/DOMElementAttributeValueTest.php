@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\ref;
 use Flow\ETL\Row;
 use Flow\ETL\Row\Factory\NativeEntryFactory;
-use PHPUnit\Framework\TestCase;
 
-final class DOMElementAttributeValueTest extends TestCase
+final class DOMElementAttributeValueTest extends FlowTestCase
 {
     public function test_extracting_attribute_from_dom_element_entry() : void
     {

@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{lit, regex, regex_match_all};
 use Flow\ETL\Row;
-use PHPUnit\Framework\TestCase;
 
-final class RegexTest extends TestCase
+final class RegexTest extends FlowTestCase
 {
     public function test_regex_expression_on_invalid_pattern() : void
     {

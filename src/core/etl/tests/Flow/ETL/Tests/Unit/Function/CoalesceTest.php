@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{coalesce, int_entry, lit, ref, row};
-use PHPUnit\Framework\TestCase;
 
-final class CoalesceTest extends TestCase
+final class CoalesceTest extends FlowTestCase
 {
     public function test_coalesce_entries() : void
     {

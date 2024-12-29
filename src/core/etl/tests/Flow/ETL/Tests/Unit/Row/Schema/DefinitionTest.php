@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Row\Schema;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{datetime_schema,
     int_entry,
     str_entry,
@@ -22,9 +23,8 @@ use Flow\ETL\Exception\{InvalidArgumentException, RuntimeException};
 use Flow\ETL\PHP\Type\Logical\List\ListElement;
 use Flow\ETL\PHP\Type\Logical\{ListType, StructureType};
 use Flow\ETL\Row\Schema\{Definition, Metadata};
-use PHPUnit\Framework\TestCase;
 
-final class DefinitionTest extends TestCase
+final class DefinitionTest extends FlowTestCase
 {
     public function test_creating_definition_without_class() : void
     {

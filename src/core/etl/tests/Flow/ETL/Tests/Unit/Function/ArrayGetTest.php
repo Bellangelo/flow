@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{array_exists, array_get, int_entry, json_entry, ref};
 use Flow\ArrayDot\Exception\InvalidPathException;
 use Flow\ETL\Row;
-use PHPUnit\Framework\TestCase;
 
-final class ArrayGetTest extends TestCase
+final class ArrayGetTest extends FlowTestCase
 {
     public function test_array_access_for_not_array_entry() : void
     {

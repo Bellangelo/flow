@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{datetime_entry, float_entry, int_entry, min, ref, row, str_entry};
-use PHPUnit\Framework\TestCase;
 
-final class MinTest extends TestCase
+final class MinTest extends FlowTestCase
 {
     public function test_aggregation_min_from_numeric_values() : void
     {

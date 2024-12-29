@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Integration\Function;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{array_sort, from_array, optional, ref, to_memory};
 use Flow\ETL\Flow;
 use Flow\ETL\Function\ArraySort\Sort;
 use Flow\ETL\Memory\ArrayMemory;
-use PHPUnit\Framework\TestCase;
 
-final class ArraySortTest extends TestCase
+final class ArraySortTest extends FlowTestCase
 {
     public function test_array_sort() : void
     {

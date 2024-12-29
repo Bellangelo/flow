@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\PHP\Type\Native;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{type_float, type_resource};
 use Flow\ETL\PHP\Type\Logical\Map\{MapKey, MapValue};
 use Flow\ETL\PHP\Type\Logical\MapType;
-use PHPUnit\Framework\TestCase;
 
-final class ResourceTypeTest extends TestCase
+final class ResourceTypeTest extends FlowTestCase
 {
     public function test_equals() : void
     {

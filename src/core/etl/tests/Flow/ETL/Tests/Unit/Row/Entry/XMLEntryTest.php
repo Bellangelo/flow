@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Row\Entry;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\xml_entry;
 use Flow\ETL\Exception\InvalidArgumentException;
 use Flow\ETL\Row\Entry\XMLEntry;
 use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 
-final class XMLEntryTest extends TestCase
+final class XMLEntryTest extends FlowTestCase
 {
     public static function is_equal_data_provider() : \Generator
     {
