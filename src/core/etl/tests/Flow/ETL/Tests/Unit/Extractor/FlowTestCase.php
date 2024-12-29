@@ -38,13 +38,13 @@ abstract class FlowTestCase extends TestCase
      */
     public function assertExtractedRowsAsArrayEquals(array $expectedArray, Extractor $extractor) : void
     {
-        $data = [];
+        $extractedRows = rows();
 
-        foreach ($extractor->extract(new FlowContext(Config::default())) as $rowsData) {
-            $data = [...$data, ...$rowsData->toArray()];
+        foreach ($extractor->extract(new FlowContext(Config::default())) as $nextRows) {
+            $extractedRows = $extractedRows->merge($nextRows);
         }
 
-        static::assertSame($expectedArray, $data);
+        static::assertEquals($expectedArray, $extractedRows->toArray());
     }
 
     public function assertExtractedRowsCount(int $expectedCount, Extractor $extractor) : void
