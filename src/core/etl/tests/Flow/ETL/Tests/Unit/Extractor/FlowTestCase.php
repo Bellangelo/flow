@@ -10,19 +10,22 @@ use PHPUnit\Framework\TestCase;
 
 abstract class FlowTestCase extends TestCase
 {
-    public function assertExtractedBatchesCount(int $expectedCount, Extractor $extractor) : void
+    public function assertExtractedBatchesCount(int $expectedCount, Extractor $extractor, ?FlowContext $flowContext = null) : void
     {
+        $flowContext = $flowContext ?? new FlowContext(Config::default());
+
         static::assertCount(
             $expectedCount,
-            \iterator_to_array($extractor->extract(new FlowContext(Config::default())))
+            \iterator_to_array($extractor->extract($flowContext))
         );
     }
 
-    public function assertExtractedBatchesSize(int $expectedCount, Extractor $extractor) : void
+    public function assertExtractedBatchesSize(int $expectedCount, Extractor $extractor, ?FlowContext $flowContext = null) : void
     {
+        $flowContext = $flowContext ?? new FlowContext(Config::default());
         $extractorContainsBatches = false;
 
-        foreach ($extractor->extract(new FlowContext(Config::default())) as $rows) {
+        foreach ($extractor->extract($flowContext) as $rows) {
             static::assertCount($expectedCount, $rows);
             $extractorContainsBatches = true;
         }
@@ -35,34 +38,38 @@ abstract class FlowTestCase extends TestCase
     /**
      * @param array<mixed> $expectedArray
      * @param Extractor $extractor
+     * @param null|FlowContext $flowContext
      */
-    public function assertExtractedRowsAsArrayEquals(array $expectedArray, Extractor $extractor) : void
+    public function assertExtractedRowsAsArrayEquals(array $expectedArray, Extractor $extractor, ?FlowContext $flowContext = null) : void
     {
+        $flowContext = $flowContext ?? new FlowContext(Config::default());
         $extractedRows = rows();
 
-        foreach ($extractor->extract(new FlowContext(Config::default())) as $nextRows) {
+        foreach ($extractor->extract($flowContext) as $nextRows) {
             $extractedRows = $extractedRows->merge($nextRows);
         }
 
         static::assertEquals($expectedArray, $extractedRows->toArray());
     }
 
-    public function assertExtractedRowsCount(int $expectedCount, Extractor $extractor) : void
+    public function assertExtractedRowsCount(int $expectedCount, Extractor $extractor, ?FlowContext $flowContext = null) : void
     {
+        $flowContext = $flowContext ?? new FlowContext(Config::default());
         $totalRows = 0;
 
-        foreach ($extractor->extract(new FlowContext(Config::default())) as $rows) {
+        foreach ($extractor->extract($flowContext) as $rows) {
             $totalRows += $rows->count();
         }
 
         static::assertSame($expectedCount, $totalRows);
     }
 
-    public function assertExtractedRowsEquals(Rows $expectedRows, Extractor $extractor) : void
+    public function assertExtractedRowsEquals(Rows $expectedRows, Extractor $extractor, ?FlowContext $flowContext = null) : void
     {
+        $flowContext = $flowContext ?? new FlowContext(Config::default());
         $extractedRows = rows();
 
-        foreach ($extractor->extract(new FlowContext(Config::default())) as $nextRows) {
+        foreach ($extractor->extract($flowContext) as $nextRows) {
             $extractedRows = $extractedRows->merge($nextRows);
         }
 
