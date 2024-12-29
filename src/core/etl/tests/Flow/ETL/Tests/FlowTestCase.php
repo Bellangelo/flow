@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests;
 
-use function Flow\ETL\DSL\rows;
-use Flow\ETL\{Config, Extractor, FlowContext, Rows};
+use function Flow\ETL\DSL\{flow_context, rows};
+use Flow\ETL\{Extractor, FlowContext, Rows};
 use PHPUnit\Framework\TestCase;
 
 abstract class FlowTestCase extends TestCase
@@ -16,7 +16,7 @@ abstract class FlowTestCase extends TestCase
         ?FlowContext $flowContext = null,
         string $message = '',
     ) : void {
-        $flowContext = $flowContext ?? new FlowContext(Config::default());
+        $flowContext = $flowContext ?? flow_context();
 
         static::assertCount(
             $expectedCount,
@@ -31,7 +31,7 @@ abstract class FlowTestCase extends TestCase
         ?FlowContext $flowContext = null,
         string $message = '',
     ) : void {
-        $flowContext = $flowContext ?? new FlowContext(Config::default());
+        $flowContext = $flowContext ?? flow_context();
         $extractorContainsBatches = false;
 
         foreach ($extractor->extract($flowContext) as $rows) {
@@ -50,7 +50,7 @@ abstract class FlowTestCase extends TestCase
         ?FlowContext $flowContext = null,
         string $message = '',
     ) : void {
-        $flowContext = $flowContext ?? new FlowContext(Config::default());
+        $flowContext = $flowContext ?? flow_context();
         $extractedRows = rows();
 
         foreach ($extractor->extract($flowContext) as $nextRows) {
@@ -66,7 +66,7 @@ abstract class FlowTestCase extends TestCase
         ?FlowContext $flowContext = null,
         string $message = '',
     ) : void {
-        $flowContext = $flowContext ?? new FlowContext(Config::default());
+        $flowContext = $flowContext ?? flow_context();
         $totalRows = 0;
 
         foreach ($extractor->extract($flowContext) as $rows) {
@@ -82,7 +82,7 @@ abstract class FlowTestCase extends TestCase
         ?FlowContext $flowContext = null,
         string $message = '',
     ) : void {
-        $flowContext = $flowContext ?? new FlowContext(Config::default());
+        $flowContext = $flowContext ?? flow_context();
         $extractedRows = rows();
 
         foreach ($extractor->extract($flowContext) as $nextRows) {
