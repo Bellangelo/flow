@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Extractor;
 
+use Flow\ETL\{Extractor, FlowContext, Row, Rows, Tests\FlowTestCase};
 use function Flow\ETL\DSL\{from_all, int_entry};
-use Flow\ETL\{Extractor, FlowContext, Row, Rows};
 
 final class ChainExtractorTest extends FlowTestCase
 {
