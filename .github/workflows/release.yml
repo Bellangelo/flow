@@ -1,4 +1,4 @@
-name: Build Release
+name: Release
 
 on:
   release:
@@ -6,8 +6,8 @@ on:
       - published
 
 jobs:
-  build-release:
-    name: "Build Release"
+  build-archives:
+    name: "Release"
     runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:

@@ -1,6 +1,7 @@
 ## [Unreleased] - 2024-12-29
 
 ### Added
+- [d8ee4f](https://github.com/flow-php/flow/commit/d8ee4fa0e9fe83a94f9c7c96bb860a8bed77b2e9) - **flags for codecov uploads** - [@norberttech](https://github.com/norberttech)
 - [#1291](https://github.com/flow-php/flow/pull/1291) - **FlowTestCase with assertions around Extractors** - [@Bellangelo](https://github.com/Bellangelo)
 - [#1296](https://github.com/flow-php/flow/pull/1296) - **Added codecov integration** - [@norberttech](https://github.com/norberttech)
 - [#1295](https://github.com/flow-php/flow/pull/1295) - **Symfony Http Foundation Bridge documentation to navigation** - [@norberttech](https://github.com/norberttech)
@@ -33,6 +34,10 @@
 - [#1244](https://github.com/flow-php/flow/pull/1244) - **Added CLI command to read schema from a file** - [@norberttech](https://github.com/norberttech)
 
 ### Changed
+- [#1305](https://github.com/flow-php/flow/pull/1305) - **Moved FlowIntegrationTestCase to the same namespace as FlowTestCase** - [@norberttech](https://github.com/norberttech)
+- [#1304](https://github.com/flow-php/flow/pull/1304) - **Set commit parent for codecov coverage/test report comparison** - [@norberttech](https://github.com/norberttech)
+- [47990c](https://github.com/flow-php/flow/commit/47990cdca675e2cba3b87d2e64e230e26111fdb6) - **Moved uploading baseline codecov commit sha to test suite workflow and merged test suite with extensions tests** - [@norberttech](https://github.com/norberttech)
+- [a90bf2](https://github.com/flow-php/flow/commit/a90bf215817d3e4e769da01e7efab6a45fe7c613) - **Unified github workflows** - [@norberttech](https://github.com/norberttech)
 - [#1302](https://github.com/flow-php/flow/pull/1302) - **Updated infection configuration to focus it at core only** - [@norberttech](https://github.com/norberttech)
 - [2072d8](https://github.com/flow-php/flow/commit/2072d8d620aaf0ae013d005455c9306f9a529d0c) - **Renamed output files of phpunit coverage report and junit report for codecov** - [@norberttech](https://github.com/norberttech)
 - [#1300](https://github.com/flow-php/flow/pull/1300) - **Moved coverage and phpunit logs to standalone files** - [@norberttech](https://github.com/norberttech)
@@ -63,6 +68,10 @@
 - [#1240](https://github.com/flow-php/flow/pull/1240) - **Update Homebrew TAP formula: flow-php to version: 0.10.0** - [@norberttech](https://github.com/norberttech)
 
 ### Fixed
+- [01b885](https://github.com/flow-php/flow/commit/01b885dd7b5f64ced595579eb2a422652db4c967) - **codecov using base commit only for pull requests, otherwise upload baseline commit** - [@norberttech](https://github.com/norberttech)
+- [e26960](https://github.com/flow-php/flow/commit/e2696094f6723411c126262d3b83047236d6d469) - **warnings in Github Baselin Workflow** - [@norberttech](https://github.com/norberttech)
+- [aa0e48](https://github.com/flow-php/flow/commit/aa0e48b61eeb09f9d7b312e9a594279f5ef9df5c) - **SHA artifact upload** - [@norberttech](https://github.com/norberttech)
+- [c7d57a](https://github.com/flow-php/flow/commit/c7d57aa4a149e3641da9a2f7d5a91f6f16a70240) - **bug in baseline workflow related to fetching base commit sha** - [@norberttech](https://github.com/norberttech)
 - [#1299](https://github.com/flow-php/flow/pull/1299) - **Fixed typo in AWS filesystem docs** - [@stloyd](https://github.com/stloyd)
 - [#1297](https://github.com/flow-php/flow/pull/1297) - **Website navigation** - [@norberttech](https://github.com/norberttech)
 - [#1294](https://github.com/flow-php/flow/pull/1294) - **Fixed broken documentation building script** - [@norberttech](https://github.com/norberttech)
@@ -85,6 +94,8 @@
 - [#1243](https://github.com/flow-php/flow/pull/1243) - **Fixed flow cli autoloading** - [@norberttech](https://github.com/norberttech)
 
 ### Updated
+- [1ff799](https://github.com/flow-php/flow/commit/1ff79929ad11b38e9a3ab2fa204f1d7c927680e4) - **base test case for avro** - [@norberttech](https://github.com/norberttech)
+- [a3080b](https://github.com/flow-php/flow/commit/a3080b297c7a63e9bc9bdd1f5363dec529814106) - **github actions step conditions** - [@norberttech](https://github.com/norberttech)
 - [575eeb](https://github.com/flow-php/flow/commit/575eeb43bd748b2d8329c7a6c88208208ae357ab) - **README.md** - [@norberttech](https://github.com/norberttech)
 - [df71e5](https://github.com/flow-php/flow/commit/df71e5e4f251126ee2b18f7d8af77d002424ebf2) - **.gitattributes of flow-php/etl** - [@norberttech](https://github.com/norberttech)
 - [afb55b](https://github.com/flow-php/flow/commit/afb55b8a8d8f7678257b29cbd34737fbbb9f0fce) - **introduction.md** - [@norberttech](https://github.com/norberttech)

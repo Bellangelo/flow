@@ -1,4 +1,4 @@
-name: Benchmark Suite
+name: Test Benchmarks
 
 on:
   pull_request:
@@ -64,7 +64,7 @@ jobs:
       - name: "Download phpbench benchmarks artifact"
         uses: dawidd6/action-download-artifact@v7
         with:
-          workflow: benchmark-baseline.yml
+          workflow: baseline.yml
           name: phpbench-baseline
           path: ./var/phpbench/
 

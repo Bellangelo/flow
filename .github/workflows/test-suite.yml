@@ -249,16 +249,151 @@ jobs:
       - name: "Test - Examples"
         run: "composer test:examples"
 
-      - name: Upload test results to Codecov.io
-        if: ${{ !cancelled() }} && ${{ matrix.php-version == '8.2' }} && ${{ matrix.dependencies == 'locked' }}
+      - name: "Download artifact"
+        if: ${{ github.event_name == 'pull_request' && matrix.php-version == '8.2' && matrix.dependencies == 'locked' }}
+        uses: dawidd6/action-download-artifact@v7
+        with:
+          workflow: test-suite.yml
+          name: codecov-base-commit-sha-1.x
+
+      - name: Read artifact content into variable
+        if: ${{ github.event_name == 'pull_request' && matrix.php-version == '8.2' && matrix.dependencies == 'locked' }}
+        run: |
+          ARTIFACT_CONTENT=$(cat codecov-base-commit-sha-1.x.txt)
+          echo "codecov_base_commit_sha=$ARTIFACT_CONTENT" >> $GITHUB_ENV
+
+      - name: Upload test results to Codecov.io for baseline
+        if: ${{ github.event_name == 'push' && !cancelled() && matrix.php-version == '8.2' && matrix.dependencies == 'locked' }}
         uses: codecov/test-results-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           directory: ./var/phpunit/logs
+          flags: etl, cli, lib-azure-sdk, lib-doctrine-dbal-bulk, lib-filesystem, lib-parquet, lib-parquet-viewer, lib-rdsl, lib-snappy, bridge-filesystem-async-aws, bridge-filesystem-azure, bridge-monolog-http, bridge-symfony-http-foundation, adapter-chartjs, adapter-csv, adapter-doctrine, adapter-elasticsearch, adapter-google-sheet, adapter-http, adapter-json, adapter-logger, adapter-meilisearch, adapter-parquet, adapter-text, adapter-xml
 
-      - name: Upload code coverage data to Codecov.io
-        if: ${{ matrix.php-version == '8.2' }} && ${{ matrix.dependencies == 'locked' }}
+      - name: Upload code coverage data to Codecov.io for baseline
+        if: ${{ github.event_name == 'push' && !cancelled() && matrix.php-version == '8.2' && matrix.dependencies == 'locked' }}
         uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           directory: ./var/phpunit/coverage/clover
+          flags: etl, cli, lib-azure-sdk, lib-doctrine-dbal-bulk, lib-filesystem, lib-parquet, lib-parquet-viewer, lib-rdsl, lib-snappy, bridge-filesystem-async-aws, bridge-filesystem-azure, bridge-monolog-http, bridge-symfony-http-foundation, adapter-chartjs, adapter-csv, adapter-doctrine, adapter-elasticsearch, adapter-google-sheet, adapter-http, adapter-json, adapter-logger, adapter-meilisearch, adapter-parquet, adapter-text, adapter-xml
+
+      - name: Upload code coverage data to Codecov.io for pull request
+        if: ${{ github.event_name == 'pull_request' && !cancelled() && matrix.php-version == '8.2' && matrix.dependencies == 'locked' }}
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          directory: ./var/phpunit/coverage/clover
+          commit_parent: ${{ env.codecov_base_commit_sha }}
+          flags: etl, cli, lib-azure-sdk, lib-doctrine-dbal-bulk, lib-filesystem, lib-parquet, lib-parquet-viewer, lib-rdsl, lib-snappy, bridge-filesystem-async-aws, bridge-filesystem-azure, bridge-monolog-http, bridge-symfony-http-foundation, adapter-chartjs, adapter-csv, adapter-doctrine, adapter-elasticsearch, adapter-google-sheet, adapter-http, adapter-json, adapter-logger, adapter-meilisearch, adapter-parquet, adapter-text, adapter-xml
+
+      - name: Upload test results to Codecov.io for pull request
+        if: ${{ github.event_name == 'pull_request' && !cancelled() && matrix.php-version == '8.2' && matrix.dependencies == 'locked' }}
+        uses: codecov/test-results-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          directory: ./var/phpunit/logs
+          commit_parent: ${{ env.codecov_base_commit_sha }}
+          flags: etl, cli, lib-azure-sdk, lib-doctrine-dbal-bulk, lib-filesystem, lib-parquet, lib-parquet-viewer, lib-rdsl, lib-snappy, bridge-filesystem-async-aws, bridge-filesystem-azure, bridge-monolog-http, bridge-symfony-http-foundation, adapter-chartjs, adapter-csv, adapter-doctrine, adapter-elasticsearch, adapter-google-sheet, adapter-http, adapter-json, adapter-logger, adapter-meilisearch, adapter-parquet, adapter-text, adapter-xml
+
+      - name: Get the branch name and SHA
+        if: ${{ github.event_name == 'push' && matrix.php-version == '8.2' && matrix.dependencies == 'locked' }}
+        run: |
+          branch_name=${GITHUB_REF#refs/heads/}
+          commit_sha=$(git rev-parse HEAD)
+          echo "codecov_branch_name=$branch_name" >> $GITHUB_ENV
+          echo "codecov_commit_sha=$commit_sha" >> $GITHUB_ENV
+
+      - name: Save commit SHA to file
+        if: ${{ github.event_name == 'push' && matrix.php-version == '8.2' && matrix.dependencies == 'locked' }}
+        run: echo -n "${{ env.codecov_commit_sha }}" > codecov-base-commit-sha-${{ env.codecov_branch_name }}.txt
+
+      - name: Upload commit SHA as artifact
+        if: ${{ github.event_name == 'push' && matrix.php-version == '8.2' && matrix.dependencies == 'locked' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: codecov-base-commit-sha-${{ env.codecov_branch_name }}
+          path: codecov-base-commit-sha-${{ env.codecov_branch_name }}.txt
+
+      - name: "Put SHA to step summary"
+        if: ${{ github.event_name == 'push' && matrix.php-version == '8.2' && matrix.dependencies == 'locked' }}
+        run: |
+          echo "Baseline commit SHA for Codecov: ${{ env.codecov_commit_sha }}" >> $GITHUB_STEP_SUMMARY
+
+  extension-tests:
+    name: "Extension Tests"
+
+    runs-on: ${{ matrix.operating-system }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        dependencies:
+          - "locked"
+        php-version:
+          - "8.2"
+          - "8.3"
+          - "8.4"
+        operating-system:
+          - "ubuntu-latest"
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v4"
+
+      - name: "Install dependencies"
+        run: |
+          sudo apt-get update && sudo apt-get install libbrotli1 liblz4-1 libzstd1 --assume-yes
+
+      - name: "Install PHP"
+        uses: "shivammathur/setup-php@v2"
+        with:
+          tools: composer:v2
+          php-version: "${{ matrix.php-version }}"
+          ini-values: memory_limit=-1
+          extensions: :psr, bcmath, dom, hash, json, mbstring, xml, xmlwriter, xmlreader, zlib, brotli, lz4, zstd, snappy-https://github.com/kjdev/php-ext-snappy@0.2.1
+        env:
+            SNAPPY_CONFIGURE_PREFIX_OPTS: "CXXFLAGS=-std=c++11"
+
+      - name: "List PHP Extensions"
+        run: php -m
+
+      - name: "List PHP configuration"
+        run: php -i
+
+      - name: "Get Composer Cache Directory"
+        id: composer-cache
+        run: |
+          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: "Cache Composer dependencies"
+        uses: "actions/cache@v4"
+        with:
+          path: "${{ steps.composer-cache.outputs.dir }}"
+          key: "php-${{ matrix.php-version }}-${{ matrix.dependencies }}-composer-${{ hashFiles('**/composer.lock') }}"
+          restore-keys: |
+            php-${{ matrix.php-version }}-${{ matrix.dependencies }}-composer-
+
+      - name: "Install lowest dependencies"
+        if: ${{ matrix.dependencies == 'lowest' }}
+        run: "composer update --prefer-lowest --no-interaction --no-progress --no-suggest"
+
+      - name: "Install highest dependencies"
+        if: ${{ matrix.dependencies == 'highest' }}
+        run: "composer update --no-interaction --no-progress --no-suggest"
+
+      - name: "Install locked dependencies"
+        if: ${{ matrix.dependencies == 'locked' }}
+        run: "composer install --no-interaction --no-progress --no-suggest"
+
+      - name: "Test Brotli"
+        run: "composer test:lib:parquet -- --group brotli-extension"
+
+      - name: "Test LZ4"
+        run: "composer test:lib:parquet -- --group lz4-extension"
+
+      - name: "Test ZSTD"
+        run: "composer test:lib:parquet -- --group zstd-extension"
+
+      - name: "Test Snappy"
+        run: "composer test:lib:parquet -- --group snappy-extension"

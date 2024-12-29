@@ -4,7 +4,7 @@ ARG FLOW_BASE_IMAGE_TAG_SUFFIX=cli-alpine3.18
 ARG FLOW_BASE_IMAGE_TAG=${FLOW_PHP_VERSION}-${FLOW_BASE_IMAGE_TAG_SUFFIX}
 ARG FLOW_BASE_IMAGE=php:${FLOW_BASE_IMAGE_TAG}
 
-FROM ${FLOW_BASE_IMAGE} as builder
+FROM ${FLOW_BASE_IMAGE} AS builder
 
 # Install dependencies and PHP extensions
 RUN apk update && apk add --no-cache \
@@ -22,7 +22,7 @@ RUN apk update && apk add --no-cache \
  && rm -rf /tmp/php-ext-snappy
 
 # Stage 2: Final Image
-FROM ${FLOW_BASE_IMAGE} as flow
+FROM ${FLOW_BASE_IMAGE} AS flow
 
 # Copy the built extensions from the builder stage
 COPY --from=builder /usr/local/lib/php/extensions /usr/local/lib/php/extensions
