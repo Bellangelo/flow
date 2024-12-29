@@ -1,4 +1,4 @@
-## [Unreleased] - 2024-12-28
+## [Unreleased] - 2024-12-29
 
 ### Added
 - [#1296](https://github.com/flow-php/flow/pull/1296) - **Added codecov integration** - [@norberttech](https://github.com/norberttech)
@@ -32,6 +32,9 @@
 - [#1244](https://github.com/flow-php/flow/pull/1244) - **Added CLI command to read schema from a file** - [@norberttech](https://github.com/norberttech)
 
 ### Changed
+- [2072d8](https://github.com/flow-php/flow/commit/2072d8d620aaf0ae013d005455c9306f9a529d0c) - **Renamed output files of phpunit coverage report and junit report for codecov** - [@norberttech](https://github.com/norberttech)
+- [#1300](https://github.com/flow-php/flow/pull/1300) - **Moved coverage and phpunit logs to standalone files** - [@norberttech](https://github.com/norberttech)
+- [#1300](https://github.com/flow-php/flow/pull/1300) - **upload to codecov only from one php and deps version** - [@norberttech](https://github.com/norberttech)
 - [#1295](https://github.com/flow-php/flow/pull/1295) - **Improved readability of remote filesystem examples** - [@norberttech](https://github.com/norberttech)
 - [#1293](https://github.com/flow-php/flow/pull/1293) - **Increase minimal MSI for Infection** - [@stloyd](https://github.com/stloyd)
 - [#1293](https://github.com/flow-php/flow/pull/1293) - **Run mutations tests when changing Inflection related files** - [@stloyd](https://github.com/stloyd)
@@ -58,6 +61,8 @@
 - [#1240](https://github.com/flow-php/flow/pull/1240) - **Update Homebrew TAP formula: flow-php to version: 0.10.0** - [@norberttech](https://github.com/norberttech)
 
 ### Fixed
+- [#1299](https://github.com/flow-php/flow/pull/1299) - **Fixed typo in AWS filesystem docs** - [@stloyd](https://github.com/stloyd)
+- [#1297](https://github.com/flow-php/flow/pull/1297) - **Website navigation** - [@norberttech](https://github.com/norberttech)
 - [#1294](https://github.com/flow-php/flow/pull/1294) - **Fixed broken documentation building script** - [@norberttech](https://github.com/norberttech)
 - [#1281](https://github.com/flow-php/flow/pull/1281) - **Meilisearch pagination** - [@norberttech](https://github.com/norberttech)
 - [#1289](https://github.com/flow-php/flow/pull/1289) - **Adjust Meilisearch adapter to newer library code** - [@stloyd](https://github.com/stloyd)
