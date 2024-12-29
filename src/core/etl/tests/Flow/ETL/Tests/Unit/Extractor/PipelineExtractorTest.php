@@ -21,6 +21,6 @@ final class PipelineExtractorTest extends FlowTestCase
 
         $extractor = new PipelineExtractor($pipeline);
 
-        $this->assertExtractorCountBatches(3, $extractor);
+        $this->assertExtractedBatchesCount(3, $extractor);
     }
 }

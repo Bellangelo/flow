@@ -28,7 +28,7 @@ final class ChainExtractorTest extends FlowTestCase
             },
         );
 
-        $this->assertExtractorEqualsRows(
+        $this->assertExtractedRowsEquals(
             [
                 new Rows(Row::create(int_entry('id', 1))),
                 new Rows(Row::create(int_entry('id', 2))),

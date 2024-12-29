@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 abstract class FlowTestCase extends TestCase
 {
-    public function assertExtractorCountBatches(int $expectedCount, Extractor $extractor) : void
+    public function assertExtractedBatchesCount(int $expectedCount, Extractor $extractor) : void
     {
         static::assertCount(
             $expectedCount,
@@ -17,7 +17,7 @@ abstract class FlowTestCase extends TestCase
         );
     }
 
-    public function assertExtractorCountRows(int $expectedCount, Extractor $extractor) : void
+    public function assertExtractedRowsCount(int $expectedCount, Extractor $extractor) : void
     {
         $totalRows = 0;
 
@@ -28,7 +28,7 @@ abstract class FlowTestCase extends TestCase
         static::assertSame($expectedCount, $totalRows);
     }
 
-    public function assertExtractorCountRowsPerBatch(int $expectedCount, Extractor $extractor) : void
+    public function assertExtractedBatchesSize(int $expectedCount, Extractor $extractor) : void
     {
         $extractorContainsBatches = false;
 
@@ -46,7 +46,7 @@ abstract class FlowTestCase extends TestCase
      * @param array<Rows> $expectedRows
      * @param Extractor $extractor
      */
-    public function assertExtractorEqualsRows(array $expectedRows, Extractor $extractor) : void
+    public function assertExtractedRowsEquals(array $expectedRows, Extractor $extractor) : void
     {
         static::assertEquals(
             $expectedRows,
@@ -58,7 +58,7 @@ abstract class FlowTestCase extends TestCase
      * @param array<mixed> $expectedArray
      * @param Extractor $extractor
      */
-    public function assertExtractorSameArray(array $expectedArray, Extractor $extractor) : void
+    public function assertExtractedRowsAsArrayEquals(array $expectedArray, Extractor $extractor) : void
     {
         $data = [];
 

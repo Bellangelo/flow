@@ -26,7 +26,7 @@ final class MemoryExtractorTest extends FlowTestCase
 
         $extractor = from_memory($memory);
 
-        $this->assertExtractorSameArray(
+        $this->assertExtractedRowsAsArrayEquals(
             [
                 ['number' => 1, 'name' => 'one'],
                 ['number' => 2, 'name' => 'two'],

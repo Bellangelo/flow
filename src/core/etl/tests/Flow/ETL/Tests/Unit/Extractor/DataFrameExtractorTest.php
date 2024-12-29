@@ -23,7 +23,7 @@ final class DataFrameExtractorTest extends FlowTestCase
             ))
         );
 
-        $this->assertExtractorEqualsRows(
+        $this->assertExtractedRowsEquals(
             [
                 rows(
                     row(str_entry('value', 'test')),

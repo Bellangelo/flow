@@ -13,7 +13,7 @@ final class ChunkExtractorTest extends FlowTestCase
     {
         $extractor = new ChunkExtractor(new FakeExtractor($batches = 100), $chunkSize = 10);
 
-        $this->assertExtractorCountBatches(
+        $this->assertExtractedBatchesCount(
             $batches / $chunkSize,
             $extractor
         );
@@ -23,7 +23,7 @@ final class ChunkExtractorTest extends FlowTestCase
     {
         $extractor = new ChunkExtractor(new FakeExtractor(total: 20), chunkSize: 25);
 
-        $this->assertExtractorCountBatches(
+        $this->assertExtractedBatchesCount(
             1,
             $extractor
         );
