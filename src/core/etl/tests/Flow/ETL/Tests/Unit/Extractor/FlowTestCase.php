@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 abstract class FlowTestCase extends TestCase
 {
-    public function assertExtractedBatchesCount(
+    final public static function assertExtractedBatchesCount(
         int $expectedCount,
         Extractor $extractor,
         ?FlowContext $flowContext = null,
@@ -25,7 +25,7 @@ abstract class FlowTestCase extends TestCase
         );
     }
 
-    public function assertExtractedBatchesSize(
+    final public static function assertExtractedBatchesSize(
         int $expectedCount,
         Extractor $extractor,
         ?FlowContext $flowContext = null,
@@ -44,12 +44,7 @@ abstract class FlowTestCase extends TestCase
         }
     }
 
-    /**
-     * @param array<mixed> $expectedArray
-     * @param Extractor $extractor
-     * @param null|FlowContext $flowContext
-     */
-    public function assertExtractedRowsAsArrayEquals(
+    final public static function assertExtractedRowsAsArrayEquals(
         array $expectedArray,
         Extractor $extractor,
         ?FlowContext $flowContext = null,
@@ -65,7 +60,7 @@ abstract class FlowTestCase extends TestCase
         static::assertEquals($expectedArray, $extractedRows->toArray(), $message);
     }
 
-    public function assertExtractedRowsCount(
+    final public static function assertExtractedRowsCount(
         int $expectedCount,
         Extractor $extractor,
         ?FlowContext $flowContext = null,
@@ -81,7 +76,7 @@ abstract class FlowTestCase extends TestCase
         static::assertSame($expectedCount, $totalRows, $message);
     }
 
-    public function assertExtractedRowsEquals(
+    final public static function assertExtractedRowsEquals(
         Rows $expectedRows,
         Extractor $extractor,
         ?FlowContext $flowContext = null,

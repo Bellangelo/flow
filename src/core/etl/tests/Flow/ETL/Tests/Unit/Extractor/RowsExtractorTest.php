@@ -21,7 +21,7 @@ final class RowsExtractorTest extends FlowTestCase
 
         $extractor = from_rows($rows);
 
-        $this->assertExtractedRowsAsArrayEquals(
+        FlowTestCase::assertExtractedRowsAsArrayEquals(
             [
                 ['number' => 1, 'name' => 'one'],
                 ['number' => 2, 'name' => 'two'],
