@@ -14,8 +14,8 @@ final class FilesExtractorTest extends FlowTestCase
     {
         $extractor = files(__DIR__ . '/Fixtures/FileListExtractor/*');
 
-        FlowTestCase::assertExtractedRowsCount(3, $extractor);
-        FlowTestCase::assertExtractedBatchesSize(1, $extractor);
+        self::assertExtractedRowsCount(3, $extractor);
+        self::assertExtractedBatchesSize(1, $extractor);
     }
 
     public function test_extracting_files_from_directory_after_getting_stop_signal() : void
@@ -37,8 +37,8 @@ final class FilesExtractorTest extends FlowTestCase
     {
         $extractor = files(__DIR__ . '/Fixtures/FileListExtractor/**/*');
 
-        FlowTestCase::assertExtractedRowsCount(6, $extractor);
-        FlowTestCase::assertExtractedBatchesSize(1, $extractor);
+        self::assertExtractedRowsCount(6, $extractor);
+        self::assertExtractedBatchesSize(1, $extractor);
     }
 
     public function test_extracting_files_from_directory_with_limit() : void
@@ -46,7 +46,7 @@ final class FilesExtractorTest extends FlowTestCase
         $extractor = files(__DIR__ . '/Fixtures/FileListExtractor/**/*');
         $extractor->changeLimit(2);
 
-        FlowTestCase::assertExtractedRowsCount(2, $extractor);
-        FlowTestCase::assertExtractedBatchesSize(1, $extractor);
+        self::assertExtractedRowsCount(2, $extractor);
+        self::assertExtractedBatchesSize(1, $extractor);
     }
 }

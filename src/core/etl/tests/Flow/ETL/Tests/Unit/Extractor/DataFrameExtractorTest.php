@@ -24,7 +24,7 @@ final class DataFrameExtractorTest extends FlowTestCase
             ))
         );
 
-        FlowTestCase::assertExtractedRowsEquals(
+        self::assertExtractedRowsEquals(
             rows(
                 row(str_entry('value', 'test')),
                 row(str_entry('value', 'test')),
