@@ -7,7 +7,7 @@ namespace Flow\ETL\Adapter\Elasticsearch\Tests\Integration;
 use Flow\ETL\Adapter\Elasticsearch\Tests\Context\{Elasticsearch7Context, Elasticsearch8Context, ElasticsearchContext};
 use Flow\ETL\Tests\FlowTestCase;
 
-abstract class TestCase extends FlowTestCase
+abstract class ElasticsearchTestCase extends FlowTestCase
 {
     protected ElasticsearchContext $elasticsearchContext;
 
