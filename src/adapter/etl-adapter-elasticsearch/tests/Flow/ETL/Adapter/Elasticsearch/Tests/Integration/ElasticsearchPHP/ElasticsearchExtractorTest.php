@@ -14,7 +14,7 @@ use Flow\ETL\{Adapter\Elasticsearch\Tests\Integration\TestCase,
     FlowContext,
     Row,
     Rows
-    };
+};
 
 final class ElasticsearchExtractorTest extends TestCase
 {
