@@ -5,6 +5,7 @@ on:
     paths:
       - '.github/workflows/**'
       - 'src/adapter/**'
+      - 'src/bridge/**'
       - 'src/core/**'
       - 'src/lib/**'
       - 'tools/**'

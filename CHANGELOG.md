@@ -69,6 +69,7 @@
 - [#1240](https://github.com/flow-php/flow/pull/1240) - **Update Homebrew TAP formula: flow-php to version: 0.10.0** - [@norberttech](https://github.com/norberttech)
 
 ### Fixed
+- [39af78](https://github.com/flow-php/flow/commit/39af78b4626daa32d1092ce50fa105cb1e3266cd) - **paths in test suite triggers on github actions** - [@norberttech](https://github.com/norberttech)
 - [01b885](https://github.com/flow-php/flow/commit/01b885dd7b5f64ced595579eb2a422652db4c967) - **codecov using base commit only for pull requests, otherwise upload baseline commit** - [@norberttech](https://github.com/norberttech)
 - [e26960](https://github.com/flow-php/flow/commit/e2696094f6723411c126262d3b83047236d6d469) - **warnings in Github Baselin Workflow** - [@norberttech](https://github.com/norberttech)
 - [aa0e48](https://github.com/flow-php/flow/commit/aa0e48b61eeb09f9d7b312e9a594279f5ef9df5c) - **SHA artifact upload** - [@norberttech](https://github.com/norberttech)
