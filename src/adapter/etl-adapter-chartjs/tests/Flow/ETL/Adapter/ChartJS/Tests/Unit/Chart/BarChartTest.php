@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Adapter\ChartJS\Tests\Unit\Chart;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{df, from_memory, ref, refs};
 use Flow\ETL\Adapter\ChartJS\Chart\BarChart;
 use Flow\ETL\Memory\ArrayMemory;
+use Flow\ETL\Tests\FlowTestCase;
 
 final class BarChartTest extends FlowTestCase
 {

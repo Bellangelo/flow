@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Adapter\Elasticsearch\Tests\Integration;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\Adapter\Elasticsearch\to_es_bulk_index;
 use function Flow\ETL\DSL\from_array;
 use Flow\ETL\Adapter\Elasticsearch\EntryIdFactory\EntryIdFactory;
 use Flow\ETL\Adapter\Elasticsearch\Tests\Doubles\Spy\HttpClientSpy;
 use Flow\ETL\Flow;
+use Flow\ETL\Tests\FlowTestCase;
 
 final class ElasticsearchTest extends FlowTestCase
 {

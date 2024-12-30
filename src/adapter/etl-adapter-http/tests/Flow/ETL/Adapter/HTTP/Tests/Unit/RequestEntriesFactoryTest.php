@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Flow\ETL\Adapter\HTTP\Tests\Unit;
 
 use Flow\ETL\Adapter\Http\RequestEntriesFactory;
-use Flow\ETL\Tests\FlowTestCase;
 use Flow\ETL\Row\Entry\{JsonEntry, StringEntry};
+use Flow\ETL\Tests\FlowTestCase;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use PHPUnit\Framework\Attributes\DataProvider;
 use Psr\Http\Message\RequestInterface;

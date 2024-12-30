@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Adapter\Parquet\Tests\Unit;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{bool_schema,
     date_schema,
     datetime_schema,
@@ -26,6 +25,7 @@ use function Flow\ETL\DSL\{bool_schema,
     type_uuid,
     uuid_schema};
 use Flow\ETL\Adapter\Parquet\SchemaConverter;
+use Flow\ETL\Tests\FlowTestCase;
 use Flow\Parquet\ParquetFile\Schema;
 use Flow\Parquet\ParquetFile\Schema\{MapKey, MapValue};
 

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Adapter\ChartJS\Tests\Integration;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\Adapter\ChartJS\{bar_chart, line_chart, pie_chart, to_chartjs, to_chartjs_file, to_chartjs_var};
 use function Flow\ETL\DSL\{df, first, from_array, lit, ref, refs, sum};
 use function Flow\Filesystem\DSL\path;
+use Flow\ETL\Tests\FlowTestCase;
 
 final class ChartJSLoaderTest extends FlowTestCase
 {

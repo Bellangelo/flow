@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Adapter\Parquet\Tests\Unit;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{type_boolean, type_int, type_string};
 use Flow\ETL\Adapter\Parquet\SchemaConverter;
 use Flow\ETL\PHP\Type\Logical\List\ListElement;
@@ -12,6 +11,7 @@ use Flow\ETL\PHP\Type\Logical\Map\{MapKey, MapValue};
 use Flow\ETL\PHP\Type\Logical\Structure\StructureElement;
 use Flow\ETL\PHP\Type\Logical\{ListType, MapType, StructureType};
 use Flow\ETL\Row\Schema;
+use Flow\ETL\Tests\FlowTestCase;
 use Flow\Parquet\ParquetFile\Schema as ParquetSchema;
 use Flow\Parquet\ParquetFile\Schema\{FlatColumn, NestedColumn};
 

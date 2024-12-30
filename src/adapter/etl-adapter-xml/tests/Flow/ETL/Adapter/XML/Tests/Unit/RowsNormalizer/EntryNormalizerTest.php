@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Adapter\XML\Tests\Unit\RowsNormalizer;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{str_entry,
     structure_element,
     structure_entry,
@@ -19,6 +18,7 @@ use Flow\ETL\Adapter\XML\Abstraction\{XMLAttribute, XMLNode};
 use Flow\ETL\Adapter\XML\RowsNormalizer\EntryNormalizer;
 use Flow\ETL\Adapter\XML\RowsNormalizer\EntryNormalizer\PHPValueNormalizer;
 use Flow\ETL\PHP\Type\Caster;
+use Flow\ETL\Tests\FlowTestCase;
 
 final class EntryNormalizerTest extends FlowTestCase
 {

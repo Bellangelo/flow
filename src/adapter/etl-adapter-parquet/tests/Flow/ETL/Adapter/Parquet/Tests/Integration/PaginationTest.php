@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Adapter\Parquet\Tests\Integration;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{config, flow_context};
 use Flow\ETL\Adapter\Parquet\ParquetExtractor;
+use Flow\ETL\Tests\FlowTestCase;
 use Flow\Filesystem\Path;
 use Flow\Parquet\{Reader};
 

@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Adapter\XML\Tests\Unit\RowsNormalizer\EntryNormalizer\PHPValueNormalizer;
 
-use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{structure_element, type_int, type_integer, type_list, type_map, type_string, type_structure};
 use Flow\ETL\Adapter\XML\Abstraction\XMLNode;
 use Flow\ETL\Adapter\XML\RowsNormalizer\EntryNormalizer\PHPValueNormalizer;
 use Flow\ETL\PHP\Type\Caster;
+use Flow\ETL\Tests\FlowTestCase;
 
 final class ListNormalizationTest extends FlowTestCase
 {
