@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Flow\CLI\Tests\Unit\Options;
 
-use PHPUnit\Framework\TestCase;
 use function Flow\Filesystem\DSL\path;
 use Flow\CLI\Options\{FileFormat, FileFormatOption};
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Input\{ArrayInput, InputDefinition, InputOption};
 
 final class FileFormatOptionTest extends TestCase
