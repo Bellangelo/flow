@@ -9,12 +9,12 @@ use Flow\Azure\SDK\BlobService\PutBlockBlob\PutBlockBlobOptions;
 use Flow\Azure\SDK\BlobService\PutBlockBlobBlock\PutBlockBlobBlockOptions;
 use Flow\Azure\SDK\BlobService\PutBlockBlobBlockList\PutBlockBlobBlockListOptions;
 use Flow\Azure\SDK\BlobServiceInterface;
+use Flow\ETL\Tests\FlowTestCase;
 use Flow\Filesystem\Bridge\Azure\AzureBlobDestinationStream;
 use Flow\Filesystem\Path;
 use Flow\Filesystem\Stream\{Block, BlockFactory};
-use PHPUnit\Framework\TestCase;
 
-final class AzureBlobDestinationStreamTest extends TestCase
+final class AzureBlobDestinationStreamTest extends FlowTestCase
 {
     public function test_using_put_blob_with_content_when_data_is_larger_than_block_size() : void
     {

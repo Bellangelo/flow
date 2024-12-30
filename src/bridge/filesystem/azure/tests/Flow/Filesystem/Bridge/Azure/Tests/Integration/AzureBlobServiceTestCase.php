@@ -6,10 +6,10 @@ namespace Flow\Filesystem\Bridge\Azure\Tests\Integration;
 
 use function Flow\Azure\SDK\DSL\{azure_blob_service, azure_blob_service_config, azure_http_factory, azure_shared_key_authorization_factory, azurite_url_factory};
 use Flow\Azure\SDK\{BlobService, Exception\AzureException};
+use Flow\ETL\Tests\FlowTestCase;
 use Http\Discovery\{Psr17FactoryDiscovery, Psr18ClientDiscovery};
-use PHPUnit\Framework\TestCase;
 
-abstract class AzureBlobServiceTestCase extends TestCase
+abstract class AzureBlobServiceTestCase extends FlowTestCase
 {
     /**
      * @var array<string>
