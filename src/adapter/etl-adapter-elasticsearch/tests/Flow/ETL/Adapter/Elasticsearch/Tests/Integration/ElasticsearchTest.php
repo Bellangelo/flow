@@ -9,9 +9,8 @@ use function Flow\ETL\DSL\from_array;
 use Flow\ETL\Adapter\Elasticsearch\EntryIdFactory\EntryIdFactory;
 use Flow\ETL\Adapter\Elasticsearch\Tests\Doubles\Spy\HttpClientSpy;
 use Flow\ETL\Flow;
-use Flow\ETL\Tests\FlowTestCase;
 
-final class ElasticsearchTest extends FlowTestCase
+final class ElasticsearchTest extends TestCase
 {
     public function test_batch_size_when_its_not_explicitly_set() : void
     {
