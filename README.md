@@ -75,12 +75,12 @@ Flow PHP is not just a tool, but a growing community of developers passionate ab
 
 ### How You Can Contribute
 
-- **Submitting Bug Reports and Feature Requests**: Encounter an issue or have an idea for an enhancement? Submit an issue on our GitHub repository. Please provide a clear description and, if possible, steps to reproduce the bug or details of the feature request.
+- **Submitting Bug Reports and Feature Requests**: Encounter an issue or have an idea for an enhancement? Please create an issue on our GitHub repository. Provide a clear description and, if possible, steps to reproduce the bug or details of the feature request.
 - **Code Contributions**: Interested in directly impacting the development of Flow PHP? Check out our issue tracker for areas where you can contribute. From simple fixes to substantial feature additions, every bit of help is appreciated.
 - **Improving Documentation**: Good documentation is key to any project's success. If you notice gaps, inaccuracies, or areas that could use better explanations, we encourage you to submit updates.
 - **Community Support**: Help out fellow users by answering questions on our community channels, Stack Overflow, or other forums where Flow PHP users gather.
-- **Spread the Word**: Share your experiences using Flow PHP, write blog posts, tutorials, or speak at meetups and conferences. Let others know how Flow PHP has helped in your projects!
-- **Leave a GitHub Star**: If you find Flow PHP useful, consider giving it a star on GitHub. Your star is a simple yet powerful way to show support and helps others discover our project.
+- **Spread the Word**: Share your experiences using Flow PHP, write blog posts, and tutorials, or speak at meetups and conferences. Let others know how Flow PHP has helped in your projects!
+- **Leave a GitHub Star**: If you find Flow PHP useful, consider giving it a star on GitHub. Your star is a simple yet powerful way to show support and help others discover our project.
 
 ### Contribution Guidelines
 
@@ -89,7 +89,7 @@ Please take a moment to read our [Contribution Guidelines](CONTRIBUTING.md) befo
 
 ### Questions?
 
-If you have any questions about contributing, please feel free to reach out to us. We're more than happy to provide guidance and support.
+If you have any questions about contributing, please don't hesitate to contact us. We're more than happy to provide guidance and support.
 
 Join us in shaping the future of data processing in PHP — every contribution, big or small, makes a significant difference!
 
