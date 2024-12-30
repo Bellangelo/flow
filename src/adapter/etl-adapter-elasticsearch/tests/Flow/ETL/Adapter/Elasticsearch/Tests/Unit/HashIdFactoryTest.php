@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Adapter\Elasticsearch\Tests\Unit;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{str_entry, string_entry};
 use Flow\ETL\Adapter\Elasticsearch\EntryIdFactory\HashIdFactory;
 use Flow\ETL\Hash\NativePHPHash;
 use Flow\ETL\Row;
-use PHPUnit\Framework\TestCase;
 
-final class HashIdFactoryTest extends TestCase
+final class HashIdFactoryTest extends FlowTestCase
 {
     public function test_create_row() : void
     {

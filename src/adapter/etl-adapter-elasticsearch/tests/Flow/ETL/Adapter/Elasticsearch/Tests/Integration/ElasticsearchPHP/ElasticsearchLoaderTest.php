@@ -6,10 +6,9 @@ namespace Flow\ETL\Adapter\Elasticsearch\Tests\Integration\ElasticsearchPHP;
 
 use function Flow\ETL\Adapter\Elasticsearch\{entry_id_factory, hash_id_factory, to_es_bulk_index, to_es_bulk_update};
 use function Flow\ETL\DSL\{generate_random_string, string_entry};
-use Flow\ETL\Adapter\Elasticsearch\Tests\Integration\TestCase;
-use Flow\ETL\{Config, FlowContext, Row, Rows};
+use Flow\ETL\{Config, FlowContext, Row, Rows, Tests\FlowTestCase};
 
-final class ElasticsearchLoaderTest extends TestCase
+final class ElasticsearchLoaderTest extends FlowTestCase
 {
     public const INDEX_NAME = 'etl-test-index';
 

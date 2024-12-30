@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Adapter\Elasticsearch\Tests\Integration;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\Adapter\Elasticsearch\to_es_bulk_index;
 use function Flow\ETL\DSL\from_array;
 use Flow\ETL\Adapter\Elasticsearch\EntryIdFactory\EntryIdFactory;
 use Flow\ETL\Adapter\Elasticsearch\Tests\Doubles\Spy\HttpClientSpy;
 use Flow\ETL\Flow;
 
-final class ElasticsearchTest extends TestCase
+final class ElasticsearchTest extends FlowTestCase
 {
     public function test_batch_size_when_its_not_explicitly_set() : void
     {

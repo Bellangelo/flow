@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Adapter\Parquet\Tests\Unit;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{bool_schema,
     date_schema,
     datetime_schema,
@@ -27,9 +28,8 @@ use function Flow\ETL\DSL\{bool_schema,
 use Flow\ETL\Adapter\Parquet\SchemaConverter;
 use Flow\Parquet\ParquetFile\Schema;
 use Flow\Parquet\ParquetFile\Schema\{MapKey, MapValue};
-use PHPUnit\Framework\TestCase;
 
-final class ParquetToFlowSchemaTest extends TestCase
+final class ParquetToFlowSchemaTest extends FlowTestCase
 {
     public function test_converting_flat_fields_to_flow_schema() : void
     {

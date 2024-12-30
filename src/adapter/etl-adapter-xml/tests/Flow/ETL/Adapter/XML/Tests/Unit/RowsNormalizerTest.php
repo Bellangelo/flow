@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Adapter\XML\Tests\Unit;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\DSL\{row,
     rows,
     str_entry,
@@ -21,9 +22,8 @@ use Flow\ETL\Adapter\XML\RowsNormalizer;
 use Flow\ETL\Adapter\XML\RowsNormalizer\EntryNormalizer;
 use Flow\ETL\Adapter\XML\RowsNormalizer\EntryNormalizer\PHPValueNormalizer;
 use Flow\ETL\PHP\Type\Caster;
-use PHPUnit\Framework\TestCase;
 
-final class RowsNormalizerTest extends TestCase
+final class RowsNormalizerTest extends FlowTestCase
 {
     public function test_normalization_of_rows() : void
     {

@@ -7,10 +7,9 @@ namespace Flow\ETL\Adapter\Elasticsearch\Tests\Integration\ElasticsearchPHP;
 use function Flow\ETL\Adapter\Elasticsearch\{es_hits_to_rows, from_es, to_es_bulk_index};
 use function Flow\ETL\DSL\{bool_entry, int_entry, string_entry};
 use Flow\ETL\Adapter\Elasticsearch\EntryIdFactory\EntryIdFactory;
-use Flow\ETL\Adapter\Elasticsearch\Tests\Integration\TestCase;
-use Flow\ETL\{Flow, Row, Rows};
+use Flow\ETL\{Flow, Row, Rows, Tests\FlowTestCase};
 
-final class IntegrationTest extends TestCase
+final class IntegrationTest extends FlowTestCase
 {
     public const DESTINATION_INDEX = 'etl-test-destination-index';
 

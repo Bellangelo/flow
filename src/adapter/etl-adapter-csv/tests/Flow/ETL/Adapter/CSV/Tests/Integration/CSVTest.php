@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Adapter\CSV\Tests\Integration;
 
+use Flow\ETL\Tests\FlowTestCase;
 use function Flow\ETL\Adapter\CSV\{from_csv, to_csv};
 use function Flow\ETL\DSL\{df, overwrite, ref};
 use Flow\ETL\Tests\Double\FakeExtractor;
-use PHPUnit\Framework\TestCase;
 
-final class CSVTest extends TestCase
+final class CSVTest extends FlowTestCase
 {
     protected function setUp() : void
     {
