@@ -319,6 +319,18 @@ parameters:
 			path: src/adapter/etl-adapter-xml/tests/Flow/ETL/Adapter/XML/Tests/Integration/Loader/XMLLoaderTest.php
 
 		-
+			message: '#^Parameter \#2 \$actualXml of static method PHPUnit\\Framework\\Assert\:\:assertXmlStringEqualsXmlString\(\) expects string, string\|null given\.$#'
+			identifier: argument.type
+			count: 3
+			path: src/adapter/etl-adapter-xml/tests/Flow/ETL/Adapter/XML/Tests/Integration/XMLParserExtractorTest.php
+
+		-
+			message: '#^Parameter \#2 \$actualXml of static method PHPUnit\\Framework\\Assert\:\:assertXmlStringEqualsXmlString\(\) expects string, string\|null given\.$#'
+			identifier: argument.type
+			count: 3
+			path: src/adapter/etl-adapter-xml/tests/Flow/ETL/Adapter/XML/Tests/Integration/XMLReaderExtractorTest.php
+
+		-
 			message: '#^Unreachable statement \- code above always terminates\.$#'
 			identifier: deadCode.unreachable
 			count: 1
@@ -833,6 +845,186 @@ parameters:
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/ArrayContentDetectorTest.php
+
+		-
+			message: '#^Parameter \#2 \$type of method Flow\\ETL\\PHP\\Type\\Caster\\DateCastingHandler\:\:value\(\) expects Flow\\ETL\\PHP\\Type\\Type\<DateTimeImmutable\>, Flow\\ETL\\PHP\\Type\\Logical\\DateType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Caster/DateCastingHandlerTest.php
+
+		-
+			message: '#^Parameter \#2 \$type of method Flow\\ETL\\PHP\\Type\\Caster\\DateTimeCastingHandler\:\:value\(\) expects Flow\\ETL\\PHP\\Type\\Type\<DateTimeImmutable\>, Flow\\ETL\\PHP\\Type\\Logical\\DateTimeType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Caster/DateTimeCastingHandlerTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Logical\\DateTimeType\:\:isEqual\(\) expects Flow\\ETL\\PHP\\Type\\Type\<DateTimeInterface\>, Flow\\ETL\\PHP\\Type\\Native\\IntegerType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Logical/DateTimeTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Logical\\JsonType\:\:isEqual\(\) expects Flow\\ETL\\PHP\\Type\\Type\<string\>, Flow\\ETL\\PHP\\Type\\Native\\IntegerType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Logical/JsonTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Logical\\ListType\:\:isEqual\(\) expects Flow\\ETL\\PHP\\Type\\Type\<array\<int, mixed\>\>, Flow\\ETL\\PHP\\Type\\Logical\\MapType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Logical/ListTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Logical\\MapType\:\:isEqual\(\) expects Flow\\ETL\\PHP\\Type\\Type\<array\>, Flow\\ETL\\PHP\\Type\\Logical\\ListType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Logical/MapTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Logical\\StructureType\:\:isEqual\(\) expects Flow\\ETL\\PHP\\Type\\Type\<array\>, Flow\\ETL\\PHP\\Type\\Logical\\ListType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Logical/StructureTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Logical\\TimeType\:\:isEqual\(\) expects Flow\\ETL\\PHP\\Type\\Type\<DateInterval\>, Flow\\ETL\\PHP\\Type\\Native\\IntegerType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Logical/TimeTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Logical\\UuidType\:\:isEqual\(\) expects Flow\\ETL\\PHP\\Type\\Type\<Flow\\ETL\\PHP\\Value\\Uuid\>, Flow\\ETL\\PHP\\Type\\Native\\IntegerType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Logical/UuidTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Logical\\XMLElementType\:\:isEqual\(\) expects Flow\\ETL\\PHP\\Type\\Type\<DOMElement\>, Flow\\ETL\\PHP\\Type\\Native\\IntegerType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Logical/XMLElementTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Logical\\XMLType\:\:isEqual\(\) expects Flow\\ETL\\PHP\\Type\\Type\<DOMDocument\>, Flow\\ETL\\PHP\\Type\\Native\\IntegerType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Logical/XMLTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Native\\ArrayType\:\:isEqual\(\) expects Flow\\ETL\\PHP\\Type\\Type\<array\>, Flow\\ETL\\PHP\\Type\\Native\\FloatType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Native/ArrayTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Native\\BooleanType\:\:isEqual\(\) expects Flow\\ETL\\PHP\\Type\\Type\<bool\>, Flow\\ETL\\PHP\\Type\\Logical\\MapType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Native/BooleanTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Native\\BooleanType\:\:isEqual\(\) expects Flow\\ETL\\PHP\\Type\\Type\<bool\>, Flow\\ETL\\PHP\\Type\\Native\\CallableType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Native/BooleanTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Native\\CallableType\:\:isEqual\(\) expects Flow\\ETL\\PHP\\Type\\Type\<callable\(\)\: mixed\>, Flow\\ETL\\PHP\\Type\\Logical\\MapType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Native/CallableTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Native\\CallableType\:\:isEqual\(\) expects Flow\\ETL\\PHP\\Type\\Type\<callable\(\)\: mixed\>, Flow\\ETL\\PHP\\Type\\Native\\FloatType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Native/CallableTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Native\\FloatType\:\:isComparableWith\(\) expects Flow\\ETL\\PHP\\Type\\Type\<float\>, Flow\\ETL\\PHP\\Type\\Logical\\MapType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Native/FloatTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Native\\FloatType\:\:isComparableWith\(\) expects Flow\\ETL\\PHP\\Type\\Type\<float\>, Flow\\ETL\\PHP\\Type\\Native\\CallableType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Native/FloatTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Native\\FloatType\:\:isComparableWith\(\) expects Flow\\ETL\\PHP\\Type\\Type\<float\>, Flow\\ETL\\PHP\\Type\\Native\\IntegerType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Native/FloatTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Native\\FloatType\:\:isComparableWith\(\) expects Flow\\ETL\\PHP\\Type\\Type\<float\>, Flow\\ETL\\PHP\\Type\\Native\\StringType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Native/FloatTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Native\\FloatType\:\:isEqual\(\) expects Flow\\ETL\\PHP\\Type\\Type\<float\>, Flow\\ETL\\PHP\\Type\\Logical\\MapType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Native/FloatTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Native\\FloatType\:\:isEqual\(\) expects Flow\\ETL\\PHP\\Type\\Type\<float\>, Flow\\ETL\\PHP\\Type\\Native\\CallableType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Native/FloatTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Native\\FloatType\:\:isEqual\(\) expects Flow\\ETL\\PHP\\Type\\Type\<float\>, Flow\\ETL\\PHP\\Type\\Native\\IntegerType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Native/FloatTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Native\\IntegerType\:\:isComparableWith\(\) expects Flow\\ETL\\PHP\\Type\\Type\<int\>, Flow\\ETL\\PHP\\Type\\Native\\CallableType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Native/IntegerTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Native\\IntegerType\:\:isComparableWith\(\) expects Flow\\ETL\\PHP\\Type\\Type\<int\>, Flow\\ETL\\PHP\\Type\\Native\\FloatType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Native/IntegerTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Native\\IntegerType\:\:isComparableWith\(\) expects Flow\\ETL\\PHP\\Type\\Type\<int\>, Flow\\ETL\\PHP\\Type\\Native\\StringType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Native/IntegerTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Native\\IntegerType\:\:isEqual\(\) expects Flow\\ETL\\PHP\\Type\\Type\<int\>, Flow\\ETL\\PHP\\Type\\Logical\\MapType given\.$#'
+			identifier: argument.type
+			count: 2
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Native/IntegerTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Native\\IntegerType\:\:isEqual\(\) expects Flow\\ETL\\PHP\\Type\\Type\<int\>, Flow\\ETL\\PHP\\Type\\Native\\CallableType given\.$#'
+			identifier: argument.type
+			count: 2
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Native/IntegerTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Native\\NullType\:\:isEqual\(\) expects Flow\\ETL\\PHP\\Type\\Type\<null\>, Flow\\ETL\\PHP\\Type\\Logical\\MapType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Native/NullTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Native\\NullType\:\:isEqual\(\) expects Flow\\ETL\\PHP\\Type\\Type\<null\>, Flow\\ETL\\PHP\\Type\\Native\\FloatType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Native/NullTypeTest.php
 
 		-
 			message: '#^Parameter \#1 \$stream of function fclose expects resource, resource\|false given\.$#'
