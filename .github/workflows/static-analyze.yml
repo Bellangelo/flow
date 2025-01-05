@@ -95,7 +95,7 @@ jobs:
         run: "composer static:analyze:cs-fixer"
 
       - name: "Static Analyze - PHPStan"
-        run: "composer static:analyze:phpstan -- --error-format=github"
+        run: "composer static:analyze:phpstan --error-format=github"
 
       - name: "Static Analyze Tests - PHPStan"
         run: "composer static:analyze:phpstan:tests --error-format=github"
