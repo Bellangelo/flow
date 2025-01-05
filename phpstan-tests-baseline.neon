@@ -679,6 +679,18 @@ parameters:
 			path: src/core/etl/tests/Flow/ETL/Tests/Integration/Function/AnyTest.php
 
 		-
+			message: '#^Cannot call method format\(\) on DateTimeInterface\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Integration/PHP/Type/CasterTest.php
+
+		-
+			message: '#^Cannot call method saveXML\(\) on DOMDocument\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Integration/PHP/Type/CasterTest.php
+
+		-
 			message: '#^Property Flow\\ETL\\Loader@anonymous/core/etl/tests/Flow/ETL/Tests/Unit/DataFrameTest\.php\:434\:\:\$result type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
@@ -829,6 +841,18 @@ parameters:
 			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Native/ResourceTypeTest.php
 
 		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Native\\ResourceType\:\:isEqual\(\) expects Flow\\ETL\\PHP\\Type\\Type\<resource\>, Flow\\ETL\\PHP\\Type\\Logical\\MapType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Native/ResourceTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$type of method Flow\\ETL\\PHP\\Type\\Native\\ResourceType\:\:isEqual\(\) expects Flow\\ETL\\PHP\\Type\\Type\<resource\>, Flow\\ETL\\PHP\\Type\\Native\\FloatType given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Native/ResourceTypeTest.php
+
+		-
 			message: '#^Parameter \#1 \$json of function json_decode expects string, string\|false given\.$#'
 			identifier: argument.type
 			count: 1
@@ -841,7 +865,7 @@ parameters:
 			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/TypeDetectorTest.php
 
 		-
-			message: '#^Method Flow\\ETL\\Tests\\Unit\\PHP\\Type\\TypeDetectorTest\:\:test_scalar_types\(\) has parameter \$expectedType with generic interface Flow\\ETL\\PHP\\Type\\Native\\NativeType but does not specify its types\: TType$#'
+			message: '#^Method Flow\\ETL\\Tests\\Unit\\PHP\\Type\\TypeDetectorTest\:\:test_scalar_types\(\) has parameter \$expectedType with generic interface Flow\\ETL\\PHP\\Type\\Type but does not specify its types\: TType$#'
 			identifier: missingType.generics
 			count: 1
 			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/TypeDetectorTest.php
@@ -919,13 +943,19 @@ parameters:
 			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Row/Entry/JsonObjectEntryTest.php
 
 		-
-			message: '#^Parameter \#1 \$mapper of method Flow\\ETL\\Row\\Entry\\ListEntry\<mixed\>\:\:map\(\) expects callable\(array\<mixed\>\|null\)\: \(array\<mixed\>\|null\), Closure\(array\)\: array\{string\} given\.$#'
+			message: '#^Parameter \#1 \$mapper of method Flow\\ETL\\Row\\Entry\\ListEntry\:\:map\(\) expects callable\(array\<int, mixed\>\|null\)\: \(array\<int, mixed\>\|null\), Closure\(array\)\: array\{string\} given\.$#'
 			identifier: argument.type
 			count: 1
 			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Row/Entry/ListEntryTest.php
 
 		-
-			message: '#^Parameter \#1 \$mapper of method Flow\\ETL\\Row\\Entry\\MapEntry\<string\>\:\:map\(\) expects callable\(array\<string\>\|null\)\: \(array\<string\>\|null\), Closure\(array\)\: array\{string\} given\.$#'
+			message: '#^Parameter \#2 \$value of class Flow\\ETL\\Row\\Entry\\ListEntry constructor expects array\<int, mixed\>\|null, array\<string, int\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Row/Entry/ListEntryTest.php
+
+		-
+			message: '#^Parameter \#1 \$mapper of method Flow\\ETL\\Row\\Entry\\MapEntry\:\:map\(\) expects callable\(array\|null\)\: \(array\|null\), Closure\(array\)\: array\{string\} given\.$#'
 			identifier: argument.type
 			count: 1
 			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Row/Entry/MapEntryTest.php
@@ -955,7 +985,7 @@ parameters:
 			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Row/Entry/UuidEntryTest.php
 
 		-
-			message: '#^Parameter \#2 \$entryClass of class Flow\\ETL\\Row\\Schema\\Definition constructor expects class\-string\<Flow\\ETL\\Row\\Entry\>, string given\.$#'
+			message: '#^Parameter \#2 \$entryClass of class Flow\\ETL\\Row\\Schema\\Definition constructor expects class\-string\<Flow\\ETL\\Row\\Entry\<mixed, mixed\>\>, ''DateTimeInterface'' given\.$#'
 			identifier: argument.type
 			count: 1
 			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Row/Schema/DefinitionTest.php
