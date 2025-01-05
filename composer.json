@@ -377,6 +377,12 @@
         "static:analyze:phpstan": [
             "tools/phpstan/vendor/bin/phpstan analyze -c phpstan.neon --memory-limit=-1"
         ],
+        "static:analyze:phpstan:tests": [
+            "tools/phpstan/vendor/bin/phpstan analyze -c phpstan-tests.neon --memory-limit=-1"
+        ],
+        "static:analyze:phpstan:tests:baseline": [
+            "tools/phpstan/vendor/bin/phpstan analyze -c phpstan-tests.neon --memory-limit=-1 --generate-baseline phpstan-tests-baseline.neon"
+        ],
         "static:analyze:cs-fixer": [
             "tools/cs-fixer/vendor/bin/php-cs-fixer fix --dry-run"
         ],
