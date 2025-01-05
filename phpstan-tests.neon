@@ -1,5 +1,6 @@
 includes:
     - phpstan-tests-baseline.neon
+    - tools/phpstan/vendor/spaze/phpstan-disallowed-calls/extension.neon
 
 parameters:
     level: 8
@@ -30,3 +31,572 @@ parameters:
         - src/bridge/symfony/http-foundation/tests
 
     tmpDir: var/phpstan-tests/cache
+
+    disallowedClasses:
+        -
+            class: Flow\ETL\Flow
+            message: 'use DSL function df() instead'
+
+        -
+            class: Flow\ETL\Extractor\RowsExtractor
+            message: 'use DSL function from_rows() instead'
+
+        -
+            class: Flow\ETL\Extractor\PathPartitionsExtractor
+            message: 'use DSL function from_path_partitions() instead'
+
+        -
+            class: Flow\ETL\Extractor\ArrayExtractor
+            message: 'use DSL function from_array() instead'
+
+        -
+            class: Flow\ETL\Extractor\CacheExtractor
+            message: 'use DSL function from_cache() instead'
+
+        -
+            class: Flow\ETL\Extractor\ChainExtractor
+            message: 'use DSL function from_all() instead'
+
+        -
+            class: Flow\ETL\Extractor\MemoryExtractor
+            message: 'use DSL function from_memory() instead'
+
+        -
+            class: Flow\ETL\Extractor\FilesExtractor
+            message: 'use DSL function files() instead'
+
+        -
+            class: Flow\ETL\Cache\Implementation\FilesystemCache
+            message: 'use DSL function filesystem_cache() instead'
+
+        -
+            class: Flow\ETL\Extractor\ChunkExtractor
+            message: 'use DSL function chunks_from() instead'
+
+        -
+            class: Flow\ETL\Extractor\PipelineExtractor
+            message: 'use DSL function from_pipeline() instead'
+
+        -
+            class: Flow\ETL\Extractor\DataFrameExtractor
+            message: 'use DSL function from_data_frame() instead'
+
+        -
+            class: Flow\ETL\Extractor\SequenceExtractor
+            message: 'use DSL function from_sequence_date_period() instead'
+
+        -
+            class: Flow\ETL\Loader\CallbackLoader
+            message: 'use DSL function to_callable() instead'
+
+        -
+            class: Flow\ETL\Loader\MemoryLoader
+            message: 'use DSL function to_memory() instead'
+
+        -
+            class: Flow\ETL\Loader\ArrayLoader
+            message: 'use DSL function to_array() instead'
+
+        -
+            class: Flow\ETL\Loader\StreamLoader
+            message: 'use DSL function to_output() instead'
+
+        -
+            class: Flow\ETL\Loader\TransformerLoader
+            message: 'use DSL function to_transformation() instead'
+
+        -
+            class: Flow\ETL\Loader
+            message: 'use DSL function to_branch() instead'
+
+        -
+            class: Flow\ETL\Entry\BooleanEntry
+            message: 'use DSL function bool_entry() instead'
+
+        -
+            class: Flow\ETL\Entry\DateTimeEntry
+            message: 'use DSL function datetime_entry() instead'
+
+        -
+            class: Flow\ETL\Entry\TimeEntry
+            message: 'use DSL function time_entry() instead'
+
+        -
+            class: Flow\ETL\Entry\DateEntry
+            message: 'use DSL function date_entry() instead'
+
+        -
+            class: Flow\ETL\Entry\IntegerEntry
+            message: 'use DSL function int_entry() instead'
+
+        -
+            class: Flow\ETL\Entry\EnumEntry
+            message: 'use DSL function enum_entry() instead'
+
+        -
+            class: Flow\ETL\Entry\FloatEntry
+            message: 'use DSL function float_entry() instead'
+
+        -
+            class: Flow\ETL\Entry\JsonEntry
+            message: 'use DSL function json_entry() instead'
+
+        -
+            class: Flow\ETL\Entry\StringEntry
+            message: 'use DSL function str_entry() instead'
+
+        -
+            class: Flow\ETL\Entry\UuidEntry
+            message: 'use DSL function uuid_entry() instead'
+
+        -
+            class: Flow\ETL\Entry\XMLEntry
+            message: 'use DSL function xml_entry() instead'
+
+        -
+            class: Flow\ETL\Entry\XMLElementEntry
+            message: 'use DSL function xml_element_entry() instead'
+
+        -
+            class: Flow\ETL\Row\Entries
+            message: 'use DSL function entries() instead'
+
+        -
+            class: Flow\ETL\Entry\StructureEntry
+            message: 'use DSL function struct_entry() instead'
+
+        -
+            class: Flow\ETL\PHP\Type\Logical\StructureType
+            message: 'use DSL function struct_type() instead'
+
+        -
+            class: Flow\ETL\PHP\Type\Logical\Structure\StructureElement
+            message: 'use DSL function struct_element() instead'
+
+        -
+            class: Flow\ETL\Entry\ListEntry
+            message: 'use DSL function list_entry() instead'
+
+        -
+            class: Flow\ETL\PHP\Type\Logical\ListType
+            message: 'use DSL function type_list() instead'
+
+        -
+            class: Flow\ETL\PHP\Type\Logical\MapType
+            message: 'use DSL function type_map() instead'
+
+        -
+            class: Flow\ETL\Entry\MapEntry
+            message: 'use DSL function map_entry() instead'
+
+        -
+            class: Flow\ETL\PHP\Type\Logical\JsonType
+            message: 'use DSL function type_json() instead'
+
+        -
+            class: Flow\ETL\PHP\Type\Logical\DateTimeType
+            message: 'use DSL function type_datetime() instead'
+
+        -
+            class: Flow\ETL\PHP\Type\Logical\DateType
+            message: 'use DSL function type_date() instead'
+
+        -
+            class: Flow\ETL\PHP\Type\Logical\TimeType
+            message: 'use DSL function type_time() instead'
+
+        -
+            class: Flow\ETL\PHP\Type\Logical\XMLType
+            message: 'use DSL function type_xml() instead'
+
+        -
+            class: Flow\ETL\PHP\Type\Logical\XMLElementType
+            message: 'use DSL function type_xml_element() instead'
+
+        -
+            class: Flow\ETL\PHP\Type\Logical\UuidType
+            message: 'use DSL function type_uuid() instead'
+
+        -
+            class: Flow\ETL\PHP\Type\Native\IntegerType
+            message: 'use DSL function type_int() instead'
+
+        -
+            class: Flow\ETL\PHP\Type\Native\StringType
+            message: 'use DSL function type_string() instead'
+
+        -
+            class: Flow\ETL\PHP\Type\Native\FloatType
+            message: 'use DSL function type_float() instead'
+
+        -
+            class: Flow\ETL\PHP\Type\Native\BooleanType
+            message: 'use DSL function type_boolean() instead'
+
+        -
+            class: Flow\ETL\PHP\Type\Native\ObjectType
+            message: 'use DSL function type_object() instead'
+
+        -
+            class: Flow\ETL\PHP\Type\Native\ResourceType
+            message: 'use DSL function type_resource() instead'
+
+        -
+            class: Flow\ETL\PHP\Type\Native\ArrayType
+            message: 'use DSL function type_array() instead'
+
+        -
+            class: Flow\ETL\PHP\Type\Native\CallableType
+            message: 'use DSL function type_callable() instead'
+
+        -
+            class: Flow\ETL\PHP\Type\Native\NullType
+            message: 'use DSL function type_null() instead'
+
+        -
+            class: Flow\ETL\PHP\Type\Native\EnumType
+            message: 'use DSL function type_enum() instead'
+
+        -
+            class: Flow\ETL\Row
+            message: 'use DSL function row() instead'
+
+        -
+            class: Flow\ETL\Rows
+            message: 'use DSL function rows() instead'
+
+        -
+            class: Flow\ETL\Row\EntryReference
+            message: 'use DSL function col() instead'
+
+        -
+            class: Flow\ETL\Function\StructureFunctions
+            message: 'use DSL function structure_ref() instead'
+
+        -
+            class: Flow\ETL\Function\ListFunctions
+            message: 'use DSL function list_ref() instead'
+
+        -
+            class: Flow\ETL\Row\References
+            message: 'use DSL function refs() instead'
+
+        -
+            class: Flow\ETL\Function\Optional
+            message: 'use DSL function optional() instead'
+
+        -
+            class: Flow\ETL\Function\Literal
+            message: 'use DSL function lit() instead'
+
+        -
+            class: Flow\ETL\Function\Exists
+            message: 'use DSL function exists() instead'
+
+        -
+            class: Flow\ETL\Function\When
+            message: 'use DSL function when() instead'
+
+        -
+            class: Flow\ETL\Function\ArrayGet
+            message: 'use DSL function array_get() instead'
+
+        -
+            class: Flow\ETL\Function\ArrayGetCollection
+            message: 'use DSL function array_get_collection() instead'
+
+        -
+            class: Flow\ETL\Function\ArrayPathExists
+            message: 'use DSL function array_exists() instead'
+
+        -
+            class: Flow\ETL\Function\ArrayMerge
+            message: 'use DSL function array_merge() instead'
+
+        -
+            class: Flow\ETL\Function\ArrayMergeCollection
+            message: 'use DSL function array_merge_collection() instead'
+
+        -
+            class: Flow\ETL\Function\ArrayKeyRename
+            message: 'use DSL function array_key_rename() instead'
+
+        -
+            class: Flow\ETL\Function\ArrayKeysStyleConvert
+            message: 'use DSL function array_keys_style_convert() instead'
+
+        -
+            class: Flow\ETL\Function\ArraySort
+            message: 'use DSL function array_sort() instead'
+
+        -
+            class: Flow\ETL\Function\ArrayReverse
+            message: 'use DSL function array_reverse() instead'
+
+        -
+            class: Flow\ETL\Function\Now
+            message: 'use DSL function now() instead'
+
+        -
+            class: Flow\ETL\Function\Between
+            message: 'use DSL function between() instead'
+
+        -
+            class: Flow\ETL\Function\ToDateTime
+            message: 'use DSL function to_date_time() instead'
+
+        -
+            class: Flow\ETL\Function\ToDate
+            message: 'use DSL function to_date() instead'
+
+        -
+            class: Flow\ETL\Function\DateTimeFormat
+            message: 'use DSL function date_time_format() instead'
+
+        -
+            class: Flow\ETL\Function\Split
+            message: 'use DSL function split() instead'
+
+        -
+            class: Flow\ETL\Function\Combine
+            message: 'use DSL function combine() instead'
+
+        -
+            class: Flow\ETL\Function\Concat
+            message: 'use DSL function concat() instead'
+
+        -
+            class: Flow\ETL\Function\Hash
+            message: 'use DSL function hash() instead'
+
+        -
+            class: Flow\ETL\Function\Cast
+            message: 'use DSL function cast() instead'
+
+        -
+            class: Flow\ETL\Function\Coalesce
+            message: 'use DSL function coalesce() instead'
+
+        -
+            class: Flow\ETL\Function\Count
+            message: 'use DSL function count() instead'
+
+        -
+            class: Flow\ETL\Function\ArrayUnpack
+            message: 'use DSL function array_unpack() instead'
+
+        -
+            class: Flow\ETL\Function\ArrayExpand\ArrayExpand
+            message: 'use DSL function array_expand() instead'
+
+        -
+            class: Flow\ETL\Function\Size
+            message: 'use DSL function size() instead'
+
+        -
+            class: Flow\ETL\Function\Uuid
+            message: 'use DSL function uuid_v4() instead'
+
+        -
+            class: Flow\ETL\Function\Ulid
+            message: 'use DSL function ulid() instead'
+
+        -
+            class: Flow\ETL\Function\ToLower
+            message: 'use DSL function lower() instead'
+
+        -
+            class: Flow\ETL\Function\Capitalize
+            message: 'use DSL function capitalize() instead'
+
+        -
+            class: Flow\ETL\Function\ToUpper
+            message: 'use DSL function upper() instead'
+
+        -
+            class: Flow\ETL\Function\All
+            message: 'use DSL function all() instead'
+
+        -
+            class: Flow\ETL\Function\Any
+            message: 'use DSL function any() instead'
+
+        -
+            class: Flow\ETL\Function\Not
+            message: 'use DSL function not() instead'
+
+        -
+            class: Flow\ETL\Function\ToTimeZone
+            message: 'use DSL function to_timezone() instead'
+
+        -
+            class: Flow\ETL\ErrorHandler\IgnoreError
+            message: 'use DSL function ignore_error_handler() instead'
+
+        -
+            class: Flow\ETL\ErrorHandler\SkipRows
+            message: 'use DSL function skip_rows_handler() instead'
+
+        -
+            class: Flow\ETL\ErrorHandler\ThrowError
+            message: 'use DSL function throw_error_handler() instead'
+
+        -
+            class: Flow\ETL\Function\RegexReplace
+            message: 'use DSL function regex_replace() instead'
+
+        -
+            class: Flow\ETL\Function\RegexMatchAll
+            message: 'use DSL function regex_match_all() instead'
+
+        -
+            class: Flow\ETL\Function\RegexMatch
+            message: 'use DSL function regex_match() instead'
+
+        -
+            class: Flow\ETL\Function\Regex
+            message: 'use DSL function regex() instead'
+
+        -
+            class: Flow\ETL\Function\RegexAll
+            message: 'use DSL function regex_all() instead'
+
+        -
+            class: Flow\ETL\Function\Sprintf
+            message: 'use DSL function sprintf() instead'
+
+        -
+            class: Flow\ETL\Function\Sanitize
+            message: 'use DSL function sanitize() instead'
+
+        -
+            class: Flow\ETL\Function\Round
+            message: 'use DSL function round() instead'
+
+        -
+            class: Flow\ETL\Function\NumberFormat
+            message: 'use DSL function number_format() instead'
+
+        -
+            class: Flow\ETL\Row\Entry
+            message: 'use DSL function to_entry() instead'
+
+        -
+            class: Flow\ETL\Function\Rank
+            message: 'use DSL function rank() instead'
+
+        -
+            class: Flow\ETL\Function\DenseRank
+            message: 'use DSL function dens_rank() instead'
+
+        -
+            class: Flow\ETL\Function\Average
+            message: 'use DSL function average() instead'
+
+        -
+            class: Flow\ETL\Function\Greatest
+            message: 'use DSL function greatest() instead'
+
+        -
+            class: Flow\ETL\Function\Least
+            message: 'use DSL function least() instead'
+
+        -
+            class: Flow\ETL\Function\Collect
+            message: 'use DSL function collect() instead'
+
+        -
+            class: Flow\ETL\Function\CollectUnique
+            message: 'use DSL function collect_unique() instead'
+
+        -
+            class: Flow\ETL\Window
+            message: 'use DSL function window() instead'
+
+        -
+            class: Flow\ETL\Function\Sum
+            message: 'use DSL function sum() instead'
+
+        -
+            class: Flow\ETL\Function\First
+            message: 'use DSL function first() instead'
+
+        -
+            class: Flow\ETL\Function\Last
+            message: 'use DSL function last() instead'
+
+        -
+            class: Flow\ETL\Function\Max
+            message: 'use DSL function max() instead'
+
+        -
+            class: Flow\ETL\Function\Min
+            message: 'use DSL function min() instead'
+
+        -
+            class: Flow\ETL\Function\RowNumber
+            message: 'use DSL function row_number() instead'
+
+        -
+            class: Flow\ETL\Row\Schema
+            message: 'use DSL function schema() instead'
+
+        -
+            class: Flow\ETL\Row\Schema\Matcher\StrictSchemaMatcher
+            message: 'use DSL function schema_strict_matcher() instead'
+
+        -
+            class: Flow\ETL\Row\Schema\Matcher\EvolvingSchemaMatcher
+            message: 'use DSL function schema_evolving_matcher() instead'
+
+        -
+            class: Flow\ETL\Row\Schema\Definition
+            message: 'use DSL function int_schema() instead'
+
+        -
+            class: Flow\ETL\FlowContext
+            message: 'use DSL function execution_context() instead'
+
+        -
+            class: Flow\ETL\Config
+            message: 'use DSL function config() instead'
+
+        -
+            class: Flow\ETL\Config\ConfigBuilder
+            message: 'use DSL function config_builder() instead'
+
+        -
+            class: Flow\ETL\Filesystem\SaveMode
+            message: 'use DSL function overwrite() instead'
+
+        -
+            class: Flow\ETL\PHP\Type\Type
+            message: 'use DSL function get_type() instead'
+
+        -
+            class: Flow\ETL\Join\Comparison\Identical
+            message: 'use DSL function identical() instead'
+
+        -
+            class: Flow\ETL\Join\Comparison\Equal
+            message: 'use DSL function equal() instead'
+
+        -
+            class: Flow\ETL\Join\Expression
+            message: 'use DSL function join_on() instead'
+
+        -
+            class: Flow\ETL\Transformer\OrderEntries\Comparator
+            message: 'use DSL function compare_entries_by_name() instead'
+
+        -
+            class: Flow\ETL\Function\RandomString
+            message: 'use DSL function random_string() instead'
+
+        -
+            class: Flow\ETL\PHP\Type\Caster\Options
+            message: 'use DSL function caster_options() instead'
+
+        -
+            class: Flow\ETL\PHP\Type\Caster
+            message: 'use DSL function caster() instead'
