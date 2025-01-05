@@ -1,4 +1,4 @@
-name: Static Analyze
+name: Static Analyze Tests
 
 on:
   pull_request:
@@ -7,10 +7,8 @@ on:
       - 'src/adapter/**'
       - 'src/bridge/**'
       - 'src/core/**'
-      - 'src/lib/**'
+      - 'src/cli/**'
       - 'tools/**'
-      - 'web/**'
-      - 'examples/**'
       - 'composer.lock'
   push:
     branches: [ 1.x ]
@@ -53,8 +51,7 @@ jobs:
 
       - name: "Create cache directories"
         run: |
-          mkdir -p var/cs-fixer
-          mkdir -p var/phpstan/cache
+          mkdir -p var/phpstan-tests/cache
 
       - name: "Get Composer Cache Directory"
         id: composer-cache
@@ -65,34 +62,20 @@ jobs:
         uses: "actions/cache@v4"
         with:
           path: "${{ steps.composer-cache.outputs.dir }}"
-          key: "php-${{ matrix.php-version }}-locked-composer-${{ hashFiles('**/composer.lock') }}"
+          key: "php-${{ matrix.php-version }}-locked-composer-tests-${{ hashFiles('**/composer.lock') }}"
           restore-keys: |
-            php-${{ matrix.php-version }}-locked-composer-
+            php-${{ matrix.php-version }}-locked-composer-tests-
 
       - name: "Install locked dependencies"
         run: "composer install --no-interaction --no-progress"
 
-      - name: "Cache cs-fixer results"
-        uses: "actions/cache@v4"
-        with:
-          path: "var/cs-fixer"
-          key: "php-${{ matrix.php-version }}-cache-cs-fixer-${{ github.run_id }}"
-          restore-keys: |
-            php-${{ matrix.php-version }}-cache-cs-fixer-
-
       - name: "Cache phpstan results"
         uses: "actions/cache@v4"
         with:
-          path: "var/phpstan/cache"
-          key: "php-${{ matrix.php-version }}-cache-phpstan-${{ github.run_id }}"
+          path: "var/phpstan-tests/cache"
+          key: "php-${{ matrix.php-version }}-cache-phpstan-tests-${{ github.run_id }}"
           restore-keys: |
-            php-${{ matrix.php-version }}-cache-phpstan-
+            php-${{ matrix.php-version }}-cache-phpstan-tests-
 
-      - name: "Monorepo Validate"
-        run: "composer test:monorepo"
-
-      - name: "Static Analyze - CS Fixer"
-        run: "composer static:analyze:cs-fixer"
-
-      - name: "Static Analyze - PHPStan"
-        run: "composer static:analyze:phpstan --error-format=github"
+      - name: "Static Analyze Tests - PHPStan"
+        run: "composer static:analyze:phpstan:tests --error-format=github"
