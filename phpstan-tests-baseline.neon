@@ -1,0 +1,979 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Parameter \#1 \$content of class Flow\\Filesystem\\Stream\\MemorySourceStream constructor expects non\-empty\-string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/adapter/etl-adapter-csv/tests/Flow/ETL/Adapter/CSV/Tests/Integration/CSVDetectorTest.php
+
+		-
+			message: '#^Parameter \#1 \$stream of function fclose expects resource, resource\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/adapter/etl-adapter-csv/tests/Flow/ETL/Adapter/CSV/Tests/Integration/CSVDetectorTest.php
+
+		-
+			message: '#^Parameter \#1 \$stream of function fputcsv expects resource, resource\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/adapter/etl-adapter-csv/tests/Flow/ETL/Adapter/CSV/Tests/Integration/CSVDetectorTest.php
+
+		-
+			message: '#^Parameter \#1 \$stream of function stream_get_contents expects resource, resource\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/adapter/etl-adapter-csv/tests/Flow/ETL/Adapter/CSV/Tests/Integration/CSVDetectorTest.php
+
+		-
+			message: '#^Method Flow\\ETL\\Adapter\\Doctrine\\Tests\\Context\\DatabaseContext\:\:insert\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/adapter/etl-adapter-doctrine/tests/Flow/ETL/Adapter/Doctrine/Tests/Context/DatabaseContext.php
+
+		-
+			message: '#^Method Flow\\ETL\\Adapter\\Doctrine\\Tests\\Context\\DatabaseContext\:\:insert\(\) has parameter \$types with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/adapter/etl-adapter-doctrine/tests/Flow/ETL/Adapter/Doctrine/Tests/Context/DatabaseContext.php
+
+		-
+			message: '#^Method Flow\\ETL\\Adapter\\Doctrine\\Tests\\Context\\DatabaseContext\:\:selectAll\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/adapter/etl-adapter-doctrine/tests/Flow/ETL/Adapter/Doctrine/Tests/Context/DatabaseContext.php
+
+		-
+			message: '#^Method Flow\\ETL\\Adapter\\Doctrine\\Tests\\Context\\InsertQueryCounter\:\:log\(\) has parameter \$message with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/adapter/etl-adapter-doctrine/tests/Flow/ETL/Adapter/Doctrine/Tests/Context/InsertQueryCounter.php
+
+		-
+			message: '#^Method Flow\\ETL\\Adapter\\Doctrine\\Tests\\IntegrationTestCase\:\:connectionParams\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/adapter/etl-adapter-doctrine/tests/Flow/ETL/Adapter/Doctrine/Tests/IntegrationTestCase.php
+
+		-
+			message: '#^Call to method indices\(\) on an unknown class Elasticsearch\\Client\.$#'
+			identifier: class.notFound
+			count: 2
+			path: src/adapter/etl-adapter-elasticsearch/tests/Flow/ETL/Adapter/Elasticsearch/Tests/Context/Elasticsearch7Context.php
+
+		-
+			message: '#^Call to static method fromConfig\(\) on an unknown class Elasticsearch\\ClientBuilder\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/adapter/etl-adapter-elasticsearch/tests/Flow/ETL/Adapter/Elasticsearch/Tests/Context/Elasticsearch7Context.php
+
+		-
+			message: '#^Caught class Elasticsearch\\Common\\Exceptions\\BadRequest400Exception not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/adapter/etl-adapter-elasticsearch/tests/Flow/ETL/Adapter/Elasticsearch/Tests/Context/Elasticsearch7Context.php
+
+		-
+			message: '#^Caught class Elasticsearch\\Common\\Exceptions\\Missing404Exception not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/adapter/etl-adapter-elasticsearch/tests/Flow/ETL/Adapter/Elasticsearch/Tests/Context/Elasticsearch7Context.php
+
+		-
+			message: '#^Method Flow\\ETL\\Adapter\\Elasticsearch\\Tests\\Context\\Elasticsearch7Context\:\:__construct\(\) has parameter \$hosts with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/adapter/etl-adapter-elasticsearch/tests/Flow/ETL/Adapter/Elasticsearch/Tests/Context/Elasticsearch7Context.php
+
+		-
+			message: '#^Method Flow\\ETL\\Adapter\\Elasticsearch\\Tests\\Context\\Elasticsearch7Context\:\:client\(\) has invalid return type Elasticsearch\\Client\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/adapter/etl-adapter-elasticsearch/tests/Flow/ETL/Adapter/Elasticsearch/Tests/Context/Elasticsearch7Context.php
+
+		-
+			message: '#^Method Flow\\ETL\\Adapter\\Elasticsearch\\Tests\\Context\\Elasticsearch7Context\:\:clientConfig\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/adapter/etl-adapter-elasticsearch/tests/Flow/ETL/Adapter/Elasticsearch/Tests/Context/Elasticsearch7Context.php
+
+		-
+			message: '#^Property Flow\\ETL\\Adapter\\Elasticsearch\\Tests\\Context\\Elasticsearch7Context\:\:\$client has unknown class Elasticsearch\\Client as its type\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/adapter/etl-adapter-elasticsearch/tests/Flow/ETL/Adapter/Elasticsearch/Tests/Context/Elasticsearch7Context.php
+
+		-
+			message: '#^Method Flow\\ETL\\Adapter\\Elasticsearch\\Tests\\Context\\Elasticsearch8Context\:\:__construct\(\) has parameter \$hosts with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/adapter/etl-adapter-elasticsearch/tests/Flow/ETL/Adapter/Elasticsearch/Tests/Context/Elasticsearch8Context.php
+
+		-
+			message: '#^Method Flow\\ETL\\Adapter\\Elasticsearch\\Tests\\Context\\Elasticsearch8Context\:\:clientConfig\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/adapter/etl-adapter-elasticsearch/tests/Flow/ETL/Adapter/Elasticsearch/Tests/Context/Elasticsearch8Context.php
+
+		-
+			message: '#^Method Flow\\ETL\\Adapter\\Elasticsearch\\Tests\\Context\\ElasticsearchContext\:\:clientConfig\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/adapter/etl-adapter-elasticsearch/tests/Flow/ETL/Adapter/Elasticsearch/Tests/Context/ElasticsearchContext.php
+
+		-
+			message: '#^Property Flow\\ETL\\Adapter\\Elasticsearch\\Tests\\Doubles\\Spy\\HttpClientSpy\:\:\$requests type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/adapter/etl-adapter-elasticsearch/tests/Flow/ETL/Adapter/Elasticsearch/Tests/Doubles/Spy/HttpClientSpy.php
+
+		-
+			message: '#^Call to an undefined method Flow\\ETL\\Adapter\\Elasticsearch\\Tests\\Context\\ElasticsearchContext\:\:loadRows\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/adapter/etl-adapter-elasticsearch/tests/Flow/ETL/Adapter/Elasticsearch/Tests/Integration/ElasticsearchIntegrationTest.php
+
+		-
+			message: '#^Call to an undefined method Flow\\ETL\\Adapter\\Elasticsearch\\Tests\\Context\\ElasticsearchContext\:\:client\(\)\.$#'
+			identifier: method.notFound
+			count: 5
+			path: src/adapter/etl-adapter-elasticsearch/tests/Flow/ETL/Adapter/Elasticsearch/Tests/Integration/ElasticsearchPHP/ElasticsearchLoaderTest.php
+
+		-
+			message: '#^Parameter \#3 \$body of class Nyholm\\Psr7\\Response constructor expects Psr\\Http\\Message\\StreamInterface\|resource\|string\|null, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/adapter/etl-adapter-http/tests/Flow/ETL/Adapter/HTTP/Tests/Integration/PsrHttpClientDynamicExtractorTest.php
+
+		-
+			message: '#^Parameter \#3 \$body of class Nyholm\\Psr7\\Response constructor expects Psr\\Http\\Message\\StreamInterface\|resource\|string\|null, string\|false given\.$#'
+			identifier: argument.type
+			count: 2
+			path: src/adapter/etl-adapter-http/tests/Flow/ETL/Adapter/HTTP/Tests/Integration/PsrHttpClientStaticExtractorTest.php
+
+		-
+			message: '#^Parameter \#1 \$content of method Nyholm\\Psr7\\Factory\\Psr17Factory\:\:createStream\(\) expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/adapter/etl-adapter-http/tests/Flow/ETL/Adapter/HTTP/Tests/Unit/RequestEntriesFactoryTest.php
+
+		-
+			message: '#^Parameter \#1 \$expected of static method PHPUnit\\Framework\\Assert\:\:assertInstanceOf\(\) expects class\-string\<object\>, string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/adapter/etl-adapter-http/tests/Flow/ETL/Adapter/HTTP/Tests/Unit/RequestEntriesFactoryTest.php
+
+		-
+			message: '#^Parameter \#2 \$actualJson of static method PHPUnit\\Framework\\Assert\:\:assertJsonStringEqualsJsonString\(\) expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/adapter/etl-adapter-json/tests/Flow/ETL/Adapter/JSON/Tests/Integration/JsonTest.php
+
+		-
+			message: '#^Parameter \#2 \$haystack of static method PHPUnit\\Framework\\Assert\:\:assertStringContainsString\(\) expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 2
+			path: src/adapter/etl-adapter-json/tests/Flow/ETL/Adapter/JSON/Tests/Integration/JsonTest.php
+
+		-
+			message: '#^Parameter \#2 \$string of static method PHPUnit\\Framework\\Assert\:\:assertStringEndsWith\(\) expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/adapter/etl-adapter-json/tests/Flow/ETL/Adapter/JSON/Tests/Integration/JsonTest.php
+
+		-
+			message: '#^Parameter \#2 \$haystack of static method PHPUnit\\Framework\\Assert\:\:assertStringContainsString\(\) expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/adapter/etl-adapter-logger/tests/Flow/ETL/Adapter/Logger/Tests/Unit/Logger/DumpLoggerTest.php
+
+		-
+			message: '#^Parameter \#1 \$config of function Flow\\ETL\\Adapter\\Meilisearch\\to_meilisearch_bulk_index expects array\{url\: string, apiKey\: string, httpClient\: Psr\\Http\\Client\\ClientInterface\|null\}, array\{url\: string, apiKey\: string\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/adapter/etl-adapter-meilisearch/tests/Flow/ETL/Adapter/Meilisearch/Tests/Context/MeilisearchContext.php
+
+		-
+			message: '#^Parameter \#3 \$body of class Nyholm\\Psr7\\Response constructor expects Psr\\Http\\Message\\StreamInterface\|resource\|string\|null, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/adapter/etl-adapter-meilisearch/tests/Flow/ETL/Adapter/Meilisearch/Tests/Double/Spy/HttpClientSpy.php
+
+		-
+			message: '#^Property Flow\\ETL\\Adapter\\Meilisearch\\Tests\\Double\\Spy\\HttpClientSpy\:\:\$requests type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/adapter/etl-adapter-meilisearch/tests/Flow/ETL/Adapter/Meilisearch/Tests/Double/Spy/HttpClientSpy.php
+
+		-
+			message: '#^Parameter \#1 \$config of function Flow\\ETL\\Adapter\\Meilisearch\\to_meilisearch_bulk_index expects array\{url\: string, apiKey\: string, httpClient\: Psr\\Http\\Client\\ClientInterface\|null\}, array\{url\: string, apiKey\: string\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/adapter/etl-adapter-meilisearch/tests/Flow/ETL/Adapter/Meilisearch/Tests/Integration/MeilisearchPHP/MailiSearchTest.php
+
+		-
+			message: '#^Parameter \#1 \$url of class Flow\\ETL\\Adapter\\Meilisearch\\Tests\\Context\\MeilisearchContext constructor expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/adapter/etl-adapter-meilisearch/tests/Flow/ETL/Adapter/Meilisearch/Tests/Integration/MeilisearchPHP/MailiSearchTest.php
+
+		-
+			message: '#^Parameter \#2 \$apiKey of class Flow\\ETL\\Adapter\\Meilisearch\\Tests\\Context\\MeilisearchContext constructor expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/adapter/etl-adapter-meilisearch/tests/Flow/ETL/Adapter/Meilisearch/Tests/Integration/MeilisearchPHP/MailiSearchTest.php
+
+		-
+			message: '#^Parameter \#2 \$params of function Flow\\ETL\\Adapter\\Meilisearch\\from_meilisearch expects array\{q\: string, limit\: int\|null, offset\: int\|null, attributesToRetrieve\: array\<string\>\|null, sort\: array\<string\>\|null\}, array\{q\: '''', limit\: 100\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/adapter/etl-adapter-meilisearch/tests/Flow/ETL/Adapter/Meilisearch/Tests/Integration/MeilisearchPHP/MailiSearchTest.php
+
+		-
+			message: '#^Parameter \#1 \$config of function Flow\\ETL\\Adapter\\Meilisearch\\to_meilisearch_bulk_index expects array\{url\: string, apiKey\: string, httpClient\: Psr\\Http\\Client\\ClientInterface\|null\}, array\{url\: string, apiKey\: string\} given\.$#'
+			identifier: argument.type
+			count: 3
+			path: src/adapter/etl-adapter-meilisearch/tests/Flow/ETL/Adapter/Meilisearch/Tests/Integration/MeilisearchPHP/MeilisearchExtractorTest.php
+
+		-
+			message: '#^Parameter \#1 \$url of class Flow\\ETL\\Adapter\\Meilisearch\\Tests\\Context\\MeilisearchContext constructor expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/adapter/etl-adapter-meilisearch/tests/Flow/ETL/Adapter/Meilisearch/Tests/Integration/MeilisearchPHP/MeilisearchExtractorTest.php
+
+		-
+			message: '#^Parameter \#2 \$apiKey of class Flow\\ETL\\Adapter\\Meilisearch\\Tests\\Context\\MeilisearchContext constructor expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/adapter/etl-adapter-meilisearch/tests/Flow/ETL/Adapter/Meilisearch/Tests/Integration/MeilisearchPHP/MeilisearchExtractorTest.php
+
+		-
+			message: '#^Parameter \#2 \$params of function Flow\\ETL\\Adapter\\Meilisearch\\from_meilisearch expects array\{q\: string, limit\: int\|null, offset\: int\|null, attributesToRetrieve\: array\<string\>\|null, sort\: array\<string\>\|null\}, array\{q\: '''', offset\: 51, attributesToRetrieve\: array\{''id'', ''position''\}\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/adapter/etl-adapter-meilisearch/tests/Flow/ETL/Adapter/Meilisearch/Tests/Integration/MeilisearchPHP/MeilisearchExtractorTest.php
+
+		-
+			message: '#^Parameter \#2 \$params of function Flow\\ETL\\Adapter\\Meilisearch\\from_meilisearch expects array\{q\: string, limit\: int\|null, offset\: int\|null, attributesToRetrieve\: array\<string\>\|null, sort\: array\<string\>\|null\}, array\{q\: '''', sort\: array\{''position\:desc''\}\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/adapter/etl-adapter-meilisearch/tests/Flow/ETL/Adapter/Meilisearch/Tests/Integration/MeilisearchPHP/MeilisearchExtractorTest.php
+
+		-
+			message: '#^Parameter \#2 \$params of function Flow\\ETL\\Adapter\\Meilisearch\\from_meilisearch expects array\{q\: string, limit\: int\|null, offset\: int\|null, attributesToRetrieve\: array\<string\>\|null, sort\: array\<string\>\|null\}, array\{q\: ''title\=this_cant_be…''\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/adapter/etl-adapter-meilisearch/tests/Flow/ETL/Adapter/Meilisearch/Tests/Integration/MeilisearchPHP/MeilisearchExtractorTest.php
+
+		-
+			message: '#^Parameter \#1 \$config of function Flow\\ETL\\Adapter\\Meilisearch\\to_meilisearch_bulk_index expects array\{url\: string, apiKey\: string, httpClient\: Psr\\Http\\Client\\ClientInterface\|null\}, array\{url\: string, apiKey\: string\} given\.$#'
+			identifier: argument.type
+			count: 4
+			path: src/adapter/etl-adapter-meilisearch/tests/Flow/ETL/Adapter/Meilisearch/Tests/Integration/MeilisearchPHP/MeilisearchLoaderTest.php
+
+		-
+			message: '#^Parameter \#1 \$config of function Flow\\ETL\\Adapter\\Meilisearch\\to_meilisearch_bulk_update expects array\{url\: string, apiKey\: string, httpClient\: Psr\\Http\\Client\\ClientInterface\|null\}, array\{url\: string, apiKey\: string\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/adapter/etl-adapter-meilisearch/tests/Flow/ETL/Adapter/Meilisearch/Tests/Integration/MeilisearchPHP/MeilisearchLoaderTest.php
+
+		-
+			message: '#^Parameter \#1 \$url of class Flow\\ETL\\Adapter\\Meilisearch\\Tests\\Context\\MeilisearchContext constructor expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/adapter/etl-adapter-meilisearch/tests/Flow/ETL/Adapter/Meilisearch/Tests/Integration/MeilisearchPHP/MeilisearchLoaderTest.php
+
+		-
+			message: '#^Parameter \#2 \$apiKey of class Flow\\ETL\\Adapter\\Meilisearch\\Tests\\Context\\MeilisearchContext constructor expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/adapter/etl-adapter-meilisearch/tests/Flow/ETL/Adapter/Meilisearch/Tests/Integration/MeilisearchPHP/MeilisearchLoaderTest.php
+
+		-
+			message: '#^Class Flow\\ETL\\Adapter\\Parquet\\ParquetExtractor constructor invoked with 2 parameters, 1 required\.$#'
+			identifier: arguments.count
+			count: 2
+			path: src/adapter/etl-adapter-parquet/tests/Flow/ETL/Adapter/Parquet/Tests/Integration/ParquetExtractorTest.php
+
+		-
+			message: '#^Parameter \#1 \$array of function array_diff expects array, list\<string\>\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/adapter/etl-adapter-parquet/tests/Flow/ETL/Adapter/Parquet/Tests/Integration/ParquetTest.php
+
+		-
+			message: '#^Unable to resolve the template type T in call to function array_values$#'
+			identifier: argument.templateType
+			count: 1
+			path: src/adapter/etl-adapter-parquet/tests/Flow/ETL/Adapter/Parquet/Tests/Integration/ParquetTest.php
+
+		-
+			message: '#^Parameter \#2 \$haystack of static method PHPUnit\\Framework\\Assert\:\:assertStringContainsString\(\) expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/adapter/etl-adapter-text/tests/Flow/ETL/Adapter/Text/Tests/Integration/TextTest.php
+
+		-
+			message: '#^Parameter \#2 \$actualXml of static method PHPUnit\\Framework\\Assert\:\:assertXmlStringEqualsXmlString\(\) expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/adapter/etl-adapter-xml/tests/Flow/ETL/Adapter/XML/Tests/Integration/Loader/XMLLoaderTest.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 1
+			path: src/adapter/etl-adapter-xml/tests/Flow/ETL/Adapter/XML/Tests/Unit/RowsNormalizer/EntryNormalizer/PHPValueNormalizerTest.php
+
+		-
+			message: '#^Cannot call method isDirectory\(\) on Flow\\Filesystem\\FileStatus\|null\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: src/bridge/filesystem/async-aws/tests/Flow/Filesystem/Bridge/AsyncAWS/Tests/Integration/AsyncAWSS3DestinationStreamTest.php
+
+		-
+			message: '#^Cannot call method isFile\(\) on Flow\\Filesystem\\FileStatus\|null\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: src/bridge/filesystem/async-aws/tests/Flow/Filesystem/Bridge/AsyncAWS/Tests/Integration/AsyncAWSS3DestinationStreamTest.php
+
+		-
+			message: '#^Parameter \#1 \$resource of method Flow\\Filesystem\\DestinationStream\:\:fromResource\(\) expects resource, resource\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/bridge/filesystem/async-aws/tests/Flow/Filesystem/Bridge/AsyncAWS/Tests/Integration/AsyncAWSS3DestinationStreamTest.php
+
+		-
+			message: '#^Cannot access property \$path on Flow\\Filesystem\\FileStatus\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: src/bridge/filesystem/async-aws/tests/Flow/Filesystem/Bridge/AsyncAWS/Tests/Integration/AsyncAWSS3FilesystemTest.php
+
+		-
+			message: '#^Cannot call method isDirectory\(\) on Flow\\Filesystem\\FileStatus\|null\.$#'
+			identifier: method.nonObject
+			count: 11
+			path: src/bridge/filesystem/async-aws/tests/Flow/Filesystem/Bridge/AsyncAWS/Tests/Integration/AsyncAWSS3FilesystemTest.php
+
+		-
+			message: '#^Cannot call method isFile\(\) on Flow\\Filesystem\\FileStatus\|null\.$#'
+			identifier: method.nonObject
+			count: 19
+			path: src/bridge/filesystem/async-aws/tests/Flow/Filesystem/Bridge/AsyncAWS/Tests/Integration/AsyncAWSS3FilesystemTest.php
+
+		-
+			message: '#^Parameter \#1 \$resource of method Flow\\Filesystem\\DestinationStream\:\:fromResource\(\) expects resource, resource\|false given\.$#'
+			identifier: argument.type
+			count: 14
+			path: src/bridge/filesystem/async-aws/tests/Flow/Filesystem/Bridge/AsyncAWS/Tests/Integration/AsyncAWSS3FilesystemTest.php
+
+		-
+			message: '#^Parameter \$length of method Flow\\Filesystem\\SourceStream\:\:readLines\(\) expects int\<1, max\>\|null, int given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/bridge/filesystem/async-aws/tests/Flow/Filesystem/Bridge/AsyncAWS/Tests/Integration/AsyncAWSS3SourceStreamTest.php
+
+		-
+			message: '#^Parameter \#1 \$input of method AsyncAws\\S3\\S3Client\:\:deleteBucket\(\) expects array\{Bucket\: string, ExpectedBucketOwner\?\: string\|null, @region\?\: string\|null\}\|AsyncAws\\S3\\Input\\DeleteBucketRequest, array\{Bucket\: string\|null\} given\.$#'
+			identifier: argument.type
+			count: 2
+			path: src/bridge/filesystem/async-aws/tests/Flow/Filesystem/Bridge/AsyncAWS/Tests/Integration/AsyncAWSS3TestCase.php
+
+		-
+			message: '#^Parameter \#1 \$string of function ltrim expects string, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/bridge/filesystem/async-aws/tests/Flow/Filesystem/Bridge/AsyncAWS/Tests/Integration/AsyncAWSS3TestCase.php
+
+		-
+			message: '#^Parameter \#2 \$bucket of method Flow\\Filesystem\\Bridge\\AsyncAWS\\Tests\\Integration\\AsyncAWSS3TestCase\:\:deleteBucketContents\(\) expects string, string\|null given\.$#'
+			identifier: argument.type
+			count: 2
+			path: src/bridge/filesystem/async-aws/tests/Flow/Filesystem/Bridge/AsyncAWS/Tests/Integration/AsyncAWSS3TestCase.php
+
+		-
+			message: '#^Cannot call method isDirectory\(\) on Flow\\Filesystem\\FileStatus\|null\.$#'
+			identifier: method.nonObject
+			count: 3
+			path: src/bridge/filesystem/azure/tests/Flow/Filesystem/Bridge/Azure/Tests/Integration/AzureBlobDestinationStreamTest.php
+
+		-
+			message: '#^Cannot call method isFile\(\) on Flow\\Filesystem\\FileStatus\|null\.$#'
+			identifier: method.nonObject
+			count: 3
+			path: src/bridge/filesystem/azure/tests/Flow/Filesystem/Bridge/Azure/Tests/Integration/AzureBlobDestinationStreamTest.php
+
+		-
+			message: '#^Parameter \#1 \$resource of method Flow\\Filesystem\\DestinationStream\:\:fromResource\(\) expects resource, resource\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/bridge/filesystem/azure/tests/Flow/Filesystem/Bridge/Azure/Tests/Integration/AzureBlobDestinationStreamTest.php
+
+		-
+			message: '#^Cannot access property \$path on Flow\\Filesystem\\FileStatus\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: src/bridge/filesystem/azure/tests/Flow/Filesystem/Bridge/Azure/Tests/Integration/AzureBlobFilesystemTest.php
+
+		-
+			message: '#^Cannot call method isDirectory\(\) on Flow\\Filesystem\\FileStatus\|null\.$#'
+			identifier: method.nonObject
+			count: 10
+			path: src/bridge/filesystem/azure/tests/Flow/Filesystem/Bridge/Azure/Tests/Integration/AzureBlobFilesystemTest.php
+
+		-
+			message: '#^Cannot call method isFile\(\) on Flow\\Filesystem\\FileStatus\|null\.$#'
+			identifier: method.nonObject
+			count: 18
+			path: src/bridge/filesystem/azure/tests/Flow/Filesystem/Bridge/Azure/Tests/Integration/AzureBlobFilesystemTest.php
+
+		-
+			message: '#^Parameter \#1 \$resource of method Flow\\Filesystem\\DestinationStream\:\:fromResource\(\) expects resource, resource\|false given\.$#'
+			identifier: argument.type
+			count: 14
+			path: src/bridge/filesystem/azure/tests/Flow/Filesystem/Bridge/Azure/Tests/Integration/AzureBlobFilesystemTest.php
+
+		-
+			message: '#^Method Flow\\Filesystem\\Bridge\\Azure\\Tests\\Integration\\AzureBlobServiceTestCase\:\:blobService\(\) should return Flow\\Azure\\SDK\\BlobService but returns Flow\\Azure\\SDK\\BlobServiceInterface\.$#'
+			identifier: return.type
+			count: 1
+			path: src/bridge/filesystem/azure/tests/Flow/Filesystem/Bridge/Azure/Tests/Integration/AzureBlobServiceTestCase.php
+
+		-
+			message: '#^Parameter \#2 \$content of method Flow\\Azure\\SDK\\BlobService\:\:putBlockBlob\(\) expects resource\|string\|null, resource\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/bridge/filesystem/azure/tests/Flow/Filesystem/Bridge/Azure/Tests/Integration/AzureBlobServiceTestCase.php
+
+		-
+			message: '#^Parameter \#3 \$size of method Flow\\Azure\\SDK\\BlobService\:\:putBlockBlob\(\) expects int\|null, int\<0, max\>\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/bridge/filesystem/azure/tests/Flow/Filesystem/Bridge/Azure/Tests/Integration/AzureBlobServiceTestCase.php
+
+		-
+			message: '#^Parameter \$length of method Flow\\Filesystem\\SourceStream\:\:readLines\(\) expects int\<1, max\>\|null, int given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/bridge/filesystem/azure/tests/Flow/Filesystem/Bridge/Azure/Tests/Integration/AzureBlobSourceStreamTest.php
+
+		-
+			message: '#^Method Flow\\Bridge\\Symfony\\HttpFoundation\\Tests\\Integration\\FlowStreamedResponseTest\:\:sendResponse\(\) should return string but returns string\|false\.$#'
+			identifier: return.type
+			count: 1
+			path: src/bridge/symfony/http-foundation/tests/Flow/Bridge/Symfony/HttpFoundation/Tests/Integration/FlowStreamedResponseTest.php
+
+		-
+			message: '#^Method Flow\\CLI\\Tests\\Integration\\FileConvertCommandTest\:\:test_convert\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/cli/tests/Flow/CLI/Tests/Integration/FileConvertCommandTest.php
+
+		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertNull\(\) with int will always evaluate to false\.$#'
+			identifier: staticMethod.impossibleType
+			count: 1
+			path: src/cli/tests/Flow/CLI/Tests/Unit/Options/TypedOptionTest.php
+
+		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertNull\(\) with string will always evaluate to false\.$#'
+			identifier: staticMethod.impossibleType
+			count: 1
+			path: src/cli/tests/Flow/CLI/Tests/Unit/Options/TypedOptionTest.php
+
+		-
+			message: '#^Method Flow\\ArrayComparison\\Tests\\Unit\\ArrayComparisonTest\:\:test_equals\(\) has parameter \$a with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/core/etl/tests/Flow/ArrayComparison/Tests/Unit/ArrayComparisonTest.php
+
+		-
+			message: '#^Method Flow\\ArrayComparison\\Tests\\Unit\\ArrayComparisonTest\:\:test_equals\(\) has parameter \$b with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/core/etl/tests/Flow/ArrayComparison/Tests/Unit/ArrayComparisonTest.php
+
+		-
+			message: '#^Method Flow\\ArrayComparison\\Tests\\Unit\\ArrayComparisonTest\:\:test_not_equals\(\) has parameter \$a with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/core/etl/tests/Flow/ArrayComparison/Tests/Unit/ArrayComparisonTest.php
+
+		-
+			message: '#^Method Flow\\ArrayComparison\\Tests\\Unit\\ArrayComparisonTest\:\:test_not_equals\(\) has parameter \$b with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/core/etl/tests/Flow/ArrayComparison/Tests/Unit/ArrayComparisonTest.php
+
+		-
+			message: '#^Method Flow\\ArrayComparison\\Tests\\Unit\\ArraySortByKeyTest\:\:test_sorts_array_by_key\(\) has parameter \$origin with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/core/etl/tests/Flow/ArrayComparison/Tests/Unit/ArraySortByKeyTest.php
+
+		-
+			message: '#^Method Flow\\ArrayComparison\\Tests\\Unit\\ArraySortByKeyTest\:\:test_sorts_array_by_key\(\) has parameter \$sorted with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/core/etl/tests/Flow/ArrayComparison/Tests/Unit/ArraySortByKeyTest.php
+
+		-
+			message: '#^Method Flow\\ETL\\Tests\\Benchmark\\EntryFactory\\NativeEntryFactoryBench\:\:bench_entry_factory\(\) has parameter \$params with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Benchmark/EntryFactory/NativeEntryFactoryBench.php
+
+		-
+			message: '#^Method Flow\\ETL\\Tests\\Benchmark\\TypeDetectorBench\:\:bench_type_detector\(\) has parameter \$params with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Benchmark/TypeDetectorBench.php
+
+		-
+			message: '#^Generator expects value type Flow\\ETL\\Tests\\Double\\Rows, Flow\\ETL\\Rows given\.$#'
+			identifier: generator.valueType
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Double/FakeExtractor.php
+
+		-
+			message: '#^Method Flow\\ETL\\Tests\\Double\\FakeExtractor\:\:extract\(\) has invalid return type Flow\\ETL\\Tests\\Double\\Rows\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Double/FakeExtractor.php
+
+		-
+			message: '#^Property Flow\\ETL\\Tests\\Fixtures\\Example\:\:\$bad is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Fixtures/Example.php
+
+		-
+			message: '#^Property Flow\\ETL\\Tests\\Fixtures\\Example\:\:\$bar is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Fixtures/Example.php
+
+		-
+			message: '#^Property Flow\\ETL\\Tests\\Fixtures\\Example\:\:\$baz is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Fixtures/Example.php
+
+		-
+			message: '#^Argument of an invalid type list\<string\>\|false supplied for foreach, only iterables are supported\.$#'
+			identifier: foreach.nonIterable
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/FlowIntegrationTestCase.php
+
+		-
+			message: '#^Method Flow\\ETL\\Tests\\FlowIntegrationTestCase\:\:setupFiles\(\) has parameter \$path with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/FlowIntegrationTestCase.php
+
+		-
+			message: '#^Parameter \#1 \$path of static method Flow\\Filesystem\\Path\:\:realpath\(\) expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/FlowIntegrationTestCase.php
+
+		-
+			message: '#^Property Flow\\ETL\\Tests\\FlowIntegrationTestCase\:\:\$baseMemoryLimit \(string\|false\) is never assigned false so it can be removed from the property type\.$#'
+			identifier: property.unusedType
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/FlowIntegrationTestCase.php
+
+		-
+			message: '#^Method Flow\\ETL\\Tests\\FlowTestCase\:\:assertExtractedRowsAsArrayEquals\(\) has parameter \$expectedArray with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/FlowTestCase.php
+
+		-
+			message: '#^Cannot call method schema\(\) on Flow\\ETL\\Dataset\\Report\|null\.$#'
+			identifier: method.nonObject
+			count: 5
+			path: src/core/etl/tests/Flow/ETL/Tests/Integration/DataFrame/AnalyzeTest.php
+
+		-
+			message: '#^Cannot call method statistics\(\) on Flow\\ETL\\Dataset\\Report\|null\.$#'
+			identifier: method.nonObject
+			count: 3
+			path: src/core/etl/tests/Flow/ETL/Tests/Integration/DataFrame/AnalyzeTest.php
+
+		-
+			message: '#^Parameter \#2 \$haystack of static method PHPUnit\\Framework\\Assert\:\:assertStringContainsString\(\) expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 2
+			path: src/core/etl/tests/Flow/ETL/Tests/Integration/DataFrame/DisplayTest.php
+
+		-
+			message: '#^Parameter \#1 \$datasets of method Flow\\ETL\\Tests\\FlowIntegrationTestCase\:\:setupFiles\(\) expects array\<string, array\<string, string\>\|string\>, array\<string, array\<string, array\<string, string\>\>\> given\.$#'
+			identifier: argument.type
+			count: 2
+			path: src/core/etl/tests/Flow/ETL/Tests/Integration/Filesystem/FilesystemStreams/FilesystemStreamsTest.php
+
+		-
+			message: '#^Parameter \#1 \$datasets of method Flow\\ETL\\Tests\\FlowIntegrationTestCase\:\:setupFiles\(\) expects array\<string, array\<string, string\>\|string\>, array\<string, array\<string, array\<string, string\>\|string\>\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Integration/Filesystem/FilesystemStreams/FilesystemStreamsTest.php
+
+		-
+			message: '#^Parameter \#1 \$datasets of method Flow\\ETL\\Tests\\FlowIntegrationTestCase\:\:setupFiles\(\) expects array\<string, array\<string, string\>\|string\>, array\<string, array\<string, array\<string, string\>\>\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Integration/Filesystem/FilesystemStreams/Partitioned/AppendModeTest.php
+
+		-
+			message: '#^Parameter \#1 \$datasets of method Flow\\ETL\\Tests\\FlowIntegrationTestCase\:\:setupFiles\(\) expects array\<string, array\<string, string\>\|string\>, array\<string, array\<string, array\>\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Integration/Filesystem/FilesystemStreams/Partitioned/AppendModeTest.php
+
+		-
+			message: '#^Parameter \#1 \$datasets of method Flow\\ETL\\Tests\\FlowIntegrationTestCase\:\:setupFiles\(\) expects array\<string, array\<string, string\>\|string\>, array\<string, array\<string, array\<string, string\>\>\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Integration/Filesystem/FilesystemStreams/Partitioned/ExceptionIfExistsModeTest.php
+
+		-
+			message: '#^Parameter \#1 \$datasets of method Flow\\ETL\\Tests\\FlowIntegrationTestCase\:\:setupFiles\(\) expects array\<string, array\<string, string\>\|string\>, array\<string, array\<string, array\>\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Integration/Filesystem/FilesystemStreams/Partitioned/ExceptionIfExistsModeTest.php
+
+		-
+			message: '#^Parameter \#1 \$datasets of method Flow\\ETL\\Tests\\FlowIntegrationTestCase\:\:setupFiles\(\) expects array\<string, array\<string, string\>\|string\>, array\<string, array\<string, array\<string, string\>\>\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Integration/Filesystem/FilesystemStreams/Partitioned/IgnoreModeTest.php
+
+		-
+			message: '#^Parameter \#1 \$datasets of method Flow\\ETL\\Tests\\FlowIntegrationTestCase\:\:setupFiles\(\) expects array\<string, array\<string, string\>\|string\>, array\<string, array\<string, array\>\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Integration/Filesystem/FilesystemStreams/Partitioned/IgnoreModeTest.php
+
+		-
+			message: '#^Parameter \#1 \$datasets of method Flow\\ETL\\Tests\\FlowIntegrationTestCase\:\:setupFiles\(\) expects array\<string, array\<string, string\>\|string\>, array\<string, array\<string, array\<string, string\>\>\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Integration/Filesystem/FilesystemStreams/Partitioned/OverwriteModeTest.php
+
+		-
+			message: '#^Parameter \#1 \$datasets of method Flow\\ETL\\Tests\\FlowIntegrationTestCase\:\:setupFiles\(\) expects array\<string, array\<string, string\>\|string\>, array\<string, array\<string, array\>\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Integration/Filesystem/FilesystemStreams/Partitioned/OverwriteModeTest.php
+
+		-
+			message: '#^Method Flow\\ETL\\Function\\ScalarFunctionChain\:\:exists\(\) invoked with 1 parameter, 0 required\.$#'
+			identifier: arguments.count
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Integration/Function/AllTest.php
+
+		-
+			message: '#^Method Flow\\ETL\\Function\\ScalarFunctionChain\:\:exists\(\) invoked with 1 parameter, 0 required\.$#'
+			identifier: arguments.count
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Integration/Function/AnyTest.php
+
+		-
+			message: '#^Property Flow\\ETL\\Loader@anonymous/core/etl/tests/Flow/ETL/Tests/Unit/DataFrameTest\.php\:434\:\:\$result type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/DataFrameTest.php
+
+		-
+			message: '#^Property Flow\\ETL\\Loader@anonymous/core/etl/tests/Flow/ETL/Tests/Unit/ETLErrorHandlingTest\.php\:107\:\:\$result type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/ETLErrorHandlingTest.php
+
+		-
+			message: '#^Property Flow\\ETL\\Loader@anonymous/core/etl/tests/Flow/ETL/Tests/Unit/ETLErrorHandlingTest\.php\:183\:\:\$result type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/ETLErrorHandlingTest.php
+
+		-
+			message: '#^Property Flow\\ETL\\Loader@anonymous/core/etl/tests/Flow/ETL/Tests/Unit/ETLErrorHandlingTest\.php\:50\:\:\$result type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/ETLErrorHandlingTest.php
+
+		-
+			message: '#^Function Flow\\ETL\\DSL\\array_get_collection invoked with 3 parameters, 2 required\.$#'
+			identifier: arguments.count
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Function/ArrayGetCollectionTest.php
+
+		-
+			message: '#^Method Flow\\ETL\\Tests\\Unit\\Function\\CastTest\:\:cast_provider\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Function/CastTest.php
+
+		-
+			message: '#^Cannot access property \$firstChild on DOMElement\|null\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Function/DOMElementAttributeValueTest.php
+
+		-
+			message: '#^Cannot access property \$firstChild on DOMElement\|null\.$#'
+			identifier: property.nonObject
+			count: 3
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Function/DOMElementAttributesCountTest.php
+
+		-
+			message: '#^Method Flow\\ETL\\Function\\ScalarFunctionChain\:\:domElementAttributesCount\(\) invoked with 1 parameter, 0 required\.$#'
+			identifier: arguments.count
+			count: 3
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Function/DOMElementAttributesCountTest.php
+
+		-
+			message: '#^Cannot access property \$firstChild on DOMElement\|null\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Function/DOMElementValueTest.php
+
+		-
+			message: '#^Cannot access property \$firstChild on DOMElement\|null\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Function/XPathTest.php
+
+		-
+			message: '#^Cannot access property \$lastChild on DOMElement\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Function/XPathTest.php
+
+		-
+			message: '#^Function Flow\\ETL\\DSL\\null_entry invoked with 2 parameters, 1 required\.$#'
+			identifier: arguments.count
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/GroupByTest.php
+
+		-
+			message: '#^Parameter \#2 \$haystack of static method PHPUnit\\Framework\\Assert\:\:assertStringContainsString\(\) expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 2
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Loader/StreamLoaderTest.php
+
+		-
+			message: '#^Parameter \#1 \$data of method Flow\\ETL\\Memory\\ArrayMemory\:\:save\(\) expects array\<array\<string, mixed\>\>, array\<int, int\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Memory/ArrayMemoryTest.php
+
+		-
+			message: '#^Parameter \#1 \$memory of class Flow\\ETL\\Memory\\ArrayMemory constructor expects array\<array\<string, mixed\>\>, array\<int, int\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Memory/ArrayMemoryTest.php
+
+		-
+			message: '#^Method Flow\\ETL\\Tests\\Unit\\NativePHPRandomValueGeneratorTest\:\:invalid_range_provider\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/NativePHPRandomValueGeneratorTest.php
+
+		-
+			message: '#^Method Flow\\ETL\\Tests\\Unit\\NativePHPRandomValueGeneratorTest\:\:valid_range_provider\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/NativePHPRandomValueGeneratorTest.php
+
+		-
+			message: '#^Method Flow\\ETL\\Tests\\Unit\\PHP\\Type\\ArrayContentDetectorTest\:\:test_list_data\(\) has parameter \$keys with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/ArrayContentDetectorTest.php
+
+		-
+			message: '#^Method Flow\\ETL\\Tests\\Unit\\PHP\\Type\\ArrayContentDetectorTest\:\:test_list_data\(\) has parameter \$values with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/ArrayContentDetectorTest.php
+
+		-
+			message: '#^Method Flow\\ETL\\Tests\\Unit\\PHP\\Type\\ArrayContentDetectorTest\:\:test_map_data\(\) has parameter \$keys with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/ArrayContentDetectorTest.php
+
+		-
+			message: '#^Method Flow\\ETL\\Tests\\Unit\\PHP\\Type\\ArrayContentDetectorTest\:\:test_map_data\(\) has parameter \$values with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/ArrayContentDetectorTest.php
+
+		-
+			message: '#^Method Flow\\ETL\\Tests\\Unit\\PHP\\Type\\ArrayContentDetectorTest\:\:test_structure_data\(\) has parameter \$keys with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/ArrayContentDetectorTest.php
+
+		-
+			message: '#^Method Flow\\ETL\\Tests\\Unit\\PHP\\Type\\ArrayContentDetectorTest\:\:test_structure_data\(\) has parameter \$values with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/ArrayContentDetectorTest.php
+
+		-
+			message: '#^Parameter \#1 \$stream of function fclose expects resource, resource\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/Native/ResourceTypeTest.php
+
+		-
+			message: '#^Parameter \#1 \$json of function json_decode expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/TypeDetector/StructuresTypeDetectorTest.php
+
+		-
+			message: '#^Method Flow\\ETL\\Tests\\Unit\\PHP\\Type\\TypeDetectorTest\:\:test_logical_types\(\) has parameter \$data with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/TypeDetectorTest.php
+
+		-
+			message: '#^Method Flow\\ETL\\Tests\\Unit\\PHP\\Type\\TypeDetectorTest\:\:test_scalar_types\(\) has parameter \$expectedType with generic interface Flow\\ETL\\PHP\\Type\\Native\\NativeType but does not specify its types\: TType$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/TypeDetectorTest.php
+
+		-
+			message: '#^Parameter \#1 \$expected of static method PHPUnit\\Framework\\Assert\:\:assertInstanceOf\(\) expects class\-string\<object\>, string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/PHP/Type/TypeDetectorTest.php
+
+		-
+			message: '#^Parameter \#2 \$haystack of static method PHPUnit\\Framework\\Assert\:\:assertCount\(\) expects Countable\|iterable, Flow\\ETL\\Pipeline\\HashJoin\\Bucket\|null given\.$#'
+			identifier: argument.type
+			count: 5
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Pipeline/HashJoin/HashTableTest.php
+
+		-
+			message: '#^Class Flow\\ETL\\Adapter\\Doctrine\\DbalLoader constructor invoked with 3 parameters, 2 required\.$#'
+			identifier: arguments.count
+			count: 4
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Pipeline/Optimizer/BatchSizeOptimizationTest.php
+
+		-
+			message: '#^Class Flow\\ETL\\Pipeline\\LinkedPipeline constructor invoked with 2 parameters, 1 required\.$#'
+			identifier: arguments.count
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Pipeline/Optimizer/BatchSizeOptimizationTest.php
+
+		-
+			message: '#^Call to an undefined method Flow\\ETL\\Extractor\:\:isLimited\(\)\.$#'
+			identifier: method.notFound
+			count: 5
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Pipeline/Optimizer/LimitOptimizationTest.php
+
+		-
+			message: '#^Parameter \#1 \$mapper of method Flow\\ETL\\Row\\Entry\\BooleanEntry\:\:map\(\) expects callable\(bool\|null\)\: \(bool\|null\), Closure\(bool\)\: bool given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Row/Entry/BooleanEntryTest.php
+
+		-
+			message: '#^Parameter \#1 \$mapper of method Flow\\ETL\\Row\\Entry\\DateEntry\:\:map\(\) expects callable\(DateTimeInterface\|null\)\: \(DateTimeInterface\|null\), Closure\(DateTimeImmutable\)\: DateTimeImmutable given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Row/Entry/DateEntryTest.php
+
+		-
+			message: '#^Parameter \#1 \$mapper of method Flow\\ETL\\Row\\Entry\\DateTimeEntry\:\:map\(\) expects callable\(DateTimeInterface\|null\)\: \(DateTimeInterface\|null\), Closure\(DateTimeImmutable\)\: DateTimeImmutable given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Row/Entry/DateTimeEntryTest.php
+
+		-
+			message: '#^Parameter \#1 \$mapper of method Flow\\ETL\\Row\\Entry\\FloatEntry\:\:map\(\) expects callable\(float\|null\)\: \(float\|null\), Closure\(float\)\: float given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Row/Entry/FloatEntryTest.php
+
+		-
+			message: '#^Parameter \#1 \$mapper of method Flow\\ETL\\Row\\Entry\\IntegerEntry\:\:map\(\) expects callable\(int\|null\)\: \(int\|null\), Closure\(int\)\: int given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Row/Entry/IntegerEntryTest.php
+
+		-
+			message: '#^Parameter \#1 \$mapper of method Flow\\ETL\\Row\\Entry\\JsonEntry\:\:map\(\) expects callable\(array\<mixed\>\|null\)\: \(array\<mixed\>\|null\), Closure\(array\)\: non\-empty\-string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Row/Entry/JsonEntryTest.php
+
+		-
+			message: '#^Parameter \#1 \$mapper of method Flow\\ETL\\Row\\Entry\\JsonEntry\:\:map\(\) expects callable\(array\<mixed\>\|null\)\: \(array\<mixed\>\|null\), Closure\(array\)\: non\-empty\-string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Row/Entry/JsonObjectEntryTest.php
+
+		-
+			message: '#^Parameter \#1 \$mapper of method Flow\\ETL\\Row\\Entry\\ListEntry\<mixed\>\:\:map\(\) expects callable\(array\<mixed\>\|null\)\: \(array\<mixed\>\|null\), Closure\(array\)\: array\{string\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Row/Entry/ListEntryTest.php
+
+		-
+			message: '#^Parameter \#1 \$mapper of method Flow\\ETL\\Row\\Entry\\MapEntry\<string\>\:\:map\(\) expects callable\(array\<string\>\|null\)\: \(array\<string\>\|null\), Closure\(array\)\: array\{string\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Row/Entry/MapEntryTest.php
+
+		-
+			message: '#^Parameter \#1 \$mapper of method Flow\\ETL\\Row\\Entry\\StringEntry\:\:map\(\) expects callable\(string\|null\)\: \(string\|null\), Closure\(string\)\: string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Row/Entry/StringEntryTest.php
+
+		-
+			message: '#^Parameter \#1 \$mapper of method Flow\\ETL\\Row\\Entry\\StructureEntry\:\:map\(\) expects callable\(array\<mixed\>\|null\)\: \(array\<mixed\>\|null\), Closure\(array\)\: array\<mixed\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Row/Entry/StructureEntryTest.php
+
+		-
+			message: '#^Parameter \#1 \$mapper of method Flow\\ETL\\Row\\Entry\\TimeEntry\:\:map\(\) expects callable\(DateInterval\|null\)\: \(DateInterval\|null\), Closure\(DateInterval\)\: DateInterval given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Row/Entry/TimeEntryTest.php
+
+		-
+			message: '#^Cannot call method toString\(\) on Flow\\ETL\\PHP\\Value\\Uuid\|null\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Row/Entry/UuidEntryTest.php
+
+		-
+			message: '#^Parameter \#2 \$entryClass of class Flow\\ETL\\Row\\Schema\\Definition constructor expects class\-string\<Flow\\ETL\\Row\\Entry\>, string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Row/Schema/DefinitionTest.php
+
+		-
+			message: '#^Method Flow\\ETL\\Tests\\Unit\\Row\\Schema\\MetadataTest\:\:test_get_as\(\) has parameter \$type with generic interface Flow\\ETL\\PHP\\Type\\Type but does not specify its types\: TType$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Row/Schema/MetadataTest.php
+
+		-
+			message: '#^Parameter \#1 \$offset of method Flow\\ETL\\Rows\:\:offsetExists\(\) expects int, string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/RowsTest.php
+
+		-
+			message: '#^Cannot call method item\(\) on DOMNodeList\<DOMNode\>\|false\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: src/core/etl/tests/Flow/ETL/Tests/Unit/Transformer/ScalarFunctionTransformerTest.php
