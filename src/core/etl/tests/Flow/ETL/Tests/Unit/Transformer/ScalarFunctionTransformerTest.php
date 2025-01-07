@@ -94,11 +94,11 @@ final class ScalarFunctionTransformerTest extends FlowTestCase
         $document->loadXML($xml);
         $xpath = new \DOMXPath($document);
 
+        $nodes = $xpath->query('/root/foo');
+        $expected = $nodes ? [$nodes->item(0), $nodes->item(1)] : null;
+
         self::assertEquals(
-            list_entry('xpath', [
-                $xpath->query('/root/foo')->item(0),
-                $xpath->query('/root/foo')->item(1),
-            ], type_list(type_xml_element())),
+            list_entry('xpath', $expected, type_list(type_xml_element())),
             (new ScalarFunctionTransformer('xpath', ref('xml')->xpath('/root/foo')))
                 ->transform(
                     new Rows(Row::create(xml_entry('xml', $xml))),
