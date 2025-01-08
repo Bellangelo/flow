@@ -15,7 +15,7 @@ final class ParquetExtractorTest extends FlowTestCase
 {
     public function test_limit() : void
     {
-        $extractor = new ParquetExtractor(\Flow\Filesystem\DSL\path(__DIR__ . '/Fixtures/orders_1k.parquet'), Options::default());
+        $extractor = new ParquetExtractor(\Flow\Filesystem\DSL\path(__DIR__ . '/Fixtures/orders_1k.parquet'));
         $extractor->changeLimit(2);
 
         self::assertCount(
@@ -40,7 +40,7 @@ final class ParquetExtractorTest extends FlowTestCase
 
     public function test_signal_stop() : void
     {
-        $extractor = new ParquetExtractor(\Flow\Filesystem\DSL\path(__DIR__ . '/Fixtures/orders_1k.parquet'), Options::default());
+        $extractor = new ParquetExtractor(\Flow\Filesystem\DSL\path(__DIR__ . '/Fixtures/orders_1k.parquet'));
 
         $generator = $extractor->extract(flow_context(config()));
 
