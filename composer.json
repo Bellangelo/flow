@@ -378,9 +378,6 @@
         "static:analyze:phpstan": [
             "tools/phpstan/vendor/bin/phpstan analyze -c phpstan.neon --memory-limit=-1"
         ],
-        "static:analyze:phpstan:baseline": [
-            "tools/phpstan/vendor/bin/phpstan analyze -c phpstan.neon --memory-limit=-1 --generate-baseline phpstan-baseline.neon"
-        ],
         "static:analyze:rector": [
             "tools/rector/vendor/bin/rector -c ./rector.tests.php --dry-run",
             "tools/rector/vendor/bin/rector -c ./rector.src.php --dry-run"
