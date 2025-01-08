@@ -9,7 +9,7 @@ use Flow\ETL\Adapter\Parquet\ParquetExtractor;
 use Flow\ETL\Extractor\Signal;
 use Flow\ETL\{Tests\FlowTestCase};
 use Flow\Filesystem\Path;
-use Flow\Parquet\{Options, Reader};
+use Flow\Parquet\{Reader};
 
 final class ParquetExtractorTest extends FlowTestCase
 {

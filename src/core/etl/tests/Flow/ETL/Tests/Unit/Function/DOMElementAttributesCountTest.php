@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
-use DOMElement;
 use function Flow\ETL\DSL\{ref, row};
 use Flow\ETL\Row\Factory\NativeEntryFactory;
 use Flow\ETL\Tests\FlowTestCase;
@@ -16,7 +15,7 @@ final class DOMElementAttributesCountTest extends FlowTestCase
         $xml = new \DOMDocument();
         $xml->loadXML('<root><foo atr-01="1" atr-02="2" atr-03="3">bar</foo></root>');
 
-        self::assertInstanceOf(DOMElement::class, $xml->documentElement);
+        self::assertInstanceOf(\DOMElement::class, $xml->documentElement);
         self::assertEquals(
             3,
             ref('value')->domElementAttributesCount()->eval(
@@ -30,7 +29,7 @@ final class DOMElementAttributesCountTest extends FlowTestCase
         $xml = new \DOMDocument();
         $xml->loadXML('<root><foo baz="buz">bar</foo></root>');
 
-        self::assertInstanceOf(DOMElement::class, $xml->documentElement);
+        self::assertInstanceOf(\DOMElement::class, $xml->documentElement);
         self::assertEquals(
             1,
             ref('value')->domElementAttributesCount()->eval(
@@ -44,7 +43,7 @@ final class DOMElementAttributesCountTest extends FlowTestCase
         $xml = new \DOMDocument();
         $xml->loadXML('<root><foo>bar</foo></root>');
 
-        self::assertInstanceOf(DOMElement::class, $xml->documentElement);
+        self::assertInstanceOf(\DOMElement::class, $xml->documentElement);
         self::assertEquals(
             0,
             ref('value')->domElementAttributesCount()->eval(

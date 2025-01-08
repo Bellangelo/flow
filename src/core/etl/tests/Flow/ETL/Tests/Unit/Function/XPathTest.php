@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
-use DOMElement;
 use function Flow\ETL\DSL\{ref, row};
 use Flow\ETL\Row\Factory\NativeEntryFactory;
 use Flow\ETL\Tests\FlowTestCase;
@@ -16,7 +15,7 @@ final class XPathTest extends FlowTestCase
         $xml = new \DOMDocument();
         $xml->loadXML('<root><foo baz="buz">bar</foo></root>');
 
-        self::assertInstanceOf(DOMElement::class, $xml->documentElement);
+        self::assertInstanceOf(\DOMElement::class, $xml->documentElement);
         self::assertEquals(
             [$xml->documentElement->firstChild],
             ref('value')->xpath('/root/foo')->eval(row((new NativeEntryFactory())->create('value', $xml)))
@@ -28,7 +27,7 @@ final class XPathTest extends FlowTestCase
         $xml = new \DOMDocument();
         $xml->loadXML('<root><foo baz="buz">bar</foo><foo baz="buz">bar</foo></root>');
 
-        self::assertInstanceOf(DOMElement::class, $xml->documentElement);
+        self::assertInstanceOf(\DOMElement::class, $xml->documentElement);
         self::assertEquals(
             [
                 $xml->documentElement->firstChild,
