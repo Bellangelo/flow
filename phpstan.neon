@@ -7,6 +7,7 @@ parameters:
     bootstrapFiles:
         - tools/phpunit/vendor/autoload.php
         - tools/phpbench/vendor/autoload.php
+        - vendor/autoload.php
     paths:
         - src/core/etl/src
         - src/cli/src
