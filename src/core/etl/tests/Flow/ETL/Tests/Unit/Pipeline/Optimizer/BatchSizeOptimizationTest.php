@@ -15,10 +15,7 @@ final class BatchSizeOptimizationTest extends FlowTestCase
 {
     public function test_for_nested_pipeline_with_batching_pipeline() : void
     {
-        $pipeline = new LinkedPipeline(
-            new BatchingPipeline(new SynchronousPipeline(), 10),
-            new SynchronousPipeline()
-        );
+        $pipeline = new LinkedPipeline(new BatchingPipeline(new SynchronousPipeline(), 10));
 
         self::assertFalse(
             (new BatchSizeOptimization())->isFor(new DbalLoader('test', [], []), $pipeline)
