@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Flow\Filesystem\Bridge\Azure\Tests\Integration;
 
 use function Flow\Azure\SDK\DSL\{azure_blob_service, azure_blob_service_config, azure_http_factory, azure_shared_key_authorization_factory, azurite_url_factory};
-use Flow\Azure\SDK\{BlobService, Exception\AzureException};
+use Flow\Azure\SDK\{BlobService, BlobServiceInterface, Exception\AzureException};
 use Flow\ETL\Tests\FlowTestCase;
 use Http\Discovery\{Psr17FactoryDiscovery, Psr18ClientDiscovery};
 
@@ -36,7 +36,7 @@ abstract class AzureBlobServiceTestCase extends FlowTestCase
         $this->blobService($container)->putBlockBlob($path, fopen($sourcePath, 'rb'), \filesize($sourcePath));
     }
 
-    protected function blobService(string $container) : BlobService
+    protected function blobService(string $container) : BlobServiceInterface
     {
         $blobService = azure_blob_service(
             azure_blob_service_config($_ENV['AZURITE_ACCOUNT_NAME'], $container),
