@@ -55,7 +55,7 @@ final class UuidEntryTest extends FlowTestCase
     {
         $entry = UuidEntry::from('entry-name', $value);
 
-        self::assertEquals($value, $entry->value()->toString());
+        self::assertEquals($value, $entry->value()?->toString());
     }
 
     #[DataProvider('is_equal_data_provider')]
@@ -95,6 +95,6 @@ final class UuidEntryTest extends FlowTestCase
         $newEntry = $entry->rename('new-entry-name');
 
         self::assertEquals('new-entry-name', $newEntry->name());
-        self::assertEquals($uuid->toString(), $newEntry->value()->toString());
+        self::assertEquals($uuid->toString(), $newEntry->value()?->toString());
     }
 }
