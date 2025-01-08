@@ -27,7 +27,7 @@ final class AsyncAWSS3DestinationStreamTest extends AsyncAWSS3TestCase
         $stream->close();
 
         self::assertTrue($fs->status(path('aws-s3://orders.csv'))?->isFile());
-        self::assertFalse($fs->status(path('aws-s3://orders.csv'))?->isDirectory());
+        self::assertFalse($fs->status(path('aws-s3://orders.csv'))->isDirectory());
         self::assertSame(\file_get_contents(__DIR__ . '/Fixtures/orders.csv'), $fs->readFrom(path('aws-s3://orders.csv'))->content());
 
         $fs->rm(path('aws-s3://orders.csv'));
@@ -42,7 +42,7 @@ final class AsyncAWSS3DestinationStreamTest extends AsyncAWSS3TestCase
         $stream->close();
 
         self::assertTrue($fs->status(path('aws-s3://file.txt'))?->isFile());
-        self::assertFalse($fs->status(path('aws-s3://file.txt'))?->isDirectory());
+        self::assertFalse($fs->status(path('aws-s3://file.txt'))->isDirectory());
         self::assertSame('Hello, World!', $fs->readFrom(path('aws-s3://file.txt'))->content());
 
         $fs->rm(path('aws-s3://file.txt'));
