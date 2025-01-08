@@ -186,7 +186,7 @@ TXT
         self::assertTrue($fs->status(path('aws-s3://var/flow-fs-test-directory/'))?->isDirectory());
         self::assertTrue($fs->status(path('aws-s3://var/flow-fs-test-directory/remove_file_when_exists.txt'))?->isFile());
         $fs->rm(path('aws-s3://var/flow-fs-test-directory/*.txt'));
-        self::assertTrue($fs->status(path('aws-s3://var/flow-fs-test-directory/'))?->isDirectory());
+        self::assertTrue($fs->status(path('aws-s3://var/flow-fs-test-directory/'))->isDirectory());
         self::assertNull($fs->status(path('aws-s3://var/flow-fs-test-directory/remove_file_when_exists.txt')));
         $fs->rm(path('aws-s3://var/flow-fs-test-directory/'));
     }
@@ -244,7 +244,7 @@ TXT
 
         $paths = \iterator_to_array($fs->list(path('aws-s3://multi_partitions/**/*.txt')));
 
-        self::assertTrue($fs->status(path('aws-s3://multi_partitions/**/*.txt'))->isFile());
+        self::assertTrue($fs->status(path('aws-s3://multi_partitions/**/*.txt'))?->isFile());
 
         self::assertEquals(
             [
