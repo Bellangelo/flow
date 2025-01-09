@@ -8,14 +8,14 @@ use Flow\ETL\Exception\InvalidArgumentException;
 use Flow\ETL\PHP\Type\Type;
 
 /**
- * @implements NativeType<\UnitEnum>
+ * @implements Type<\UnitEnum>
  */
-final class EnumType implements NativeType
+final readonly class EnumType implements Type
 {
     /**
      * @param class-string<\UnitEnum> $class
      */
-    public function __construct(public readonly string $class, private readonly bool $nullable)
+    public function __construct(public string $class, private bool $nullable)
     {
         if (!\enum_exists($class)) {
             throw new InvalidArgumentException("Enum {$class} not found");

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Row;
 
+use function Flow\ETL\DSL\schema;
 use function Flow\ETL\DSL\{array_to_row,
     bool_entry,
     bool_schema,
@@ -14,15 +15,13 @@ use function Flow\ETL\DSL\{array_to_row,
     row,
     str_entry,
     str_schema,
-    struct_element,
     struct_entry,
-    struct_type,
     type_boolean,
     type_int,
     type_list,
     type_null,
-    type_string};
-use Flow\ETL\Row\Schema;
+    type_string,
+    type_structure};
 use Flow\ETL\Tests\FlowTestCase;
 
 final class ArrayToRowTest extends FlowTestCase
@@ -51,19 +50,19 @@ final class ArrayToRowTest extends FlowTestCase
                 struct_entry(
                     'e00',
                     ['id' => 1234, 'deleted' => false, 'phase' => null],
-                    struct_type([
-                        struct_element('id', type_int()),
-                        struct_element('deleted', type_boolean()),
-                        struct_element('phase', type_null()),
+                    type_structure([
+                        'id' => type_int(),
+                        'deleted' => type_boolean(),
+                        'phase' => type_null(),
                     ])
                 ),
                 struct_entry(
                     'e01',
                     ['id' => 4321, 'deleted' => true, 'phase' => 'launch'],
-                    struct_type([
-                        struct_element('id', type_int()),
-                        struct_element('deleted', type_boolean()),
-                        struct_element('phase', type_string()),
+                    type_structure([
+                        'id' => type_int(),
+                        'deleted' => type_boolean(),
+                        'phase' => type_string(),
                     ])
                 )
             ),
@@ -75,10 +74,7 @@ final class ArrayToRowTest extends FlowTestCase
     {
         $row = array_to_row(
             ['id' => 1234, 'deleted' => false, 'phase' => null],
-            schema: new Schema(
-                int_schema('id'),
-                bool_schema('deleted'),
-            )
+            schema: schema(int_schema('id'), bool_schema('deleted'))
         );
 
         self::assertEquals(
@@ -94,11 +90,7 @@ final class ArrayToRowTest extends FlowTestCase
     {
         $row = array_to_row(
             ['id' => 1234, 'deleted' => false],
-            schema: new Schema(
-                int_schema('id'),
-                bool_schema('deleted'),
-                str_schema('phase', true),
-            )
+            schema: schema(int_schema('id'), bool_schema('deleted'), str_schema('phase', true))
         );
 
         self::assertEquals(

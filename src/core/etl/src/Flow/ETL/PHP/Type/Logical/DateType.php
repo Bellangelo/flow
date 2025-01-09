@@ -9,11 +9,11 @@ use Flow\ETL\PHP\Type\Native\NullType;
 use Flow\ETL\PHP\Type\Type;
 
 /**
- * @implements LogicalType<\DateTimeInterface>
+ * @implements Type<\DateTimeInterface>
  */
-final class DateType implements LogicalType
+final readonly class DateType implements Type
 {
-    public function __construct(private readonly bool $nullable = false)
+    public function __construct(private bool $nullable = false)
     {
     }
 

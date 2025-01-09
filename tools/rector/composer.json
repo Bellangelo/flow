@@ -1,0 +1,15 @@
+{
+  "name": "flow-php/flow-tools",
+  "description": "Flow PHP ETL - Tools",
+  "require-dev": {
+    "rector/rector": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Flow\\Tools\\Rector\\": "src/Flow/Tools/Rector/"
+    }
+  },
+  "config": {
+    "allow-plugins": false
+  }
+}

@@ -38,12 +38,12 @@ use Flow\ETL\PHP\Type\Caster\{ArrayCastingHandler,
     UuidCastingHandler,
     XMLCastingHandler};
 
-final class Caster
+final readonly class Caster
 {
     /**
      * @param array<CastingHandler> $handlers
      */
-    public function __construct(private readonly array $handlers, private readonly Options $options = new Options())
+    public function __construct(private array $handlers, private Options $options = new Options())
     {
     }
 
@@ -71,8 +71,12 @@ final class Caster
     }
 
     /**
-     * @param Type $type
+     * @template T
+     *
+     * @param Type<T> $type
      * @param null|Options $options - by passing options here you can override Caster global options
+     *
+     * @return CastingContext<T>
      */
     public function to(Type $type, ?Options $options = null) : CastingContext
     {

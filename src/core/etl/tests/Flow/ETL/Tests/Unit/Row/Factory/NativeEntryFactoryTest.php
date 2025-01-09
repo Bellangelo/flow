@@ -14,8 +14,6 @@ use function Flow\ETL\DSL\{bool_entry,
     json_object_entry,
     list_entry,
     str_entry,
-    structure_element,
-    structure_type,
     time_entry,
     type_datetime,
     type_float,
@@ -25,13 +23,10 @@ use function Flow\ETL\DSL\{bool_entry,
     type_string,
     uuid_entry,
     xml_entry};
+use function Flow\ETL\DSL\{bool_schema, date_schema, datetime_schema, enum_schema, float_schema, integer_schema, json_schema, list_schema, schema, string_schema, structure_entry, time_schema, type_integer, type_structure, uuid_schema, xml_schema};
 use Flow\ETL\Exception\{CastingException, SchemaDefinitionNotFoundException};
-use Flow\ETL\PHP\Type\Logical\List\ListElement;
-use Flow\ETL\PHP\Type\Logical\Structure\StructureElement;
-use Flow\ETL\PHP\Type\Logical\{ListType, StructureType};
-use Flow\ETL\Row\Entry\{StructureEntry, TimeEntry};
+use Flow\ETL\Row\Entry\{TimeEntry};
 use Flow\ETL\Row\Factory\NativeEntryFactory;
-use Flow\ETL\Row\Schema;
 use Flow\ETL\Tests\Fixtures\Enum\BackedIntEnum;
 use Flow\ETL\Tests\FlowTestCase;
 use PHPUnit\Framework\Attributes\DataProvider;
@@ -69,11 +64,7 @@ final class NativeEntryFactoryTest extends FlowTestCase
     public function test_array_structure() : void
     {
         self::assertEquals(
-            new StructureEntry(
-                'e',
-                ['a' => 1, 'b' => '2'],
-                new StructureType([new StructureElement('a', type_int()), new StructureElement('b', type_string())])
-            ),
+            structure_entry('e', ['a' => 1, 'b' => '2'], type_structure(['a' => type_int(), 'b' => type_string()])),
             (new NativeEntryFactory())->create('e', ['a' => 1, 'b' => '2'])
         );
     }
@@ -90,7 +81,7 @@ final class NativeEntryFactoryTest extends FlowTestCase
     {
         self::assertEquals(
             bool_entry('e', false),
-            (new NativeEntryFactory())->create('e', false, new Schema(Schema\Definition::boolean('e')))
+            (new NativeEntryFactory())->create('e', false, schema(bool_schema('e')))
         );
     }
 
@@ -106,7 +97,7 @@ final class NativeEntryFactoryTest extends FlowTestCase
     {
         self::assertEquals(
             date_entry('e', '1970-01-01'),
-            (new NativeEntryFactory())->create('e', 1, new Schema(Schema\Definition::date('e')))
+            (new NativeEntryFactory())->create('e', 1, schema(date_schema('e')))
         );
     }
 
@@ -114,7 +105,7 @@ final class NativeEntryFactoryTest extends FlowTestCase
     {
         self::assertEquals(
             date_entry('e', null),
-            (new NativeEntryFactory())->create('e', null, new Schema(Schema\Definition::date('e', true)))
+            (new NativeEntryFactory())->create('e', null, schema(date_schema('e', true)))
         );
     }
 
@@ -122,7 +113,7 @@ final class NativeEntryFactoryTest extends FlowTestCase
     {
         self::assertEquals(
             date_entry('e', '2022-01-01'),
-            (new NativeEntryFactory())->create('e', '2022-01-01', new Schema(Schema\Definition::date('e')))
+            (new NativeEntryFactory())->create('e', '2022-01-01', schema(date_schema('e')))
         );
     }
 
@@ -139,7 +130,7 @@ final class NativeEntryFactoryTest extends FlowTestCase
         self::assertEquals(
             datetime_entry('e', '2022-01-01 00:00:00 UTC'),
             (new NativeEntryFactory())
-                ->create('e', '2022-01-01 00:00:00 UTC', new Schema(Schema\Definition::dateTime('e')))
+                ->create('e', '2022-01-01 00:00:00 UTC', schema(datetime_schema('e')))
         );
     }
 
@@ -148,7 +139,7 @@ final class NativeEntryFactoryTest extends FlowTestCase
         self::assertEquals(
             datetime_entry('e', $datetime = new \DateTimeImmutable('now')),
             (new NativeEntryFactory())
-                ->create('e', $datetime, new Schema(Schema\Definition::dateTime('e')))
+                ->create('e', $datetime, schema(datetime_schema('e')))
         );
     }
 
@@ -166,7 +157,7 @@ final class NativeEntryFactoryTest extends FlowTestCase
         self::assertEquals(
             enum_entry('e', BackedIntEnum::one),
             (new NativeEntryFactory())
-                ->create('e', 1, new Schema(Schema\Definition::enum('e', BackedIntEnum::class)))
+                ->create('e', 1, schema(enum_schema('e', BackedIntEnum::class)))
         );
     }
 
@@ -176,7 +167,7 @@ final class NativeEntryFactoryTest extends FlowTestCase
         $this->expectExceptionMessage("Can't cast \"string\" into \"enum<Flow\ETL\Tests\Fixtures\Enum\BackedIntEnum>\" type");
 
         (new NativeEntryFactory())
-            ->create('e', 'invalid', new Schema(Schema\Definition::enum('e', BackedIntEnum::class)));
+            ->create('e', 'invalid', schema(enum_schema('e', BackedIntEnum::class)));
     }
 
     public function test_float() : void
@@ -191,7 +182,7 @@ final class NativeEntryFactoryTest extends FlowTestCase
     {
         self::assertEquals(
             float_entry('e', 1.1),
-            (new NativeEntryFactory())->create('e', 1.1, new Schema(Schema\Definition::float('e')))
+            (new NativeEntryFactory())->create('e', 1.1, schema(float_schema('e')))
         );
     }
 
@@ -215,7 +206,7 @@ final class NativeEntryFactoryTest extends FlowTestCase
     {
         self::assertEquals(
             int_entry('e', 1),
-            (new NativeEntryFactory())->create('e', 1, new Schema(Schema\Definition::integer('e')))
+            (new NativeEntryFactory())->create('e', 1, schema(integer_schema('e')))
         );
     }
 
@@ -231,7 +222,7 @@ final class NativeEntryFactoryTest extends FlowTestCase
     {
         self::assertEquals(
             json_object_entry('e', ['id' => 1]),
-            (new NativeEntryFactory())->create('e', ['id' => 1], new Schema(Schema\Definition::json('e')))
+            (new NativeEntryFactory())->create('e', ['id' => 1], schema(json_schema('e')))
         );
     }
 
@@ -247,7 +238,7 @@ final class NativeEntryFactoryTest extends FlowTestCase
     {
         self::assertEquals(
             json_entry('e', '{"id": 1}'),
-            (new NativeEntryFactory())->create('e', '{"id": 1}', new Schema(Schema\Definition::json('e')))
+            (new NativeEntryFactory())->create('e', '{"id": 1}', schema(json_schema('e')))
         );
     }
 
@@ -255,7 +246,7 @@ final class NativeEntryFactoryTest extends FlowTestCase
     {
         self::assertEquals(
             json_entry('e', [['id' => 1]]),
-            (new NativeEntryFactory())->create('e', [['id' => 1]], new Schema(Schema\Definition::json('e')))
+            (new NativeEntryFactory())->create('e', [['id' => 1]], schema(json_schema('e')))
         );
     }
 
@@ -263,7 +254,7 @@ final class NativeEntryFactoryTest extends FlowTestCase
     {
         self::assertEquals(
             list_entry('e', [1, 2, 3], type_list(type_int())),
-            (new NativeEntryFactory())->create('e', [1, 2, 3], new Schema(Schema\Definition::list('e', new ListType(ListElement::integer()))))
+            (new NativeEntryFactory())->create('e', [1, 2, 3], schema(list_schema('e', type_list(type_integer()))))
         );
     }
 
@@ -271,7 +262,7 @@ final class NativeEntryFactoryTest extends FlowTestCase
     {
         self::assertEquals(
             list_entry('e', ['false', 'true', 'true'], type_list(type_string())),
-            (new NativeEntryFactory())->create('e', [false, true, true], new Schema(Schema\Definition::list('e', new ListType(ListElement::string()))))
+            (new NativeEntryFactory())->create('e', [false, true, true], schema(list_schema('e', type_list(type_string()))))
         );
     }
 
@@ -280,7 +271,7 @@ final class NativeEntryFactoryTest extends FlowTestCase
         self::assertEquals(
             list_entry('e', $list = [new \DateTimeImmutable('now'), new \DateTimeImmutable('tomorrow')], type_list(type_datetime())),
             (new NativeEntryFactory())
-                ->create('e', $list, new Schema(Schema\Definition::list('e', new ListType(ListElement::datetime()))))
+                ->create('e', $list, schema(list_schema('e', type_list(type_datetime()))))
         );
     }
 
@@ -303,27 +294,20 @@ final class NativeEntryFactoryTest extends FlowTestCase
     public function test_nested_structure() : void
     {
         self::assertEquals(
-            new StructureEntry(
-                'address',
-                [
-                    'city' => 'Krakow',
-                    'geo' => [
-                        'lat' => 50.06143,
-                        'lon' => 19.93658,
-                    ],
-                    'street' => 'Floriańska',
-                    'zip' => '31-021',
+            structure_entry('address', [
+                'city' => 'Krakow',
+                'geo' => [
+                    'lat' => 50.06143,
+                    'lon' => 19.93658,
                 ],
-                structure_type([
-                    structure_element('city', type_string()),
-                    structure_element(
-                        'geo',
-                        type_map(type_string(), type_float())
-                    ),
-                    structure_element('street', type_string()),
-                    structure_element('zip', type_string()),
-                ]),
-            ),
+                'street' => 'Floriańska',
+                'zip' => '31-021',
+            ], type_structure([
+                'city' => type_string(),
+                'geo' => type_map(type_string(), type_float()),
+                'street' => type_string(),
+                'zip' => type_string(),
+            ])),
             (new NativeEntryFactory())->create('address', [
                 'city' => 'Krakow',
                 'geo' => [
@@ -355,23 +339,19 @@ final class NativeEntryFactoryTest extends FlowTestCase
     {
         self::assertEquals(
             str_entry('e', 'string'),
-            (new NativeEntryFactory())->create('e', 'string', new Schema(Schema\Definition::string('e')))
+            (new NativeEntryFactory())->create('e', 'string', schema(string_schema('e')))
         );
     }
 
     public function test_structure() : void
     {
         self::assertEquals(
-            new StructureEntry(
-                'address',
-                ['id' => 1, 'city' => 'Krakow', 'street' => 'Floriańska', 'zip' => '31-021'],
-                new StructureType([
-                    new StructureElement('id', type_int()),
-                    new StructureElement('city', type_string()),
-                    new StructureElement('street', type_string()),
-                    new StructureElement('zip', type_string()),
-                ])
-            ),
+            structure_entry('address', ['id' => 1, 'city' => 'Krakow', 'street' => 'Floriańska', 'zip' => '31-021'], type_structure([
+                'id' => type_int(),
+                'city' => type_string(),
+                'street' => type_string(),
+                'zip' => type_string(),
+            ])),
             (new NativeEntryFactory())->create('address', ['id' => 1, 'city' => 'Krakow', 'street' => 'Floriańska', 'zip' => '31-021'])
         );
     }
@@ -388,7 +368,7 @@ final class NativeEntryFactoryTest extends FlowTestCase
     {
         self::assertEquals(
             time_entry('e', null),
-            (new NativeEntryFactory())->create('e', null, new Schema(Schema\Definition::time('e', true)))
+            (new NativeEntryFactory())->create('e', null, schema(time_schema('e', true)))
         );
     }
 
@@ -396,7 +376,7 @@ final class NativeEntryFactoryTest extends FlowTestCase
     {
         self::assertEquals(
             time_entry('e', new \DateInterval('P10D')),
-            (new NativeEntryFactory())->create('e', 'P10D', new Schema(Schema\Definition::time('e')))
+            (new NativeEntryFactory())->create('e', 'P10D', schema(time_schema('e')))
         );
     }
 
@@ -433,7 +413,7 @@ final class NativeEntryFactoryTest extends FlowTestCase
     {
         self::assertEquals(
             uuid_entry('e', $uuid = '00000000-0000-0000-0000-000000000000'),
-            (new NativeEntryFactory())->create('e', $uuid, new Schema(Schema\Definition::uuid('e')))
+            (new NativeEntryFactory())->create('e', $uuid, schema(uuid_schema('e')))
         );
     }
 
@@ -442,7 +422,7 @@ final class NativeEntryFactoryTest extends FlowTestCase
         $this->expectException(SchemaDefinitionNotFoundException::class);
 
         (new NativeEntryFactory())
-            ->create('e', '1', new Schema());
+            ->create('e', '1', schema());
     }
 
     public function test_with_schema_for_different_entry() : void
@@ -450,7 +430,7 @@ final class NativeEntryFactoryTest extends FlowTestCase
         $this->expectException(SchemaDefinitionNotFoundException::class);
 
         (new NativeEntryFactory())
-            ->create('diff', '1', new Schema(Schema\Definition::string('e')));
+            ->create('diff', '1', schema(string_schema('e')));
     }
 
     public function test_xml_from_dom_document() : void
@@ -475,7 +455,7 @@ final class NativeEntryFactoryTest extends FlowTestCase
     {
         self::assertEquals(
             xml_entry('e', $xml = '<root><foo>1</foo><bar>2</bar><baz>3</baz></root>'),
-            (new NativeEntryFactory())->create('e', $xml, new Schema(Schema\Definition::xml('e')))
+            (new NativeEntryFactory())->create('e', $xml, schema(xml_schema('e')))
         );
     }
 }

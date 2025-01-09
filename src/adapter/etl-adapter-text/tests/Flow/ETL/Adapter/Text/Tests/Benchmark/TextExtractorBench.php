@@ -5,17 +5,18 @@ declare(strict_types=1);
 namespace Flow\ETL\Adapter\Text\Tests\Benchmark;
 
 use function Flow\ETL\Adapter\Text\from_text;
-use Flow\ETL\{Config, FlowContext};
+use function Flow\ETL\DSL\{config, flow_context};
+use Flow\ETL\{FlowContext};
 use PhpBench\Attributes\Groups;
 
 #[Groups(['extractor'])]
-final class TextExtractorBench
+final readonly class TextExtractorBench
 {
-    private readonly FlowContext $context;
+    private FlowContext $context;
 
     public function __construct()
     {
-        $this->context = new FlowContext(Config::default());
+        $this->context = flow_context(config());
     }
 
     public function bench_extract_10k() : void

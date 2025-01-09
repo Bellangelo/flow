@@ -11,6 +11,9 @@ use Flow\ETL\Row\{Entry, Reference};
 
 final class First implements AggregatingFunction
 {
+    /**
+     * @var null|Entry<mixed, mixed>
+     */
     private ?Entry $first;
 
     public function __construct(private readonly Reference $ref)
@@ -23,12 +26,15 @@ final class First implements AggregatingFunction
         if ($this->first === null) {
             try {
                 $this->first = $row->get($this->ref);
-            } catch (InvalidArgumentException $e) {
+            } catch (InvalidArgumentException) {
                 // entry not found
             }
         }
     }
 
+    /**
+     * @return Entry<mixed, mixed>
+     */
     public function result() : Entry
     {
         $name = $this->ref->hasAlias() ? $this->ref->name() : $this->ref->name() . '_first';

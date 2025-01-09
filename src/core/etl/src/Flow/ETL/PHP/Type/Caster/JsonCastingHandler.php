@@ -11,6 +11,9 @@ use Flow\ETL\PHP\Type\{Caster, Type};
 
 final class JsonCastingHandler implements CastingHandler
 {
+    /**
+     * @param Type<array> $type
+     */
     public function supports(Type $type) : bool
     {
         return $type instanceof JsonType;
@@ -28,7 +31,7 @@ final class JsonCastingHandler implements CastingHandler
             }
 
             return \json_encode($value, JSON_THROW_ON_ERROR);
-        } catch (\Throwable $e) {
+        } catch (\Throwable) {
             throw new CastingException($value, $type);
         }
     }

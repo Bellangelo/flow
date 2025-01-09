@@ -10,6 +10,9 @@ use Flow\ETL\PHP\Type\{Caster, Type};
 
 final class StructureCastingHandler implements CastingHandler
 {
+    /**
+     * @param Type<array> $type
+     */
     public function supports(Type $type) : bool
     {
         return $type instanceof StructureType;
@@ -25,12 +28,11 @@ final class StructureCastingHandler implements CastingHandler
 
             $castedStructure = [];
 
-            foreach ($type->elements() as $element) {
-                $elementName = $element->name();
+            foreach ($type->elements() as $elementName => $elementType) {
 
                 $castedStructure[$elementName] = (\is_array($value) && \array_key_exists($elementName, $value))
-                    ? $caster->to($element->type())->value($value[$elementName])
-                    : $caster->to($element->type())->value(null);
+                    ? $caster->to($elementType)->value($value[$elementName])
+                    : $caster->to($elementType)->value(null);
             }
 
             return $castedStructure;

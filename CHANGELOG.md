@@ -1,6 +1,11 @@
-## [Unreleased] - 2025-01-04
+## [Unreleased] - 2025-01-08
 
 ### Added
+- [#1329](https://github.com/flow-php/flow/pull/1329) - **Run PHPStan for test suite** - [@Bellangelo](https://github.com/Bellangelo)
+- [#1341](https://github.com/flow-php/flow/pull/1341) - **Rector to static analysis tools** - [@norberttech](https://github.com/norberttech)
+- [#1339](https://github.com/flow-php/flow/pull/1339) - **Tool - rector** - [@norberttech](https://github.com/norberttech)
+- [#1337](https://github.com/flow-php/flow/pull/1337) - **Slug Scalar Function** - [@norberttech](https://github.com/norberttech)
+- [#1337](https://github.com/flow-php/flow/pull/1337) - **Ascii Scalar Function** - [@norberttech](https://github.com/norberttech)
 - [#1326](https://github.com/flow-php/flow/pull/1326) - **template to Types that defines underlying data type** - [@norberttech](https://github.com/norberttech)
 - [#1325](https://github.com/flow-php/flow/pull/1325) - **Precision to float type** - [@norberttech](https://github.com/norberttech)
 - [#1325](https://github.com/flow-php/flow/pull/1325) - **caster DSL function** - [@norberttech](https://github.com/norberttech)
@@ -41,6 +46,12 @@
 - [#1244](https://github.com/flow-php/flow/pull/1244) - **Added CLI command to read schema from a file** - [@norberttech](https://github.com/norberttech)
 
 ### Changed
+- [#1343](https://github.com/flow-php/flow/pull/1343) - **Simplified defining StructureType by removing StructureElement** - [@norberttech](https://github.com/norberttech)
+- [#1341](https://github.com/flow-php/flow/pull/1341) - **Enforce using DSL in test suite** - [@norberttech](https://github.com/norberttech)
+- [#1339](https://github.com/flow-php/flow/pull/1339) - **Upgraded codebase to PHP 8.2** - [@norberttech](https://github.com/norberttech)
+- [#1336](https://github.com/flow-php/flow/pull/1336) - **Replaced jawira/case-converter with symfony/string** - [@norberttech](https://github.com/norberttech)
+- [#1336](https://github.com/flow-php/flow/pull/1336) - **Removed redundant String Style class** - [@norberttech](https://github.com/norberttech)
+- [#1328](https://github.com/flow-php/flow/pull/1328) - **Harden phpstan generics static analysis configuration** - [@norberttech](https://github.com/norberttech)
 - [#1326](https://github.com/flow-php/flow/pull/1326) - **Made return types of casting handlers more strict** - [@norberttech](https://github.com/norberttech)
 - [#1325](https://github.com/flow-php/flow/pull/1325) - **Caster will now respect float precision** - [@norberttech](https://github.com/norberttech)
 - [#1325](https://github.com/flow-php/flow/pull/1325) - **Split ScalarType into standalone types** - [@norberttech](https://github.com/norberttech)
@@ -83,6 +94,7 @@
 - [#1240](https://github.com/flow-php/flow/pull/1240) - **Update Homebrew TAP formula: flow-php to version: 0.10.0** - [@norberttech](https://github.com/norberttech)
 
 ### Fixed
+- [#1343](https://github.com/flow-php/flow/pull/1343) - **Structure ignoring wrong element names, not matching type definition** - [@norberttech](https://github.com/norberttech)
 - [39af78](https://github.com/flow-php/flow/commit/39af78b4626daa32d1092ce50fa105cb1e3266cd) - **paths in test suite triggers on github actions** - [@norberttech](https://github.com/norberttech)
 - [01b885](https://github.com/flow-php/flow/commit/01b885dd7b5f64ced595579eb2a422652db4c967) - **codecov using base commit only for pull requests, otherwise upload baseline commit** - [@norberttech](https://github.com/norberttech)
 - [e26960](https://github.com/flow-php/flow/commit/e2696094f6723411c126262d3b83047236d6d469) - **warnings in Github Baselin Workflow** - [@norberttech](https://github.com/norberttech)
@@ -119,6 +131,10 @@
 - [afb55b](https://github.com/flow-php/flow/commit/afb55b8a8d8f7678257b29cbd34737fbbb9f0fce) - **introduction.md** - [@norberttech](https://github.com/norberttech)
 
 ### Removed
+- [#1343](https://github.com/flow-php/flow/pull/1343) - **MapKey** - [@norberttech](https://github.com/norberttech)
+- [#1343](https://github.com/flow-php/flow/pull/1343) - **MapValue** - [@norberttech](https://github.com/norberttech)
+- [#1343](https://github.com/flow-php/flow/pull/1343) - **ListElement** - [@norberttech](https://github.com/norberttech)
+- [#1343](https://github.com/flow-php/flow/pull/1343) - **StructureElemet** - [@norberttech](https://github.com/norberttech)
 - [#1311](https://github.com/flow-php/flow/pull/1311) - **Psalm - static analysis tool** - [@norberttech](https://github.com/norberttech)
 - [#1288](https://github.com/flow-php/flow/pull/1288) - **Drop support for PHP 8.1** - [@stloyd](https://github.com/stloyd)
 - [#1273](https://github.com/flow-php/flow/pull/1273) - **development leftover methods from Filesystems** - [@norberttech](https://github.com/norberttech)

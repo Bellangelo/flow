@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Function;
 
-use function Flow\ETL\DSL\ref;
-use Flow\ETL\Row;
+use function Flow\ETL\DSL\{ref, row};
 use Flow\ETL\Row\Factory\NativeEntryFactory;
 use Flow\ETL\Tests\FlowTestCase;
 
@@ -16,9 +15,10 @@ final class DOMElementValueTest extends FlowTestCase
         $xml = new \DOMDocument();
         $xml->loadXML('<root><foo><bar>baz</bar></foo></root>');
 
+        self::assertInstanceOf(\DOMElement::class, $xml->documentElement);
         self::assertEquals(
             'baz',
-            ref('value')->domElementValue()->eval(Row::create((new NativeEntryFactory())->create('value', $xml->documentElement->firstChild)))
+            ref('value')->domElementValue()->eval(row((new NativeEntryFactory())->create('value', $xml->documentElement->firstChild)))
         );
     }
 
@@ -27,9 +27,10 @@ final class DOMElementValueTest extends FlowTestCase
         $xml = new \DOMDocument();
         $xml->loadXML('<root><foo>bar</foo></root>');
 
+        self::assertInstanceOf(\DOMElement::class, $xml->documentElement);
         self::assertEquals(
             'bar',
-            ref('value')->domElementValue()->eval(Row::create((new NativeEntryFactory())->create('value', $xml->documentElement->firstChild)))
+            ref('value')->domElementValue()->eval(row((new NativeEntryFactory())->create('value', $xml->documentElement->firstChild)))
         );
     }
 }

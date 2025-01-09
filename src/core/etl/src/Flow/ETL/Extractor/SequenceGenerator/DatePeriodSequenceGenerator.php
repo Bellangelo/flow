@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Extractor\SequenceGenerator;
 
-final class DatePeriodSequenceGenerator implements SequenceGenerator
+final readonly class DatePeriodSequenceGenerator implements SequenceGenerator
 {
-    public function __construct(private readonly \DatePeriod $period)
+    /**
+     * @param \DatePeriod<\DateTimeImmutable, \DateTimeImmutable, null> $period
+     */
+    public function __construct(private \DatePeriod $period)
     {
     }
 

@@ -9,10 +9,9 @@ use Flow\ETL\PHP\Type\{Caster, Native\FloatType, Type};
 
 final class FloatCastingHandler implements CastingHandler
 {
-    public function __construct()
-    {
-    }
-
+    /**
+     * @param Type<float> $type
+     */
     public function supports(Type $type) : bool
     {
         return $type instanceof FloatType;
@@ -44,7 +43,7 @@ final class FloatCastingHandler implements CastingHandler
 
         try {
             return \round((float) $value, $type->precision, $options->get(Options::FLOAT_ROUNDING_MODE)->value);
-        } catch (\Throwable $e) {
+        } catch (\Throwable) {
             throw new CastingException($value, $type);
         }
     }

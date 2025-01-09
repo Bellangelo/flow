@@ -10,6 +10,9 @@ use Flow\ETL\PHP\Type\{Caster, Type};
 
 final class ListCastingHandler implements CastingHandler
 {
+    /**
+     * @param Type<array> $type
+     */
     public function supports(Type $type) : bool
     {
         return $type instanceof ListType;
@@ -24,17 +27,17 @@ final class ListCastingHandler implements CastingHandler
             }
 
             if (!\is_array($value)) {
-                return [$caster->to($type->element()->type())->value($value)];
+                return [$caster->to($type->element())->value($value)];
             }
 
             $castedList = [];
 
             foreach ($value as $key => $item) {
-                $castedList[$key] = $caster->to($type->element()->type())->value($item);
+                $castedList[$key] = $caster->to($type->element())->value($item);
             }
 
             return $castedList;
-        } catch (\Throwable $e) {
+        } catch (\Throwable) {
             throw new CastingException($value, $type);
         }
     }

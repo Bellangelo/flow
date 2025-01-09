@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Adapter\HTTP\Tests\Integration;
 
+use function Flow\ETL\DSL\{config, flow_context};
 use Flow\ETL\Adapter\Http\PsrHttpClientStaticExtractor;
-use Flow\ETL\{Config, FlowContext, Rows, Tests\FlowTestCase};
+use Flow\ETL\{Rows, Tests\FlowTestCase};
 use Http\Mock\Client;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use Nyholm\Psr7\Response;
@@ -37,7 +38,7 @@ final class PsrHttpClientStaticExtractorTest extends FlowTestCase
 
         $extractor = new PsrHttpClientStaticExtractor($psr18Client, $requests());
 
-        $rowsGenerator = $extractor->extract(new FlowContext(Config::default()));
+        $rowsGenerator = $extractor->extract(flow_context(config()));
 
         /** @var Rows $norbertRows */
         $norbertRows = $rowsGenerator->current();
@@ -47,8 +48,8 @@ final class PsrHttpClientStaticExtractorTest extends FlowTestCase
         /** @var Rows $tomekRows */
         $tomekRows = $rowsGenerator->current();
 
-        $norbertResponseBody = \json_decode($norbertRows->first()->valueOf('response_body'), true, 512, JSON_THROW_ON_ERROR);
-        $tomekResponseBody = \json_decode($tomekRows->first()->valueOf('response_body'), true, 512, JSON_THROW_ON_ERROR);
+        $norbertResponseBody = \json_decode((string) $norbertRows->first()->valueOf('response_body'), true, 512, JSON_THROW_ON_ERROR);
+        $tomekResponseBody = \json_decode((string) $tomekRows->first()->valueOf('response_body'), true, 512, JSON_THROW_ON_ERROR);
 
         self::assertSame('norberttech', $norbertResponseBody['login']);
         self::assertSame('tomaszhanc', $tomekResponseBody['login']);

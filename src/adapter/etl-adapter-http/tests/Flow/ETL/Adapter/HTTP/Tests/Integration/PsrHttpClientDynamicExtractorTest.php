@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Adapter\HTTP\Tests\Integration;
 
+use function Flow\ETL\DSL\{config, flow_context};
 use Flow\ETL\Adapter\Http\DynamicExtractor\NextRequestFactory;
 use Flow\ETL\Adapter\Http\PsrHttpClientDynamicExtractor;
-use Flow\ETL\{Config, FlowContext, Tests\FlowTestCase};
+use Flow\ETL\{Tests\FlowTestCase};
 use Http\Mock\Client;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use Nyholm\Psr7\Response;
@@ -41,9 +42,9 @@ final class PsrHttpClientDynamicExtractorTest extends FlowTestCase
             }
         });
 
-        $rows = $extractor->extract(new FlowContext(Config::default()));
+        $rows = $extractor->extract(flow_context(config()));
 
-        $body = \json_decode($rows->current()->first()->valueOf('response_body'), true, 512, JSON_THROW_ON_ERROR);
+        $body = \json_decode((string) $rows->current()->first()->valueOf('response_body'), true, 512, JSON_THROW_ON_ERROR);
 
         self::assertSame(1, $rows->current()->count());
         self::assertSame('flow-php', $body['login'], \json_encode($body, JSON_THROW_ON_ERROR));

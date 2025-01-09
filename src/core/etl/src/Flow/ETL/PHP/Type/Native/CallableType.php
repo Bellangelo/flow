@@ -8,11 +8,11 @@ use Flow\ETL\Exception\InvalidArgumentException;
 use Flow\ETL\PHP\Type\Type;
 
 /**
- * @implements NativeType<callable>
+ * @implements Type<callable>
  */
-final class CallableType implements NativeType
+final readonly class CallableType implements Type
 {
-    public function __construct(private readonly bool $nullable)
+    public function __construct(private bool $nullable)
     {
 
     }

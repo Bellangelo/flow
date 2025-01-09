@@ -15,8 +15,8 @@ use Flow\ETL\PHP\Type\Logical\{DateTimeType,
     UuidType,
     XMLElementType,
     XMLType};
-use Flow\ETL\PHP\Type\Native\{ArrayType, EnumType, NativeType, NullType, ObjectType, StringType};
-use Flow\ETL\PHP\Type\TypeDetector;
+use Flow\ETL\PHP\Type\Native\{ArrayType, EnumType, NullType, ObjectType, StringType};
+use Flow\ETL\PHP\Type\{Type, TypeDetector};
 use Flow\ETL\PHP\Value\Uuid;
 use Flow\ETL\Tests\Fixtures\Enum\BasicEnum;
 use Flow\ETL\Tests\FlowTestCase;
@@ -386,7 +386,7 @@ final class TypeDetectorTest extends FlowTestCase
     }
 
     #[DataProvider('provide_logical_types_data')]
-    public function test_logical_types($data, string $class, string $description) : void
+    public function test_logical_types(mixed $data, string $class, string $description) : void
     {
         $type = (new TypeDetector())->detectType($data);
 
@@ -400,8 +400,11 @@ final class TypeDetectorTest extends FlowTestCase
         self::assertInstanceOf(ObjectType::class, (new TypeDetector())->detectType($data));
     }
 
+    /**
+     * @param Type<mixed> $expectedType
+     */
     #[DataProvider('provide_scalar_data')]
-    public function test_scalar_types(mixed $data, string $description, NativeType $expectedType) : void
+    public function test_scalar_types(mixed $data, string $description, Type $expectedType) : void
     {
         $type = (new TypeDetector())->detectType($data);
         self::assertInstanceOf($expectedType::class, $type);

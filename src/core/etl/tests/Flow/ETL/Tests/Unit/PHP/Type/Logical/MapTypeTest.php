@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\PHP\Type\Logical;
 
-use Flow\ETL\PHP\Type\Logical\List\ListElement;
-use Flow\ETL\PHP\Type\Logical\Map\{MapKey, MapValue};
-use Flow\ETL\PHP\Type\Logical\{ListType, MapType};
+use function Flow\ETL\DSL\{type_float, type_integer, type_list, type_map, type_string};
+use Flow\ETL\Exception\InvalidArgumentException;
 use Flow\ETL\Tests\FlowTestCase;
 
 final class MapTypeTest extends FlowTestCase
@@ -14,21 +13,13 @@ final class MapTypeTest extends FlowTestCase
     public function test_equals() : void
     {
         self::assertTrue(
-            (new MapType(MapKey::string(), MapValue::float()))->isEqual(new MapType(MapKey::string(), MapValue::float()))
+            (type_map(type_string(), type_float()))->isEqual(type_map(type_string(), type_float()))
         );
         self::assertFalse(
-            (new MapType(MapKey::string(), MapValue::float()))->isEqual(new ListType(ListElement::integer()))
+            (type_map(type_string(), type_float()))->isEqual(type_list(type_integer()))
         );
         self::assertFalse(
-            (new MapType(MapKey::string(), MapValue::float()))->isEqual(new MapType(MapKey::string(), MapValue::integer()))
-        );
-    }
-
-    public function test_key() : void
-    {
-        self::assertEquals(
-            $key = MapKey::string(),
-            (new MapType($key, MapValue::float()))->key()
+            (type_map(type_string(), type_float()))->isEqual(type_map(type_string(), type_integer()))
         );
     }
 
@@ -36,45 +27,41 @@ final class MapTypeTest extends FlowTestCase
     {
         self::assertSame(
             'map<string, string>',
-            (new MapType(MapKey::string(), MapValue::string()))->toString()
+            (type_map(type_string(), type_string()))->toString()
         );
+    }
+
+    public function test_using_nullable_map_key() : void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Key cannot be nullable');
+
+        type_map(type_string(true), type_string());
     }
 
     public function test_valid() : void
     {
         self::assertTrue(
-            (new MapType(MapKey::string(), MapValue::string()))->isValid(['one' => 'two'])
+            (type_map(type_string(), type_string()))->isValid(['one' => 'two'])
         );
         self::assertTrue(
-            (new MapType(MapKey::string(), MapValue::string(), true))->isValid(null)
+            (type_map(type_string(), type_string(), true))->isValid(null)
         );
         self::assertTrue(
-            (new MapType(MapKey::integer(), MapValue::list(new ListType(ListElement::integer()))))->isValid([[1, 2], [3, 4]])
+            (type_map(type_integer(), type_list(type_integer())))->isValid([[1, 2], [3, 4]])
         );
         self::assertTrue(
-            (
-                new MapType(
-                    MapKey::integer(),
-                    MapValue::map(new MapType(MapKey::string(), MapValue::list(new ListType(ListElement::integer()))))
-                )
-            )->isValid([0 => ['one' => [1, 2]], 1 => ['two' => [3, 4]]])
+            (type_map(type_integer(), type_map(type_string(), type_list(type_integer()))))
+                ->isValid([0 => ['one' => [1, 2]], 1 => ['two' => [3, 4]]])
         );
         self::assertFalse(
-            (new MapType(MapKey::integer(), MapValue::string()))->isValid(['one' => 'two'])
+            (type_map(type_integer(), type_string()))->isValid(['one' => 'two'])
         );
         self::assertFalse(
-            (new MapType(MapKey::integer(), MapValue::string()))->isValid([1, 2])
+            (type_map(type_integer(), type_string()))->isValid([1, 2])
         );
         self::assertFalse(
-            (new MapType(MapKey::string(), MapValue::string()))->isValid(123)
-        );
-    }
-
-    public function test_value() : void
-    {
-        self::assertEquals(
-            $value = MapValue::string(),
-            (new MapType(MapKey::string(), $value))->value()
+            (type_map(type_string(), type_string()))->isValid(123)
         );
     }
 }

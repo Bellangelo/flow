@@ -22,7 +22,7 @@ final class AsyncAWSS3FilesystemTest extends AsyncAWSS3TestCase
             ->append("This is second line\n")
             ->close();
 
-        self::assertTrue($fs->status(path('aws-s3://var/file.txt'))->isFile());
+        self::assertTrue($fs->status(path('aws-s3://var/file.txt'))?->isFile());
         self::assertFalse($fs->status(path('aws-s3://var/file.txt'))->isDirectory());
 
         self::assertStringStartsWith(\str_repeat('a', 1024), $fs->readFrom(path('aws-s3://var/file.txt'))->read(1024, 0));
@@ -43,7 +43,7 @@ final class AsyncAWSS3FilesystemTest extends AsyncAWSS3TestCase
             ->append("This is second line\n")
             ->close();
 
-        self::assertTrue($fs->status(path('aws-s3://var/file.txt'))->isFile());
+        self::assertTrue($fs->status(path('aws-s3://var/file.txt'))?->isFile());
         self::assertFalse($fs->status(path('aws-s3://var/file.txt'))->isDirectory());
         self::assertSame(
             <<<'TXT'
@@ -65,7 +65,7 @@ TXT
         $stream = $fs->writeTo(path('aws-s3://orders.csv'))->fromResource(\fopen(__DIR__ . '/Fixtures/orders.csv', 'rb'));
         $stream->close();
 
-        self::assertTrue($fs->status(path('aws-s3://orders.csv'))->isFile());
+        self::assertTrue($fs->status(path('aws-s3://orders.csv'))?->isFile());
     }
 
     public function test_file_status_on_existing_folder() : void
@@ -76,8 +76,8 @@ TXT
             ->fromResource(\fopen(__DIR__ . '/Fixtures/orders.csv', 'rb'))
             ->close();
 
-        self::assertTrue($fs->status(path('aws-s3://var/nested'))->isDirectory());
-        self::assertTrue($fs->status(path('aws-s3://var/nested/'))->isDirectory());
+        self::assertTrue($fs->status(path('aws-s3://var/nested'))?->isDirectory());
+        self::assertTrue($fs->status(path('aws-s3://var/nested/'))?->isDirectory());
     }
 
     public function test_file_status_on_non_existing_file() : void
@@ -118,7 +118,7 @@ TXT
         $stream = $fs->writeTo(path('aws-s3://var/some_path_to/file.txt'))->fromResource(\fopen(__DIR__ . '/Fixtures/orders.csv', 'rb'));
         $stream->close();
 
-        self::assertTrue($fs->status(path('aws-s3://var/some_path_to/*.txt'))->isFile());
+        self::assertTrue($fs->status(path('aws-s3://var/some_path_to/*.txt'))?->isFile());
         self::assertSame(
             'aws-s3://var/some_path_to/file.txt',
             $fs->status(path('aws-s3://var/some_path_to/*.txt'))->path->uri()
@@ -129,7 +129,7 @@ TXT
     {
         $fs = aws_s3_filesystem($this->bucket(), $this->s3Client());
 
-        self::assertTrue($fs->status(path('aws-s3:///'))->isDirectory());
+        self::assertTrue($fs->status(path('aws-s3:///'))?->isDirectory());
     }
 
     public function test_move_blob() : void
@@ -152,8 +152,8 @@ TXT
         $fs->writeTo(path('aws-s3://var/nested/orders/orders.csv'))->fromResource(\fopen(__DIR__ . '/Fixtures/orders.csv', 'rb'))->close();
         $fs->writeTo(path('aws-s3://var/nested/orders/orders_01.csv'))->fromResource(\fopen(__DIR__ . '/Fixtures/orders.csv', 'rb'))->close();
 
-        self::assertTrue($fs->status(path('aws-s3://var/nested/orders/orders.csv'))->isFile());
-        self::assertTrue($fs->status(path('aws-s3://var/nested/orders/orders_01.csv'))->isFile());
+        self::assertTrue($fs->status(path('aws-s3://var/nested/orders/orders.csv'))?->isFile());
+        self::assertTrue($fs->status(path('aws-s3://var/nested/orders/orders_01.csv'))?->isFile());
 
         self::assertFalse($fs->rm(path('aws-s3://var/nested/orders/ord')));
     }
@@ -166,7 +166,7 @@ TXT
         $stream->append('some data to make file not empty');
         $stream->close();
 
-        self::assertTrue($fs->status($stream->path())->isFile());
+        self::assertTrue($fs->status($stream->path())?->isFile());
 
         self::assertTrue($fs->rm($stream->path()));
         self::assertNull($fs->status($stream->path()));
@@ -183,8 +183,8 @@ TXT
             ->append('some data to make file not empty')
             ->close();
 
-        self::assertTrue($fs->status(path('aws-s3://var/flow-fs-test-directory/'))->isDirectory());
-        self::assertTrue($fs->status(path('aws-s3://var/flow-fs-test-directory/remove_file_when_exists.txt'))->isFile());
+        self::assertTrue($fs->status(path('aws-s3://var/flow-fs-test-directory/'))?->isDirectory());
+        self::assertTrue($fs->status(path('aws-s3://var/flow-fs-test-directory/remove_file_when_exists.txt'))?->isFile());
         $fs->rm(path('aws-s3://var/flow-fs-test-directory/*.txt'));
         self::assertTrue($fs->status(path('aws-s3://var/flow-fs-test-directory/'))->isDirectory());
         self::assertNull($fs->status(path('aws-s3://var/flow-fs-test-directory/remove_file_when_exists.txt')));
@@ -199,12 +199,12 @@ TXT
         $fs->writeTo(path('aws-s3://var/nested/orders/orders.csv'))->fromResource(\fopen(__DIR__ . '/Fixtures/orders.csv', 'rb'))->close();
         $fs->writeTo(path('aws-s3://var/nested/orders/orders_01.csv'))->fromResource(\fopen(__DIR__ . '/Fixtures/orders.csv', 'rb'))->close();
 
-        self::assertTrue($fs->status(path('aws-s3://var/nested/orders/orders.csv'))->isFile());
-        self::assertTrue($fs->status(path('aws-s3://var/nested/orders/orders_01.csv'))->isFile());
+        self::assertTrue($fs->status(path('aws-s3://var/nested/orders/orders.csv'))?->isFile());
+        self::assertTrue($fs->status(path('aws-s3://var/nested/orders/orders_01.csv'))?->isFile());
 
         $fs->rm(path('aws-s3://var/nested/orders'));
 
-        self::assertTrue($fs->status(path('aws-s3://var/orders.csv'))->isFile());
+        self::assertTrue($fs->status(path('aws-s3://var/orders.csv'))?->isFile());
         self::assertNull($fs->status(path('aws-s3://var/nested/orders/orders.csv')));
         self::assertNull($fs->status(path('aws-s3://var/nested/orders/orders_01.csv')));
     }
@@ -217,12 +217,12 @@ TXT
         $fs->writeTo(path('aws-s3://var/nested/orders/orders.csv'))->fromResource(\fopen(__DIR__ . '/Fixtures/orders.csv', 'rb'))->close();
         $fs->writeTo(path('aws-s3://var/nested/orders/orders_01.csv'))->fromResource(\fopen(__DIR__ . '/Fixtures/orders.csv', 'rb'))->close();
 
-        self::assertTrue($fs->status(path('aws-s3://var/nested/orders/orders.csv'))->isFile());
-        self::assertTrue($fs->status(path('aws-s3://var/nested/orders/orders_01.csv'))->isFile());
+        self::assertTrue($fs->status(path('aws-s3://var/nested/orders/orders.csv'))?->isFile());
+        self::assertTrue($fs->status(path('aws-s3://var/nested/orders/orders_01.csv'))?->isFile());
 
         $fs->rm(path('aws-s3://var/nested/orders/*.csv'));
 
-        self::assertTrue($fs->status(path('aws-s3://var/nested/orders/orders.txt'))->isFile());
+        self::assertTrue($fs->status(path('aws-s3://var/nested/orders/orders.txt'))?->isFile());
         self::assertNull($fs->status(path('aws-s3://var/nested/orders/orders.csv')));
         self::assertNull($fs->status(path('aws-s3://var/nested/orders/orders_01.csv')));
     }
@@ -244,7 +244,7 @@ TXT
 
         $paths = \iterator_to_array($fs->list(path('aws-s3://multi_partitions/**/*.txt')));
 
-        self::assertTrue($fs->status(path('aws-s3://multi_partitions/**/*.txt'))->isFile());
+        self::assertTrue($fs->status(path('aws-s3://multi_partitions/**/*.txt'))?->isFile());
 
         self::assertEquals(
             [
@@ -274,7 +274,7 @@ TXT
     {
         $fs = aws_s3_filesystem($this->bucket(), $this->s3Client());
 
-        self::assertTrue($fs->status($fs->getSystemTmpDir())->isDirectory());
+        self::assertTrue($fs->status($fs->getSystemTmpDir())?->isDirectory());
     }
 
     public function test_write_to_tmp_dir() : void
@@ -285,7 +285,7 @@ TXT
         $stream->append('Hello, World!');
         $stream->close();
 
-        self::assertTrue($fs->status($filePath)->isFile());
+        self::assertTrue($fs->status($filePath)?->isFile());
         self::assertSame('Hello, World!', $fs->readFrom($filePath)->content());
 
         $fs->rm($filePath);
@@ -308,7 +308,7 @@ TXT
         $stream->append('Hello, World!');
         $stream->close();
 
-        self::assertTrue($fs->status(path('aws-s3://file.txt'))->isFile());
+        self::assertTrue($fs->status(path('aws-s3://file.txt'))?->isFile());
         self::assertFalse($fs->status(path('aws-s3://file.txt'))->isDirectory());
         self::assertSame('Hello, World!', $fs->readFrom(path('aws-s3://file.txt'))->content());
 
@@ -323,7 +323,7 @@ TXT
         $stream->fromResource(\fopen(__DIR__ . '/Fixtures/orders.csv', 'rb'));
         $stream->close();
 
-        self::assertTrue($fs->status(path('aws-s3://orders.csv'))->isFile());
+        self::assertTrue($fs->status(path('aws-s3://orders.csv'))?->isFile());
         self::assertFalse($fs->status(path('aws-s3://orders.csv'))->isDirectory());
         self::assertSame(\file_get_contents(__DIR__ . '/Fixtures/orders.csv'), $fs->readFrom(path('aws-s3://orders.csv'))->content());
 
@@ -344,7 +344,7 @@ TXT
 
         $stream->close();
 
-        self::assertTrue($fs->status(path('aws-s3://block_blob.csv'))->isFile());
+        self::assertTrue($fs->status(path('aws-s3://block_blob.csv'))?->isFile());
         self::assertFalse($fs->status(path('aws-s3://block_blob.csv'))->isDirectory());
 
         $fs->rm(path('aws-s3://block_blob.csv'));

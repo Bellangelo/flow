@@ -4,12 +4,10 @@ declare(strict_types=1);
 
 namespace Flow\ETL\Tests\Unit\Row\Entry;
 
-use function Flow\ETL\DSL\{struct_element, struct_entry, struct_type, type_array, type_int, type_string};
+use function Flow\ETL\DSL\{struct_entry, type_array, type_int, type_string};
+use function Flow\ETL\DSL\{structure_entry, structure_schema, type_map, type_structure};
 use Flow\ETL\Exception\InvalidArgumentException;
-use Flow\ETL\PHP\Type\Logical\Map\{MapKey, MapValue};
-use Flow\ETL\PHP\Type\Logical\MapType;
 use Flow\ETL\Row\Entry\StructureEntry;
-use Flow\ETL\Row\Schema\Definition;
 use Flow\ETL\Tests\FlowTestCase;
 use PHPUnit\Framework\Attributes\DataProvider;
 
@@ -17,83 +15,32 @@ final class StructureEntryTest extends FlowTestCase
 {
     public static function is_equal_data_provider() : \Generator
     {
-        yield 'equal names and equal simple same integer entries' => [
-            true,
-            new StructureEntry(
-                'name',
-                ['1' => 1, '2' => 2, '3' => 3],
-                struct_type([struct_element('1', type_int()), struct_element('2', type_int()), struct_element('3', type_int())])
-            ),
-            new StructureEntry(
-                'name',
-                ['1' => 1, '2' => 2, '3' => 3],
-                struct_type([struct_element('1', type_int()), struct_element('2', type_int()), struct_element('3', type_int())])
-            ),
-        ];
-        yield 'equal names and equal simple same integer entries with different number of entries' => [
-            false,
-            new StructureEntry(
-                'name',
-                ['1' => 1, '2' => 2, '3' => 3],
-                struct_type([struct_element('1', type_int()), struct_element('2', type_string()), struct_element('3', type_string())])
-            ),
-            new StructureEntry(
-                'name',
-                ['1' => 1, '2' => 2],
-                struct_type([struct_element('1', type_int()), struct_element('2', type_string())])
-            ),
-        ];
-        yield 'equal names and equal simple same integer entries with different number of entries reversed' => [
-            false,
-            new StructureEntry(
-                'name',
-                ['1' => 1, '2' => 2],
-                struct_type([struct_element('1', type_int()), struct_element('2', type_string())])
-            ),
-            new StructureEntry(
-                'name',
-                ['1' => 1, '2' => 2, '3' => 3],
-                struct_type([struct_element('1', type_int()), struct_element('2', type_string()), struct_element('3', type_string())])
-            ),
-        ];
         yield 'equal names and equal simple same array entries' => [
             true,
-            new StructureEntry(
-                'name',
-                ['json' => ['foo' => ['bar' => 'baz']]],
-                struct_type([struct_element('json', new MapType(MapKey::string(), MapValue::map(new MapType(MapKey::string(), MapValue::string()))))])
-            ),
-            new StructureEntry(
-                'name',
-                ['json' => ['foo' => ['bar' => 'baz']]],
-                struct_type([struct_element('json', new MapType(MapKey::string(), MapValue::map(new MapType(MapKey::string(), MapValue::string()))))])
-            ),
+            structure_entry('name', ['json' => ['foo' => ['bar' => 'baz']]], type_structure([
+                'json' => type_map(type_string(), type_map(type_string(), type_string())),
+            ])),
+            structure_entry('name', ['json' => ['foo' => ['bar' => 'baz']]], type_structure([
+                'json' => type_map(type_string(), type_map(type_string(), type_string())),
+            ])),
         ];
         yield 'equal names and equal simple same collection entries' => [
             true,
-            new StructureEntry(
-                'name',
-                ['json' => ['1' => 1, '2' => 2, '3' => 3]],
-                struct_type([struct_element('json', type_array())])
-            ),
-            new StructureEntry(
-                'name',
-                ['json' => ['1' => 1, '2' => 2, '3' => 3]],
-                struct_type([struct_element('json', type_array())])
-            ),
+            structure_entry('name', ['json' => ['1' => 1, '2' => 2, '3' => 3]], type_structure([
+                'json' => type_array(),
+            ])),
+            structure_entry('name', ['json' => ['1' => 1, '2' => 2, '3' => 3]], type_structure([
+                'json' => type_array(),
+            ])),
         ];
         yield 'equal names and equal simple different collection entries' => [
             false,
-            new StructureEntry(
-                'name',
-                ['json' => ['5' => 5, '2' => 2, '1' => 1]],
-                struct_type([struct_element('json', type_array())])
-            ),
-            new StructureEntry(
-                'name',
-                ['json' => ['1' => 1, '2' => 2, '3' => 3]],
-                struct_type([struct_element('json', type_array())])
-            ),
+            structure_entry('name', ['json' => ['5' => 5, '2' => 2, '1' => 1]], type_structure([
+                'json' => type_array(),
+            ])),
+            structure_entry('name', ['json' => ['1' => 1, '2' => 2, '3' => 3]], type_structure([
+                'json' => type_array(),
+            ])),
         ];
     }
 
@@ -102,11 +49,10 @@ final class StructureEntryTest extends FlowTestCase
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Expected structure{id: integer, name: string} got different types: list<integer>');
 
-        new StructureEntry(
-            'test',
-            [1, 2, 3],
-            struct_type([struct_element('id', type_int()), struct_element('name', type_string())])
-        );
+        structure_entry('test', [1, 2, 3], type_structure([
+            'id' => type_int(),
+            'name' => type_string(),
+        ]));
     }
 
     public function test_definition() : void
@@ -121,34 +67,25 @@ final class StructureEntryTest extends FlowTestCase
                     'city' => 'bar',
                 ],
             ],
-            struct_type([
-                struct_element('id', type_int()),
-                struct_element('name', type_string()),
-                struct_element(
-                    'address',
-                    struct_type([
-                        struct_element('street', type_string()),
-                        struct_element('city', type_string()),
-                    ])
-                ),
+            type_structure([
+                'id' => type_int(),
+                'name' => type_string(),
+                'address' => type_structure([
+                    'street' => type_string(),
+                    'city' => type_string(),
+                ]),
             ]),
         );
 
         self::assertEquals(
-            Definition::structure(
-                'items',
-                struct_type([
-                    struct_element('id', type_int()),
-                    struct_element('name', type_string()),
-                    struct_element(
-                        'address',
-                        struct_type([
-                            struct_element('street', type_string()),
-                            struct_element('city', type_string()),
-                        ])
-                    ),
+            structure_schema('items', type_structure([
+                'id' => type_int(),
+                'name' => type_string(),
+                'address' => type_structure([
+                    'street' => type_string(),
+                    'city' => type_string(),
                 ]),
-            ),
+            ])),
             $entry->definition()
         );
     }
@@ -158,11 +95,7 @@ final class StructureEntryTest extends FlowTestCase
         self::assertSame(
             '0',
             (
-                new StructureEntry(
-                    '0',
-                    ['id' => 1, 'name' => 'one'],
-                    struct_type([struct_element('id', type_int()), struct_element('name', type_string())])
-                )
+                structure_entry('0', ['id' => 1, 'name' => 'one'], type_structure(['id' => type_int(), 'name' => type_string()]))
             )->name()
         );
     }
@@ -175,11 +108,7 @@ final class StructureEntryTest extends FlowTestCase
 
     public function test_map() : void
     {
-        $entry = new StructureEntry(
-            'entry-name',
-            ['id' => 1234],
-            struct_type([struct_element('id', type_int())])
-        );
+        $entry = structure_entry('entry-name', ['id' => 1234], type_structure(['id' => type_int()]));
 
         self::assertEquals(
             $entry,
@@ -192,20 +121,12 @@ final class StructureEntryTest extends FlowTestCase
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Entry name cannot be empty');
 
-        new StructureEntry(
-            '',
-            ['id' => 1, 'name' => 'one'],
-            struct_type([struct_element('id', type_int()), struct_element('name', type_string())])
-        );
+        structure_entry('', ['id' => 1, 'name' => 'one'], type_structure(['id' => type_int(), 'name' => type_string()]));
     }
 
     public function test_renames_entry() : void
     {
-        $entry = new StructureEntry(
-            'entry-name',
-            ['id' => 1234],
-            struct_type([struct_element('id', type_int())])
-        );
+        $entry = structure_entry('entry-name', ['id' => 1234], type_structure(['id' => type_int()]));
         $newEntry = $entry->rename('new-entry-name');
 
         self::assertEquals('new-entry-name', $newEntry->name());
@@ -214,11 +135,7 @@ final class StructureEntryTest extends FlowTestCase
 
     public function test_returns_array_as_value() : void
     {
-        $entry = new StructureEntry(
-            'items',
-            ['item-id' => 1, 'name' => 'one'],
-            struct_type([struct_element('id', type_int()), struct_element('name', type_string())])
-        );
+        $entry = structure_entry('items', ['item-id' => 1, 'name' => 'one'], type_structure(['item-id' => type_int(), 'name' => type_string()]));
 
         self::assertEquals(
             [
@@ -231,16 +148,35 @@ final class StructureEntryTest extends FlowTestCase
 
     public function test_serialization() : void
     {
-        $string = new StructureEntry(
-            'name',
-            ['json' => ['5' => 5, '2' => 2, '3' => 3]],
-            struct_type([struct_element('json', type_array())])
-        );
+        $string = structure_entry('name', ['json' => ['5' => 5, '2' => 2, '3' => 3]], type_structure(['json' => type_array()]));
 
         $serialized = \serialize($string);
         /** @var StructureEntry $unserialized */
         $unserialized = \unserialize($serialized);
 
         self::assertTrue($string->isEqual($unserialized));
+    }
+
+    public function test_structure_element_names_as_numbers() : void
+    {
+        self::assertNotEquals(
+            structure_entry('name', ['1' => 1, '2' => '2'], type_structure([
+                '1' => type_int(),
+                '2' => type_string(),
+            ])),
+            structure_entry('name', ['1' => 1, '2' => '2', '3' => '3'], type_structure([
+                '1' => type_int(),
+                '2' => type_string(),
+                '3' => type_string(),
+            ])),
+        );
+        self::assertEquals(
+            structure_entry('name', ['1' => 1, '2' => 2, '3' => 3], type_structure([
+                '1' => type_int(),
+                '2' => type_int(),
+                '3' => type_int(),
+            ])),
+            structure_entry('name', ['1' => 1, '2' => 2, '3' => 3], type_structure(['1' => type_int(), '2' => type_int(), '3' => type_int()])),
+        );
     }
 }

@@ -36,19 +36,20 @@ use Flow\ETL\Row\Entry\{BooleanEntry,
     XMLEntry};
 use Flow\ETL\Row\{Entry, EntryReference, Reference};
 
-final class Definition
+final readonly class Definition
 {
     private Metadata $metadata;
 
-    private readonly Reference $ref;
+    private Reference $ref;
 
     /**
-     * @param class-string<Entry> $entryClass
+     * @param class-string<Entry<mixed, mixed>> $entryClass
+     * @param Type<mixed> $type
      */
     public function __construct(
         string|Reference $ref,
-        private readonly string $entryClass,
-        private readonly Type $type,
+        private string $entryClass,
+        private Type $type,
         ?Metadata $metadata = null,
     ) {
         if (!\is_a($this->entryClass, Entry::class, true)) {
@@ -228,6 +229,9 @@ final class Definition
         return new self($this->ref, $this->entryClass, $this->type->makeNullable($nullable), $this->metadata);
     }
 
+    /**
+     * @param Entry<mixed, mixed> $entry
+     */
     public function matches(Entry $entry) : bool
     {
         if ($this->isNullable() && $entry->is($this->ref)) {
@@ -273,7 +277,7 @@ final class Definition
                 return new self(
                     $this->ref,
                     $this->entryClass,
-                    type_list(type_float($this->type->element()->type()->nullable() || $definition->type->element()->type()->nullable())),
+                    type_list(type_float($this->type->element()->nullable() || $definition->type->element()->nullable())),
                     $this->metadata->merge($definition->metadata)
                 );
             }
@@ -381,6 +385,9 @@ final class Definition
         );
     }
 
+    /**
+     * @return Type<mixed>
+     */
     public function type() : Type
     {
         return $this->type;

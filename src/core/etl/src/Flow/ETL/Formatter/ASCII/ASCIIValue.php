@@ -10,6 +10,9 @@ final class ASCIIValue
 {
     private ?string $stringValue = null;
 
+    /**
+     * @param null|array|bool|Entry<mixed, mixed>|float|int|string $value
+     */
     public function __construct(private readonly string|int|bool|float|array|Entry|null $value)
     {
     }
@@ -105,7 +108,7 @@ final class ASCIIValue
                     'double', 'integer' => (string) $val,
                     'array' => \json_encode($val, \JSON_THROW_ON_ERROR),
                 };
-            } catch (\JsonException $e) {
+            } catch (\JsonException) {
                 $this->stringValue = '{...}';
             }
         }

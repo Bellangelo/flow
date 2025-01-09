@@ -17,13 +17,13 @@ final class InsertQueryCounter extends AbstractLogger implements LoggerAwareInte
         $this->logger = new NullLogger();
     }
 
-    public function log($level, $message, array $context = []) : void
+    public function log(mixed $level, string|\Stringable $message, array $context = []) : void
     {
         if (!isset($context['sql'])) {
             return;
         }
 
-        if (\str_starts_with(\trim($context['sql']), 'INSERT')) {
+        if (\str_starts_with(\trim((string) $context['sql']), 'INSERT')) {
             $this->count++;
         }
     }

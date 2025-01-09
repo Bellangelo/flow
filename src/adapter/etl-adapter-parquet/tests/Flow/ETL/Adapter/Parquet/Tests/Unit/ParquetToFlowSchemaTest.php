@@ -13,7 +13,6 @@ use function Flow\ETL\DSL\{bool_schema,
     list_schema,
     map_schema,
     str_schema,
-    struct_element,
     struct_schema,
     time_schema,
     type_boolean,
@@ -27,6 +26,7 @@ use function Flow\ETL\DSL\{bool_schema,
 use Flow\ETL\Adapter\Parquet\SchemaConverter;
 use Flow\ETL\Tests\FlowTestCase;
 use Flow\Parquet\ParquetFile\Schema;
+use Flow\Parquet\ParquetFile\Schema\{FlatColumn, ListElement, NestedColumn};
 use Flow\Parquet\ParquetFile\Schema\{MapKey, MapValue};
 
 final class ParquetToFlowSchemaTest extends FlowTestCase
@@ -36,18 +36,18 @@ final class ParquetToFlowSchemaTest extends FlowTestCase
         $converted = new SchemaConverter();
 
         $flowSchema = $converted->fromParquet(Schema::with(
-            Schema\FlatColumn::int32('int32'),
-            Schema\FlatColumn::int64('int64'),
-            Schema\FlatColumn::string('string'),
-            Schema\FlatColumn::float('float'),
-            Schema\FlatColumn::double('double'),
-            Schema\FlatColumn::decimal('decimal'),
-            Schema\FlatColumn::boolean('boolean'),
-            Schema\FlatColumn::date('date'),
-            Schema\FlatColumn::time('time'),
-            Schema\FlatColumn::dateTime('datetime'),
-            Schema\FlatColumn::uuid('uuid'),
-            Schema\FlatColumn::json('json'),
+            FlatColumn::int32('int32'),
+            FlatColumn::int64('int64'),
+            FlatColumn::string('string'),
+            FlatColumn::float('float'),
+            FlatColumn::double('double'),
+            FlatColumn::decimal('decimal'),
+            FlatColumn::boolean('boolean'),
+            FlatColumn::date('date'),
+            FlatColumn::time('time'),
+            FlatColumn::dateTime('datetime'),
+            FlatColumn::uuid('uuid'),
+            FlatColumn::json('json'),
         ));
 
         self::assertEquals(
@@ -74,7 +74,7 @@ final class ParquetToFlowSchemaTest extends FlowTestCase
         $converted = new SchemaConverter();
 
         $flowSchema = $converted->fromParquet(Schema::with(
-            Schema\NestedColumn::list('list', Schema\ListElement::string()),
+            NestedColumn::list('list', ListElement::string()),
         ));
 
         self::assertEquals(
@@ -90,7 +90,7 @@ final class ParquetToFlowSchemaTest extends FlowTestCase
         $converted = new SchemaConverter();
 
         $flowSchema = $converted->fromParquet(Schema::with(
-            Schema\NestedColumn::map('map', MapKey::string(), MapValue::int64()),
+            NestedColumn::map('map', MapKey::string(), MapValue::int64()),
         ));
 
         self::assertEquals(
@@ -106,12 +106,12 @@ final class ParquetToFlowSchemaTest extends FlowTestCase
         $converted = new SchemaConverter();
 
         $flowSchema = $converted->fromParquet(Schema::with(
-            Schema\NestedColumn::struct(
+            NestedColumn::struct(
                 'struct',
                 [
-                    Schema\FlatColumn::uuid('uuid'),
-                    Schema\FlatColumn::string('name'),
-                    Schema\FlatColumn::boolean('active'),
+                    FlatColumn::uuid('uuid'),
+                    FlatColumn::string('name'),
+                    FlatColumn::boolean('active'),
                 ]
             ),
         ));
@@ -122,9 +122,9 @@ final class ParquetToFlowSchemaTest extends FlowTestCase
                     'struct',
                     type_structure(
                         [
-                            struct_element('uuid', type_uuid(true)),
-                            struct_element('name', type_string(true)),
-                            struct_element('active', type_boolean(true)),
+                            'uuid' => type_uuid(true),
+                            'name' => type_string(true),
+                            'active' => type_boolean(true),
                         ],
                         true
                     ),

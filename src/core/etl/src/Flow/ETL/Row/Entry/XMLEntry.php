@@ -12,7 +12,7 @@ use Flow\ETL\Row\Schema\Definition;
 use Flow\ETL\Row\{Entry, Reference};
 
 /**
- * @implements Entry<?\DOMDocument>
+ * @implements Entry<?\DOMDocument, \DOMDocument>
  */
 final class XMLEntry implements Entry
 {
@@ -70,7 +70,7 @@ final class XMLEntry implements Entry
         }
 
         /** @phpstan-ignore-next-line  */
-        $xmlString = \gzuncompress(\base64_decode($data['value'], true));
+        $xmlString = \gzuncompress(\base64_decode((string) $data['value'], true));
         $doc = new \DOMDocument();
 
         /** @phpstan-ignore-next-line  */

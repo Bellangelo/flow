@@ -12,7 +12,7 @@ use Flow\ETL\Pipeline\HashJoin\HashTable;
 use Flow\ETL\Row\Entry;
 use Flow\ETL\{DataFrame, Extractor, FlowContext, Loader, Pipeline, Row, Rows, Transformer};
 
-final class HashJoinPipeline implements Pipeline
+final readonly class HashJoinPipeline implements Pipeline
 {
     private Extractor $extractor;
 
@@ -57,9 +57,9 @@ final class HashJoinPipeline implements Pipeline
             $rightSchema = $rightSchema->merge($rightRow->schema());
         }
 
-        /** @var array<Entry> $leftEntries */
+        /** @var array<Entry<mixed, mixed>> $leftEntries */
         $leftEntries = [];
-        /** @var array<Entry> $rightEntries */
+        /** @var array<Entry<mixed, mixed>> $rightEntries */
         $rightEntries = [];
 
         if ($this->join === Join::left) {

@@ -9,11 +9,11 @@ use Flow\ETL\PHP\Type\Native\NullType;
 use Flow\ETL\PHP\Type\Type;
 
 /**
- * @implements LogicalType<\DOMDocument>
+ * @implements Type<\DOMElement>
  */
-final class XMLElementType implements LogicalType
+final readonly class XMLElementType implements Type
 {
-    public function __construct(private readonly bool $nullable)
+    public function __construct(private bool $nullable)
     {
     }
 

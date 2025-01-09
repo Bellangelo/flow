@@ -8,13 +8,15 @@ use Flow\ETL\Exception\InvalidArgumentException;
 use Flow\ETL\Hash\{Algorithm, NativePHPHash};
 use Flow\ETL\Row\{Entries, Entry, Reference, References, Schema};
 
-final class Row
+final readonly class Row
 {
-    public function __construct(private readonly Entries $entries)
+    public function __construct(private Entries $entries)
     {
     }
 
     /**
+     * @param Entry<mixed, mixed> ...$entries
+     *
      * @throws InvalidArgumentException
      */
     public static function create(Entry ...$entries) : self
@@ -22,12 +24,17 @@ final class Row
         return new self(new Entries(...$entries));
     }
 
+    /**
+     * @param Entry<mixed, mixed> ...$entries
+     */
     public static function with(Entry ...$entries) : self
     {
         return self::create(...$entries);
     }
 
     /**
+     * @param Entry<mixed, mixed> ...$entries
+     *
      * @throws InvalidArgumentException
      */
     public function add(Entry ...$entries) : self
@@ -42,6 +49,8 @@ final class Row
 
     /**
      * @throws InvalidArgumentException
+     *
+     * @return Entry<mixed, mixed>
      */
     public function get(string|Reference $ref) : Entry
     {
@@ -81,7 +90,7 @@ final class Row
     }
 
     /**
-     * @param callable(Entry) : Entry $mapper
+     * @param callable(Entry<mixed, mixed>) : Entry<mixed, mixed> $mapper
      */
     public function map(callable $mapper) : self
     {
@@ -129,6 +138,9 @@ final class Row
         return new Schema(...$definitions);
     }
 
+    /**
+     * @param Entry<mixed, mixed> ...$entries
+     */
     public function set(Entry ...$entries) : self
     {
         return new self($this->entries->set(...$entries));

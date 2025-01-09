@@ -10,6 +10,9 @@ use Flow\ETL\PHP\Type\{Caster, Native\StringType, Type};
 
 final class StringCastingHandler implements CastingHandler
 {
+    /**
+     * @param Type<string> $type
+     */
     public function supports(Type $type) : bool
     {
         return $type instanceof StringType;
@@ -48,7 +51,7 @@ final class StringCastingHandler implements CastingHandler
         try {
             return (string) $value;
             /* @phpstan-ignore-next-line */
-        } catch (\Throwable $e) {
+        } catch (\Throwable) {
             throw new CastingException($value, $type);
         }
     }
