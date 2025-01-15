@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 final class ArrayComparisonTest extends TestCase
 {
-    public function equal_arrays() : \Generator
+    static public function equal_arrays() : \Generator
     {
         yield 'simple arrays' => [
             ['id' => 1, 'name' => 'one', 'color' => 'red'],
@@ -96,7 +96,7 @@ final class ArrayComparisonTest extends TestCase
         ];
     }
 
-    public function not_equal_arrays() : \Generator
+    static public function not_equal_arrays() : \Generator
     {
         yield 'simple arrays' => [
             ['id' => 1, 'name' => 'one', 'color' => 'red'],
