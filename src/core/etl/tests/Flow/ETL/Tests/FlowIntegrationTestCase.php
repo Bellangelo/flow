@@ -22,7 +22,7 @@ abstract class FlowIntegrationTestCase extends FlowTestCase
 
     protected Serializer $serializer;
 
-    private readonly string $baseMemoryLimit;
+    private string $baseMemoryLimit;
 
     protected function setUp() : void
     {
