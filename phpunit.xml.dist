@@ -158,7 +158,6 @@
       <directory>src/core/etl/tests/Flow/ETL/Tests/Unit</directory>
       <directory>src/lib/array-dot/tests/Flow/ArrayDot/Tests/Unit</directory>
       <directory>src/lib/doctrine-dbal-bulk/tests/Flow/Doctrine/Bulk/Tests/Unit</directory>
-      <directory>src/lib/doctrine-dbal-bulk/tests/Flow/Doctrine/Bulk/Tests/Unit</directory>
       <directory>src/lib/filesystem/tests/Flow/Filesystem/Tests/Unit</directory>
       <directory>src/lib/parquet/tests/Flow/Parquet/Tests/Unit</directory>
       <directory>src/lib/rdsl/tests/Flow/RDSL/Tests/Unit</directory>
