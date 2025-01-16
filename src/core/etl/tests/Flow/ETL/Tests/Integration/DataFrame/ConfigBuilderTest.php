@@ -11,7 +11,7 @@ use Flow\ETL\Tests\FlowIntegrationTestCase;
 
 final class ConfigBuilderTest extends FlowIntegrationTestCase
 {
-    protected function tearDown(): void
+    protected function tearDown() : void
     {
         putenv(CacheConfig::CACHE_DIR_ENV . '=' . $this->cacheDir->path());
 
