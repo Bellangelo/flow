@@ -1,6 +1,7 @@
 ## [Unreleased] - 2025-01-16
 
 ### Added
+- [#1384](https://github.com/flow-php/flow/pull/1384) - **elasticsearch examples** - [@norberttech](https://github.com/norberttech)
 - [#1380](https://github.com/flow-php/flow/pull/1380) - **execution time to pipeline report** - [@norberttech](https://github.com/norberttech)
 - [#1378](https://github.com/flow-php/flow/pull/1378) - **Added and/or/andNot/orNot to ScalarFunctionsChain** - [@norberttech](https://github.com/norberttech)
 - [#1371](https://github.com/flow-php/flow/pull/1371) - **Added database upsert example** - [@norberttech](https://github.com/norberttech)
