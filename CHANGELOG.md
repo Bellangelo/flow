@@ -1,6 +1,7 @@
 ## [Unreleased] - 2025-01-16
 
 ### Added
+- [#1378](https://github.com/flow-php/flow/pull/1378) - **Added and/or/andNot/orNot to ScalarFunctionsChain** - [@norberttech](https://github.com/norberttech)
 - [#1371](https://github.com/flow-php/flow/pull/1371) - **Added database upsert example** - [@norberttech](https://github.com/norberttech)
 - [25b741](https://github.com/flow-php/flow/commit/25b7415d3911fa076af7b4bfa8b848a44b405b28) - **sponsor page** - [@norberttech](https://github.com/norberttech)
 - [#1358](https://github.com/flow-php/flow/pull/1358) - **Transformers to serialize/unserialize entire row under/from one entry** - [@norberttech](https://github.com/norberttech)
